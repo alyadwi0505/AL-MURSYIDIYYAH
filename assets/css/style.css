@@ -1658,11 +1658,18 @@ svg.lucide-loader {
 
 .form-navigation {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: flex-end;
+  gap: 0.85rem;
   margin-top: 2rem;
   padding-top: 1.5rem;
   border-top: 1px solid var(--color-border-light);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-navigation #btnPrev {
+  margin-right: auto;
 }
 
 /* PPDB Registration Success Card */
@@ -1670,10 +1677,23 @@ svg.lucide-loader {
   background: var(--color-white);
   border: 1.5px solid var(--color-emerald);
   border-radius: var(--radius-md);
-  padding: 2.25rem;
+  padding: clamp(1.25rem, 4vw, 2.25rem);
   box-shadow: 0 4px 20px rgba(7, 89, 79, 0.08);
   max-width: 600px;
   margin: 0 auto;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.reg-action-btn,
+.reg-card .btn {
+  white-space: normal !important;
+  text-align: center;
+  line-height: 1.35;
+  padding: 0.8rem 1.25rem;
+  font-size: clamp(0.85rem, 2.7vw, 0.95rem);
+  word-break: normal;
+  overflow-wrap: break-word;
 }
 
 .reg-header {
@@ -1705,6 +1725,40 @@ svg.lucide-loader {
 }
 
 @media (max-width: 640px) {
+  .ppdb-wizard {
+    padding: 1.25rem 1rem;
+  }
+  .form-navigation {
+    gap: 0.65rem;
+    flex-wrap: wrap;
+  }
+  .form-navigation .btn {
+    padding: 0.65rem 0.95rem;
+    font-size: 0.85rem;
+    gap: 0.35rem;
+    min-width: 0;
+    max-width: 100%;
+  }
+  .form-navigation #btnPrev {
+    padding: 0.65rem 0.85rem;
+  }
+  .form-navigation #btnNext {
+    padding: 0.65rem 0.95rem;
+  }
+  .form-navigation #btnSubmit {
+    white-space: normal;
+    text-align: center;
+    line-height: 1.25;
+    padding: 0.75rem 1rem;
+    font-size: 0.86rem;
+  }
+  .reg-card {
+    padding: 1.25rem 0.95rem;
+  }
+  .reg-card table td {
+    padding: 0.45rem 0;
+    font-size: 0.86rem;
+  }
   .form-grid {
     grid-template-columns: 1fr;
   }
@@ -1716,6 +1770,14 @@ svg.lucide-loader {
   }
   .step-divider-arrow {
     display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-navigation #btnSubmit {
+    width: 100%;
+    justify-content: center;
+    order: 2;
   }
 }
 

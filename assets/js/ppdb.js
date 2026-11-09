@@ -589,7 +589,7 @@ document.addEventListener('DOMContentLoaded', () => {
               </div>
 
               <!-- 5. AKSI LANGSUNG WHATSAPP PANITIA -->
-              <a href="https://wa.me/6281380327256?text=Halo%20Panitia%20PPDB%20SDIT%20Al-Mursyidiyyah,%20saya%20ingin%20menanyakan%20status%20pendaftaran%20ananda%20${encodeURIComponent(item.nama_siswa)}%20(${item.reg_number})" target="_blank" class="btn btn-gold" style="width:100%; justify-content:center; padding:0.85rem 1.25rem; font-weight:700;">
+              <a href="https://wa.me/6281380327256?text=Halo%20Panitia%20PPDB%20SDIT%20Al-Mursyidiyyah,%20saya%20ingin%20menanyakan%20status%20pendaftaran%20ananda%20${encodeURIComponent(item.nama_siswa)}%20(${item.reg_number})" target="_blank" class="btn btn-gold" style="width:100%; justify-content:center; padding:0.85rem 1.25rem; font-weight:700; white-space:normal; text-align:center; line-height:1.35;">
                 <i data-lucide="message-circle" style="width:18px;height:18px;"></i>
                 Hubungi Sekretariat PPDB via WhatsApp
               </a>
