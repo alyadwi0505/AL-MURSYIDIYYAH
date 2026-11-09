@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Formulir Pendaftaran Peserta Didik Baru (PPDB) Online SDIT Al-Mursyidiyyah Tahun Ajaran 2027/2028.">
+  <title>Formulir Pendaftaran PPDB Online — SDIT Al-Mursyidiyyah</title>
+
+  <!-- Google Fonts: M PLUS Rounded 1c, Nunito Sans & Zain -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cookie&family=M+PLUS+Rounded+1c:wght@700;800;900&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Satisfy&family=Zain:wght@400;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css?v=3.5">
+  <link rel="icon" type="image/png" href="assets/img/logo-transparent.png">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="brand">
+        <img src="assets/img/logo-transparent.png" alt="Logo SDIT Al-Mursyidiyyah" class="brand-logo">
+        <div class="brand-text">
+          <span class="brand-title">SDIT AL-MURSYIDIYYAH</span>
+          <span class="brand-subtitle">Sekolah Dasar Islam Terpadu</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="profil.html" class="nav-link">Profil</a></li>
+          <li><a href="program.html" class="nav-link">Program</a></li>
+          <li><a href="guru.html" class="nav-link">Pendidik</a></li>
+          <li><a href="fasilitas.html" class="nav-link">Fasilitas</a></li>
+          <li><a href="berita.html" class="nav-link">Berita</a></li>
+          <li><a href="galeri.html" class="nav-link">Galeri</a></li>
+          <li><a href="kontak.html" class="nav-link">Kontak</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="ppdb.html" class="btn btn-gold btn-sm">
+          <i data-lucide="info" style="width:16px;height:16px;"></i>
+          Info PPDB
+        </a>
+      </div>
+
+      <button class="nav-toggle" aria-label="Buka Menu Navigasi">
+        <i data-lucide="menu" style="width:28px;height:28px;"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-nav">
+      <ul class="mobile-nav-list">
+        <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+        <li><a href="profil.html" class="mobile-nav-link">Profil Sekolah</a></li>
+        <li><a href="program.html" class="mobile-nav-link">Program Pendidikan</a></li>
+        <li><a href="guru.html" class="mobile-nav-link">Tenaga Pendidik</a></li>
+        <li><a href="fasilitas.html" class="mobile-nav-link">Fasilitas</a></li>
+        <li><a href="berita.html" class="mobile-nav-link">Berita & Kegiatan</a></li>
+        <li><a href="galeri.html" class="mobile-nav-link">Galeri Foto</a></li>
+        <li><a href="kontak.html" class="mobile-nav-link">Kontak</a></li>
+      </ul>
+      <a href="ppdb.html" class="btn btn-gold" style="width:100%;">
+        <i data-lucide="info" style="width:18px;height:18px;"></i>
+        Info & Persyaratan PPDB
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+      <div class="container">
+        <h1>Formulir Pendaftaran Online</h1>
+        <div class="breadcrumb" style="display: flex; gap: 0.75rem; align-items: center; justify-content: center; flex-wrap: wrap;">
+          <a href="index.html">Beranda</a>
+          <span>/</span>
+          <a href="ppdb.html">PPDB Online</a>
+          <span>/</span>
+          <span style="color: var(--color-gold); font-weight: 700;">Isi Formulir</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMULIR ONLINE INTERAKTIF MULTI-STEP -->
+    <section class="section section-ivory" style="min-height: 70vh;">
+      <div class="container container-narrow">
+        
+        <!-- WIZARD CONTAINER -->
+        <div class="ppdb-wizard" id="ppdbWizard">
+          <!-- Step Indicator -->
+          <div class="wizard-steps">
+            <div class="wizard-step-item active">
+              <div class="step-circle">1</div>
+              <span class="step-label">Data Siswa</span>
+            </div>
+            <span class="step-divider-arrow">›</span>
+            <div class="wizard-step-item">
+              <div class="step-circle">2</div>
+              <span class="step-label">Orang Tua</span>
+            </div>
+            <span class="step-divider-arrow">›</span>
+            <div class="wizard-step-item">
+              <div class="step-circle">3</div>
+              <span class="step-label">Upload Berkas</span>
+            </div>
+          </div>
+
+          <form id="ppdbForm" novalidate>
+            <!-- STEP 1: DATA SISWA -->
+            <div class="form-step active" data-step="1">
+              <h3 style="font-size: 1.25rem; margin-bottom: 1.25rem; color: var(--color-emerald);">1. Identitas Calon Peserta Didik</h3>
+              <div class="form-grid">
+                <div class="form-group full-width">
+                  <label for="namaSiswa" class="form-label">Nama Lengkap Siswa <span class="req">*</span></label>
+                  <input type="text" id="namaSiswa" class="form-input" placeholder="Sesuai Akta Kelahiran" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="namaPanggilan" class="form-label">Nama Panggilan</label>
+                  <input type="text" id="namaPanggilan" class="form-input" placeholder="Panggilan akrab di rumah">
+                </div>
+
+                <div class="form-group">
+                  <label for="nikSiswa" class="form-label">Nomor Induk Kependudukan (NIK) <span class="req">*</span></label>
+                  <input type="text" id="nikSiswa" class="form-input" placeholder="16 Digit NIK di Kartu Keluarga" maxlength="16" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="jenisKelamin" class="form-label">Jenis Kelamin <span class="req">*</span></label>
+                  <select id="jenisKelamin" class="form-select" required>
+                    <option value="">Pilih Jenis Kelamin</option>
+                    <option value="Laki-laki">Laki-laki</option>
+                    <option value="Perempuan">Perempuan</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="tempatLahir" class="form-label">Tempat Lahir <span class="req">*</span></label>
+                  <input type="text" id="tempatLahir" class="form-input" placeholder="Kota Kelahiran" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="tglLahir" class="form-label">Tanggal Lahir <span class="req">*</span></label>
+                  <input type="date" id="tglLahir" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="asalTK" class="form-label">Asal TK / RA / PAUD</label>
+                  <input type="text" id="asalTK" class="form-input" placeholder="Nama sekolah sebelumnya (jika ada)">
+                </div>
+
+                <div class="form-group full-width">
+                  <label for="alamatSiswa" class="form-label">Alamat Lengkap Domisili <span class="req">*</span></label>
+                  <textarea id="alamatSiswa" class="form-textarea" placeholder="Jalan, No. Rumah, RT/RW, Kelurahan, Kecamatan, Kota" required></textarea>
+                </div>
+
+                <div class="form-group full-width">
+                  <label for="catatanKesehatan" class="form-label">Catatan Khusus / Riwayat Alergi (Opsional)</label>
+                  <textarea id="catatanKesehatan" class="form-textarea" placeholder="Tuliskan jika anak memiliki alergi makanan, pantangan, atau riwayat kesehatan tertentu..."></textarea>
+                </div>
+              </div>
+            </div>
+
+            <!-- STEP 2: DATA ORANG TUA / WALI -->
+            <div class="form-step" data-step="2">
+              <h3 style="font-size: 1.25rem; margin-bottom: 1.25rem; color: var(--color-emerald);">2. Identitas Orang Tua / Wali</h3>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="namaAyah" class="form-label">Nama Lengkap Ayah / Wali <span class="req">*</span></label>
+                  <input type="text" id="namaAyah" class="form-input" placeholder="Nama Ayah Kandung / Wali" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="pekerjaanAyah" class="form-label">Pekerjaan Ayah / Wali</label>
+                  <input type="text" id="pekerjaanAyah" class="form-input" placeholder="PNS / Karyawan Swasta / Wiraswasta">
+                </div>
+
+                <div class="form-group">
+                  <label for="namaIbu" class="form-label">Nama Lengkap Ibu</label>
+                  <input type="text" id="namaIbu" class="form-input" placeholder="Nama Ibu Kandung">
+                </div>
+
+                <div class="form-group">
+                  <label for="pekerjaanIbu" class="form-label">Pekerjaan Ibu</label>
+                  <input type="text" id="pekerjaanIbu" class="form-input" placeholder="Ibu Rumah Tangga / Karyawati / Profesi">
+                </div>
+
+                <div class="form-group full-width">
+                  <label for="noHpOrtu" class="form-label">Nomor WhatsApp Aktif Orang Tua <span class="req">*</span></label>
+                  <input type="tel" id="noHpOrtu" class="form-input" placeholder="08xxxxxxxxxx (untuk konfirmasi pendaftaran)" required>
+                </div>
+
+                <div class="form-group full-width">
+                  <label for="emailOrtu" class="form-label">Alamat Email Aktif (Opsional)</label>
+                  <input type="email" id="emailOrtu" class="form-input" placeholder="email@gmail.com">
+                </div>
+              </div>
+            </div>
+
+            <!-- STEP 3: UPLOAD DOKUMEN -->
+            <div class="form-step" data-step="3">
+              <h3 style="font-size: 1.15rem; margin-bottom: 0.4rem; color: var(--color-emerald);">3. Unggah Dokumen Berkas (Dapat Menyusul)</h3>
+              <p style="font-size: 0.88rem; color: var(--color-dark-forest-muted); margin-bottom: 1.25rem;">
+                Format file: JPG, PNG, atau PDF (Ukuran maks 5MB). Berkas yang belum siap dapat diserahkan saat tahap observasi dan verifikasi di sekolah.
+              </p>
+
+              <div class="form-grid">
+                <!-- Dropzone 1: Kartu Identitas Anak (KIA) -->
+                <div class="upload-dropzone">
+                  <i data-lucide="credit-card" class="upload-icon"></i>
+                  <div class="upload-dropzone-body">
+                    <div class="upload-title">Kartu Identitas Anak (KIA)</div>
+                    <div class="upload-hint">Foto/scan KIA (JPG/PDF, jika ada)</div>
+                    <div class="file-preview"></div>
+                  </div>
+                  <span class="upload-btn-chip">Pilih File</span>
+                  <input type="file" id="fileKIA" accept=".pdf,image/*">
+                </div>
+
+                <!-- Dropzone 2: Akte Kelahiran -->
+                <div class="upload-dropzone">
+                  <i data-lucide="file-text" class="upload-icon"></i>
+                  <div class="upload-dropzone-body">
+                    <div class="upload-title">Akte Kelahiran Siswa</div>
+                    <div class="upload-hint">Foto/scan Akta Kelahiran resmi</div>
+                    <div class="file-preview"></div>
+                  </div>
+                  <span class="upload-btn-chip">Pilih File</span>
+                  <input type="file" id="fileAkta" accept=".pdf,image/*">
+                </div>
+
+                <!-- Dropzone 3: Pas Foto 3x4 Background Merah -->
+                <div class="upload-dropzone">
+                  <i data-lucide="camera" class="upload-icon"></i>
+                  <div class="upload-dropzone-body">
+                    <div class="upload-title">Pas Foto 3x4 Latar Merah</div>
+                    <div class="upload-hint">Foto calon siswa rapi (JPG/PNG)</div>
+                    <div class="file-preview"></div>
+                  </div>
+                  <span class="upload-btn-chip">Pilih File</span>
+                  <input type="file" id="fileFoto" accept="image/*">
+                </div>
+
+                <!-- Dropzone 4: Kartu Keluarga -->
+                <div class="upload-dropzone">
+                  <i data-lucide="users" class="upload-icon"></i>
+                  <div class="upload-dropzone-body">
+                    <div class="upload-title">Kartu Keluarga (KK)</div>
+                    <div class="upload-hint">Foto/scan Kartu Keluarga asli</div>
+                    <div class="file-preview"></div>
+                  </div>
+                  <span class="upload-btn-chip">Pilih File</span>
+                  <input type="file" id="fileKK" accept=".pdf,image/*">
+                </div>
+
+                <!-- Dropzone 5: KTP Ayah -->
+                <div class="upload-dropzone">
+                  <i data-lucide="user-check" class="upload-icon"></i>
+                  <div class="upload-dropzone-body">
+                    <div class="upload-title">KTP Ayah / Wali</div>
+                    <div class="upload-hint">Foto/scan KTP Ayah yang berlaku</div>
+                    <div class="file-preview"></div>
+                  </div>
+                  <span class="upload-btn-chip">Pilih File</span>
+                  <input type="file" id="fileKTPAyah" accept=".pdf,image/*">
+                </div>
+
+                <!-- Dropzone 6: KTP Ibu -->
+                <div class="upload-dropzone">
+                  <i data-lucide="user-check" class="upload-icon"></i>
+                  <div class="upload-dropzone-body">
+                    <div class="upload-title">KTP Ibu Kandung</div>
+                    <div class="upload-hint">Foto/scan KTP Ibu yang berlaku</div>
+                    <div class="file-preview"></div>
+                  </div>
+                  <span class="upload-btn-chip">Pilih File</span>
+                  <input type="file" id="fileKTPIbu" accept=".pdf,image/*">
+                </div>
+
+                <!-- Dropzone 7: Ijazah TK (jika ada) -->
+                <div class="upload-dropzone full-width">
+                  <i data-lucide="award" class="upload-icon"></i>
+                  <div class="upload-dropzone-body">
+                    <div class="upload-title">Ijazah / SKL TK (Opsional)</div>
+                    <div class="upload-hint">Dapat menyusul jika belum terbit atau belum wisuda TK</div>
+                    <div class="file-preview"></div>
+                  </div>
+                  <span class="upload-btn-chip">Pilih File</span>
+                  <input type="file" id="fileIjazah" accept=".pdf,image/*">
+                </div>
+              </div>
+
+              <div style="margin-top: 1.25rem; padding: 0.75rem 1rem; background: var(--color-emerald-surface); border-radius: var(--radius-sm); font-size: 0.85rem; color: var(--color-emerald); display: flex; align-items: center; gap: 0.65rem;">
+                <i data-lucide="shield-check" style="width:18px;height:18px; min-width:18px;"></i>
+                <span>Data dan berkas Anda tersimpan aman dan terenkripsi untuk keperluan verifikasi PPDB.</span>
+              </div>
+            </div>
+
+            <!-- FORM NAVIGATION BUTTONS -->
+            <div class="form-navigation">
+              <button type="button" id="btnPrev" class="btn btn-outline-emerald" style="display: none;">
+                <i data-lucide="chevron-left" style="width:18px;height:18px;"></i>
+                Sebelumnya
+              </button>
+              <div></div>
+              <button type="button" id="btnNext" class="btn btn-primary">
+                Selanjutnya
+                <i data-lucide="chevron-right" style="width:18px;height:18px;"></i>
+              </button>
+              <button type="button" id="btnSubmit" class="btn btn-gold" style="display: none;">
+                <i data-lucide="check-circle" style="width:18px;height:18px;"></i>
+                Kirim Formulir Pendaftaran
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- SUCCESS REGISTRATION CARD -->
+        <div id="regResult" style="display: none; margin-top: 2rem;">
+          <div class="reg-card">
+            <div class="reg-header">
+              <img src="assets/img/logo-transparent.png" alt="Logo SDIT Al-Mursyidiyyah" class="reg-logo">
+              <div>
+                <h3 style="font-size: 1.25rem; color: var(--color-emerald); margin-bottom: 0.2rem;">BUKTI REGISTRASI PPDB ONLINE</h3>
+                <div class="font-school-title" style="font-size: 0.95rem; color: var(--color-gold); font-weight: 700;">SDIT AL-MURSYIDIYYAH T.A. 2027/2028</div>
+                <div style="font-size: 0.78rem; color: var(--color-dark-forest-muted);">Cendekia Beriman yang Berakhlak Mulia</div>
+              </div>
+            </div>
+
+            <div style="text-align: center; margin-bottom: 1.75rem;">
+              <span class="reg-num-badge" id="cardRegNumber">REG-2026-SDIT-XXXX</span>
+              <div style="font-size: 0.82rem; color: var(--color-dark-forest-muted); margin-top: 0.4rem;">Simpan nomor registrasi ini sebagai identitas saat verifikasi.</div>
+            </div>
+
+            <table style="width: 100%; border-collapse: collapse; margin-bottom: 2rem; font-size: 0.95rem;">
+              <tr style="border-bottom: 1px solid var(--color-border-light);">
+                <td style="padding: 0.6rem 0; color: var(--color-dark-forest-muted); width: 40%;">Nama Calon Siswa</td>
+                <td style="padding: 0.6rem 0; font-weight: 700; color: var(--color-emerald);" id="cardNamaSiswa">-</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--color-border-light);">
+                <td style="padding: 0.6rem 0; color: var(--color-dark-forest-muted);">Jenis Kelamin</td>
+                <td style="padding: 0.6rem 0; font-weight: 600;" id="cardJenisKelamin">-</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--color-border-light);">
+                <td style="padding: 0.6rem 0; color: var(--color-dark-forest-muted);">Tanggal Lahir</td>
+                <td style="padding: 0.6rem 0; font-weight: 600;" id="cardTglLahir">-</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--color-border-light);">
+                <td style="padding: 0.6rem 0; color: var(--color-dark-forest-muted);">Orang Tua / Wali</td>
+                <td style="padding: 0.6rem 0; font-weight: 600;" id="cardNamaOrtu">-</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--color-border-light);">
+                <td style="padding: 0.6rem 0; color: var(--color-dark-forest-muted);">No. WhatsApp</td>
+                <td style="padding: 0.6rem 0; font-weight: 600;" id="cardNoHp">-</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--color-border-light);">
+                <td style="padding: 0.6rem 0; color: var(--color-dark-forest-muted);">Asal Sekolah (TK/PAUD)</td>
+                <td style="padding: 0.6rem 0; font-weight: 600;" id="cardAsalTk">-</td>
+              </tr>
+              <tr>
+                <td style="padding: 0.6rem 0; color: var(--color-dark-forest-muted);">Tanggal Pendaftaran</td>
+                <td style="padding: 0.6rem 0; font-weight: 600;" id="cardTglDaftar">-</td>
+              </tr>
+            </table>
+
+            <div style="display: flex; flex-direction: column; gap: 0.85rem;">
+              <a href="https://wa.me/6281380327256" id="btnWhatsAppConfirm" target="_blank" class="btn btn-gold" style="width: 100%;">
+                <i data-lucide="message-circle" style="width:18px;height:18px;"></i>
+                Konfirmasi Pendaftaran ke WhatsApp Panitia
+              </a>
+              <a href="cek-status.html" id="btnGoToTracking" class="btn btn-outline-emerald" style="width: 100%;">
+                <i data-lucide="search" style="width:18px;height:18px;"></i>
+                Pantau Status di Halaman Cek Status
+              </a>
+              <button type="button" id="btnPrintCard" class="btn btn-white" style="width: 100%; border: 1px solid var(--color-border);">
+                <i data-lucide="printer" style="width:18px;height:18px;"></i>
+                Cetak / Simpan Kartu PDF
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-simple">
+        <div class="footer-simple-contact">
+          <a href="https://www.google.com/maps/search/?api=1&query=SDIT+Al-Mursyidiyyah+Klender+Duren+Sawit+Jakarta+Timur" target="_blank" title="Buka di Google Maps">
+            <i data-lucide="map-pin" style="width:16px;height:16px;color:var(--color-gold);flex-shrink:0;"></i>
+            <span>Jl. Kapitan, RT.8/RW.4, Klender, Kec. Duren Sawit, Kota Jakarta Timur 13470</span>
+          </a>
+        </div>
+
+        <div class="footer-simple-bottom">
+          © 2026 SDIT Al-Mursyidiyyah. Seluruh Hak Cipta Dilindungi.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Pill -->
+  <a href="https://wa.me/6281380327256?text=Halo%20SDIT%20Al-Mursyidiyyah,%20saya%20ingin%20bertanya%20informasi%20sekolah" target="_blank" class="whatsapp-float">
+    <i data-lucide="message-circle" style="width:20px;height:20px;"></i>
+    <span>Chat WhatsApp</span>
+  </a>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/wa-widget.js"></script>
+  <script src="assets/js/ppdb.js?v=4.1"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
+

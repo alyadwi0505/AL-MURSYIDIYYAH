@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dokumentasi Galeri Foto & Kegiatan Siswa-Siswi SDIT Al-Mursyidiyyah.">
+  <title>Galeri Foto — SDIT Al-Mursyidiyyah</title>
+
+  <!-- Google Fonts: M PLUS Rounded 1c, Nunito Sans & Zain -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700;800;900&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Zain:wght@400;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css?v=3.6">
+  <link rel="icon" type="image/png" href="assets/img/logo-transparent.png">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="brand">
+        <img src="assets/img/logo-transparent.png" alt="Logo SDIT Al-Mursyidiyyah" class="brand-logo">
+        <div class="brand-text">
+          <span class="brand-title">SDIT AL-MURSYIDIYYAH</span>
+          <span class="brand-subtitle">Sekolah Dasar Islam Terpadu</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="profil.html" class="nav-link">Profil</a></li>
+          <li><a href="program.html" class="nav-link">Program</a></li>
+          <li><a href="guru.html" class="nav-link">Pendidik</a></li>
+          <li><a href="fasilitas.html" class="nav-link">Fasilitas</a></li>
+          <li><a href="berita.html" class="nav-link">Berita</a></li>
+          <li><a href="galeri.html" class="nav-link active">Galeri</a></li>
+          <li><a href="kontak.html" class="nav-link">Kontak</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="ppdb.html" class="btn btn-gold btn-sm">
+          <i data-lucide="graduation-cap" style="width:16px;height:16px;"></i>
+          PPDB Online
+        </a>
+      </div>
+
+      <button class="nav-toggle" aria-label="Buka Menu Navigasi">
+        <i data-lucide="menu" style="width:28px;height:28px;"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-nav">
+      <ul class="mobile-nav-list">
+        <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+        <li><a href="profil.html" class="mobile-nav-link">Profil Sekolah</a></li>
+        <li><a href="program.html" class="mobile-nav-link">Program Pendidikan</a></li>
+        <li><a href="guru.html" class="mobile-nav-link">Tenaga Pendidik</a></li>
+        <li><a href="fasilitas.html" class="mobile-nav-link">Fasilitas</a></li>
+        <li><a href="berita.html" class="mobile-nav-link">Berita & Kegiatan</a></li>
+        <li><a href="galeri.html" class="mobile-nav-link active">Galeri Foto</a></li>
+        <li><a href="kontak.html" class="mobile-nav-link">Kontak</a></li>
+      </ul>
+      <a href="ppdb.html" class="btn btn-gold" style="width:100%;">
+        <i data-lucide="graduation-cap" style="width:18px;height:18px;"></i>
+        Daftar PPDB Online
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+      <div class="container">
+        <h1>Galeri Dokumentasi</h1>
+        <div class="breadcrumb">
+          <a href="index.html">Beranda</a>
+          <span>/</span>
+          <span>Galeri Foto</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERI FOTO LENGKAP -->
+    <section class="section section-white">
+      <div class="container">
+        <!-- Filter Buttons Berdasarkan Angkatan -->
+        <div class="gallery-filter">
+          <button class="filter-btn active" data-filter="all">Semua Angkatan</button>
+          <button class="filter-btn" data-filter="angkatan-1">Angkatan Pertama (I)</button>
+          <button class="filter-btn" data-filter="angkatan-2">Angkatan Kedua (II)</button>
+          <button class="filter-btn" data-filter="angkatan-3">Angkatan Ketiga (III)</button>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="gallery-grid">
+          <!-- ANGKATAN PERTAMA -->
+          <div class="gallery-item" data-category="angkatan-1">
+            <img src="assets/img/galeri-sumpah-pemuda.jpg" alt="Peringatan Hari Sumpah Pemuda Santri & Guru SDIT Al-Mursyidiyyah" loading="lazy">
+            <div class="gallery-item-overlay">
+              <h4 class="gallery-item-title">Peringatan Hari Sumpah Pemuda</h4>
+              <span class="gallery-item-tag">Angkatan Pertama</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="angkatan-1">
+            <img src="assets/img/placeholder-gallery.svg" alt="Suasana Belajar Aktif di Kelas Angkatan 1">
+            <div class="gallery-item-overlay">
+              <h4 class="gallery-item-title">Suasana Kelas Ceria</h4>
+              <span class="gallery-item-tag">Angkatan Pertama</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="angkatan-1">
+            <img src="assets/img/placeholder-program.svg" alt="Halaqoh Tahfidz Al-Qur'an Angkatan 1">
+            <div class="gallery-item-overlay">
+              <h4 class="gallery-item-title">Halaqoh Tahfidz Qur'an</h4>
+              <span class="gallery-item-tag">Angkatan Pertama</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="angkatan-1">
+            <img src="assets/img/placeholder-gallery.svg" alt="Pojok Literasi & Sains Angkatan 1">
+            <div class="gallery-item-overlay">
+              <h4 class="gallery-item-title">Pojok Literasi &amp; Sains</h4>
+              <span class="gallery-item-tag">Angkatan Pertama</span>
+            </div>
+          </div>
+
+          <!-- ANGKATAN KEDUA -->
+          <div class="gallery-item" data-category="angkatan-2">
+            <img src="assets/img/placeholder-gallery.svg" alt="Fun Science Project Angkatan 2">
+            <div class="gallery-item-overlay">
+              <h4 class="gallery-item-title">Fun Science Project</h4>
+              <span class="gallery-item-tag">Angkatan Kedua</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="angkatan-2">
+            <img src="assets/img/placeholder-gallery.svg" alt="Praktik Komputer dan Digital Angkatan 2">
+            <div class="gallery-item-overlay">
+              <h4 class="gallery-item-title">Praktik Komputer &amp; Digital</h4>
+              <span class="gallery-item-tag">Angkatan Kedua</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="angkatan-2">
+            <img src="assets/img/placeholder-news.svg" alt="Pekan Kreativitas Market Day Angkatan 2">
+            <div class="gallery-item-overlay">
+              <h4 class="gallery-item-title">Pekan Kreativitas Market Day</h4>
+              <span class="gallery-item-tag">Angkatan Kedua</span>
+            </div>
+          </div>
+
+          <!-- ANGKATAN KETIGA -->
+          <div class="gallery-item" data-category="angkatan-3">
+            <img src="assets/img/placeholder-gallery.svg" alt="Senam Pagi & Olahraga Siswa Angkatan 3">
+            <div class="gallery-item-overlay">
+              <h4 class="gallery-item-title">Senam Pagi &amp; Olahraga</h4>
+              <span class="gallery-item-tag">Angkatan Ketiga</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="angkatan-3">
+            <img src="assets/img/placeholder-facility.svg" alt="Sholat Berjamaah di Musholla Angkatan 3">
+            <div class="gallery-item-overlay">
+              <h4 class="gallery-item-title">Sholat Berjamaah di Musholla</h4>
+              <span class="gallery-item-tag">Angkatan Ketiga</span>
+            </div>
+          </div>
+
+          <div class="gallery-item" data-category="angkatan-3">
+            <img src="assets/img/placeholder-gallery.svg" alt="Kebersamaan dan Persahabatan Siswa Angkatan 3">
+            <div class="gallery-item-overlay">
+              <h4 class="gallery-item-title">Persahabatan Islami</h4>
+              <span class="gallery-item-tag">Angkatan Ketiga</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+            <div class="footer-simple">
+        <div class="footer-simple-contact">
+          <a href="https://www.google.com/maps/search/?api=1&query=SDIT+Al-Mursyidiyyah+Klender+Duren+Sawit+Jakarta+Timur" target="_blank" title="Buka di Google Maps">
+            <i data-lucide="map-pin" style="width:16px;height:16px;color:var(--color-gold);flex-shrink:0;"></i>
+            <span>Jl. Kapitan, RT.8/RW.4, Klender, Kec. Duren Sawit, Kota Jakarta Timur 13470</span>
+          </a>
+        </div>
+
+        <div class="footer-simple-bottom">
+          © 2026 SDIT Al-Mursyidiyyah. Seluruh Hak Cipta Dilindungi.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox" id="galleryLightbox">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Tutup Preview">&times;</button>
+    <div class="lightbox-content">
+      <img src="" alt="" class="lightbox-img" id="lightboxImg">
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+
+  <!-- WhatsApp Floating Pill -->
+  <a href="https://wa.me/6281380327256?text=Halo%20SDIT%20Al-Mursyidiyyah,%20saya%20ingin%20bertanya%20informasi%20sekolah" target="_blank" class="whatsapp-float">
+    <i data-lucide="message-circle" style="width:20px;height:20px;"></i>
+    <span>Chat WhatsApp</span>
+  </a>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/wa-widget.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
+
