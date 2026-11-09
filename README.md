@@ -1,6 +1,7 @@
 # 🏫 SDIT AL-MURSYIDIYYAH
 > **"Cendekia Beriman yang Berakhlak Mulia"**  
-> Website Profil Sekolah Resmi & Sistem Informasi PPDB (Penerimaan Peserta Didik Baru) Online.
+> Website Profil Sekolah Resmi & Sistem Informasi PPDB (Penerimaan Peserta Didik Baru) Online.  
+> *Pembaruan Terakhir: 9 November 2026*
 
 ---
 

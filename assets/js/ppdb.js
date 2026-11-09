@@ -1,3 +1,4 @@
+// SDIT Al-Mursyidiyyah - PPDB Registration Handler v2.0 (Updated 2026)
 /* ==========================================================================
    SDIT AL-MURSYIDIYYAH — PPDB ONLINE WIZARD & REGISTRATION HANDLER
    Full-stack integration: saves to SQLite Database via /api/ppdb with file uploads.

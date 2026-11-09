@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name=\"author\" content=\"SDIT Al-Mursyidiyyah\">
   <meta name="description"
     content="Jadwal Kegiatan Harian & Kurikulum Terpadu SDIT Al-Mursyidiyyah — Memadukan Sains, Teknologi, dan Al-Qur'an.">
   <title>Jadwal Kegiatan Harian — SDIT Al-Mursyidiyyah</title>
@@ -93,58 +94,244 @@
       </div>
     </section>
 
-    <!-- JADWAL KEGIATAN HARIAN -->
-    <section class="section section-white" id="jadwal-harian">
+    <!-- JADWAL KEGIATAN HARIAN: A JOURNEY OF LEARNING -->
+    <section class="section section-white voyage-section" id="jadwal-harian">
       <div class="container">
-        <div class="section-header">
-          <span class="badge badge-emerald">Rutinitas Harian</span>
-          <h2>Jadwal Kegiatan Siswa</h2>
-          <p>Membiasakan karakter disiplin, religius, dan mandiri melalui rutinitas belajar yang terstruktur.</p>
+        <!-- Controls / Navigasi Interaktif -->
+        <div class="voyage-controls">
+          <div class="voyage-stepper">
+            <button type="button" class="voyage-step-btn active" data-stop="1" aria-label="Pulau 1: Penyambutan">
+              <span class="step-num">1</span>
+              <span>Penyambutan</span>
+            </button>
+            <button type="button" class="voyage-step-btn" data-stop="2" aria-label="Pulau 2: Dhuha & Tadarus">
+              <span class="step-num">2</span>
+              <span>Dhuha &amp; Tadarus</span>
+            </button>
+            <button type="button" class="voyage-step-btn" data-stop="3" aria-label="Pulau 3: Belajar di Kelas">
+              <span class="step-num">3</span>
+              <span>Belajar di Kelas</span>
+            </button>
+            <button type="button" class="voyage-step-btn" data-stop="4" aria-label="Pulau 4: Sholat Dzuhur & Istirahat">
+              <span class="step-num">4</span>
+              <span>Dzuhur &amp; Istirahat</span>
+            </button>
+            <button type="button" class="voyage-step-btn" data-stop="5" aria-label="Pulau 5: Ekskul & Pulang">
+              <span class="step-num">5</span>
+              <span>Ekskul &amp; Pulang</span>
+            </button>
+          </div>
+
+          <button type="button" class="btn btn-outline-emerald btn-sm voyage-play-btn" id="btnAutoVoyage">
+            <i data-lucide="play" style="width: 14px; height: 14px;"></i>
+            <span>Jelajahi Hari</span>
+          </button>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; max-width: 1100px; margin: 0 auto;">
-          <!-- 1. Penyambutan -->
-          <div class="card" style="padding: 1.5rem; border-top: 4px solid var(--color-emerald); text-align: center;">
-            <div style="width: 44px; height: 44px; border-radius: 50%; background: #e6f4f1; color: var(--color-emerald); display: inline-flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; margin: 0 auto 0.75rem;">1</div>
-            <div style="font-size: 0.8rem; font-weight: 700; color: var(--color-emerald); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.35rem;">07.00 - 07.20</div>
-            <h3 style="font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--color-dark-forest);">Penyambutan Siswa</h3>
-            <p style="font-size: 0.88rem; color: var(--slate-600); margin: 0;">Penyambutan santun oleh dewan guru dan English Morning Boost.</p>
+        <!-- Mobile Compass Hint -->
+        <div class="voyage-mobile-hint">
+          <i data-lucide="compass" style="width: 15px; height: 15px;"></i>
+          <span>Geser peta laut atau tekan nomor pulau untuk melihat perahu berlayar</span>
+        </div>
+
+        <!-- Canvas Interaktif: Peta Laut Horisontal & Perahu Berlayar (Sama di Semua Device) -->
+        <div class="voyage-canvas-wrapper">
+          <div class="voyage-desktop">
+          <!-- Background SVG Laut & Garis Jalur Putus-putus -->
+          <svg class="voyage-sea-svg" viewBox="0 0 1100 440" preserveAspectRatio="none" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <!-- Kontur Gelombang Laut Halus -->
+            <path d="M 0,110 Q 280,85 550,110 T 1100,105" stroke="#E1F2EC" stroke-width="1.5" stroke-dasharray="6 8" />
+            <path d="M 0,330 Q 280,355 550,330 T 1100,335" stroke="#E1F2EC" stroke-width="1.5" stroke-dasharray="6 8" />
+            <path d="M 0,210 Q 280,230 550,210 T 1100,220" stroke="#D1ECE5" stroke-width="1.2" opacity="0.6" />
+
+            <!-- Dermaga Keberangkatan di Kiri -->
+            <g transform="translate(10, 192)">
+              <rect x="0" y="8" width="38" height="8" rx="2" fill="#8D6E63" />
+              <rect x="6" y="2" width="5" height="7" rx="1" fill="#4E342E" />
+              <rect x="26" y="2" width="5" height="7" rx="1" fill="#4E342E" />
+              <text x="18" y="30" font-family="'Nunito Sans', sans-serif" font-size="10" font-weight="700"
+                fill="#07594F" text-anchor="middle">Dermaga 07.00</text>
+            </g>
+
+            <!-- Jalur Laut Melengkung Garis Putus-putus (Golden Nautical Route) -->
+            <path
+              d="M 45,198 C 75,198 85,188 110,188 C 180,188 260,218 330,218 C 400,218 480,188 550,188 C 620,188 700,218 770,218 C 840,218 920,188 990,188 C 1030,188 1060,198 1085,198"
+              fill="none" stroke="#C5B344" stroke-width="3" stroke-dasharray="8 8" stroke-linecap="round" />
+
+            <!-- Titik Labuh / Pelampung di Tiap Pulau -->
+            <circle cx="110" cy="188" r="5" fill="#FFFFFF" stroke="#07594F" stroke-width="2.5" />
+            <circle cx="330" cy="218" r="5" fill="#FFFFFF" stroke="#C5B344" stroke-width="2.5" />
+            <circle cx="550" cy="188" r="5" fill="#FFFFFF" stroke="#07594F" stroke-width="2.5" />
+            <circle cx="770" cy="218" r="5" fill="#FFFFFF" stroke="#C5B344" stroke-width="2.5" />
+            <circle cx="990" cy="188" r="5" fill="#FFFFFF" stroke="#07594F" stroke-width="2.5" />
+          </svg>
+
+          <!-- Perahu Kecil Penanda Perjalanan (Floating Animated Boat) -->
+          <div class="voyage-boat-marker" id="voyageBoatMarker" style="left: calc(10% - 35px); top: 158px;">
+            <div class="voyage-boat-inner">
+              <svg viewBox="0 0 70 60" width="70" height="60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Riak Air Bawah Perahu -->
+                <path d="M6 52 C15 50, 25 54, 35 52 C45 50, 55 54, 64 52" stroke="#A3D9CE" stroke-width="2.5"
+                  stroke-linecap="round" />
+                <path d="M14 56 C22 54, 30 58, 38 56 C46 54, 52 57, 56 56" stroke="#C5E8E0" stroke-width="2"
+                  stroke-linecap="round" />
+                <!-- Lambung Perahu Kayu Emerald -->
+                <path d="M12 42 L20 51 C22 53, 48 53, 50 51 L58 42 Z" fill="#07594F" />
+                <!-- Garis Emas Lambung -->
+                <path d="M15 44 L19 48.5 C21 50, 49 50, 51 48.5 L55 44 Z" fill="#C5B344" />
+                <!-- Tiang Layar -->
+                <line x1="35" y1="12" x2="35" y2="42" stroke="#263A35" stroke-width="2.5" stroke-linecap="round" />
+                <!-- Layar Utama Putih Ivory -->
+                <path d="M35 15 L52 38 L35 38 Z" fill="#FFFFFF" stroke="#D1ECE5" stroke-width="1" />
+                <!-- Layar Depan / Jib Lembut -->
+                <path d="M33 18 L18 38 L33 38 Z" fill="#EAF5F2" stroke="#C5E8E0" stroke-width="1" />
+                <!-- Bendera Emas Berkibar -->
+                <path d="M35 12 L45 15 L35 18 Z" fill="#C5B344" />
+              </svg>
+            </div>
           </div>
 
-          <!-- 2. Dhuha & Tadarus -->
-          <div class="card" style="padding: 1.5rem; border-top: 4px solid var(--color-gold); text-align: center;">
-            <div style="width: 44px; height: 44px; border-radius: 50%; background: #fef9c3; color: #a16207; display: inline-flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; margin: 0 auto 0.75rem;">2</div>
-            <div style="font-size: 0.8rem; font-weight: 700; color: #a16207; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.35rem;">07.20 - 08.00</div>
-            <h3 style="font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--color-dark-forest);">Dhuha &amp; Tadarus</h3>
-            <p style="font-size: 0.88rem; color: var(--slate-600); margin: 0;">Pembiasaan Sholat Dhuha berjamaah dan hafalan tahfidz Al-Qur'an.</p>
-          </div>
+          <!-- Grid 5 Kolom Pulau (Ritme Berseberangan / Alternating) -->
+          <div class="voyage-grid">
+            <!-- 1. Pulau Penyambutan (Atas: Gambar, Bawah: Kartu) -->
+            <div class="voyage-col active" data-stop="1">
+              <div class="voyage-island-visual">
+                <svg viewBox="0 0 140 95" width="135" height="92" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Matahari Pagi -->
+                  <circle cx="70" cy="46" r="22" fill="#FDE68A" opacity="0.6" />
+                  <circle cx="70" cy="46" r="14" fill="#C5B344" />
+                  <!-- Pulau & Air -->
+                  <ellipse cx="70" cy="80" rx="55" ry="9" fill="#EAF5F2" />
+                  <path d="M22 79 C25 60, 45 48, 70 48 C95 48, 115 60, 118 79 Z" fill="#07594F" />
+                  <path d="M30 79 C34 64, 50 54, 70 54 C90 54, 106 64, 110 79 Z" fill="#2E8575" />
+                  <!-- Gerbang / Gapura Sekolah -->
+                  <rect x="66" y="36" width="8" height="24" rx="1" fill="#C5B344" />
+                  <rect x="52" y="30" width="36" height="11" rx="2" fill="#F7F5EB" stroke="#C5B344"
+                    stroke-width="1.5" />
+                  <circle cx="95" cy="28" r="9" fill="#FFFFFF" stroke="#07594F" stroke-width="1.5" />
+                  <path d="M91 28 H99 M95 25 V31" stroke="#07594F" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+                <span class="voyage-island-pin">Pulau 1 • Pagi</span>
+              </div>
 
-          <!-- 3. Belajar di Kelas -->
-          <div class="card" style="padding: 1.5rem; border-top: 4px solid var(--color-emerald); text-align: center;">
-            <div style="width: 44px; height: 44px; border-radius: 50%; background: #e6f4f1; color: var(--color-emerald); display: inline-flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; margin: 0 auto 0.75rem;">3</div>
-            <div style="font-size: 0.8rem; font-weight: 700; color: var(--color-emerald); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.35rem;">08.00 - 11.45</div>
-            <h3 style="font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--color-dark-forest);">Belajar di Kelas</h3>
-            <p style="font-size: 0.88rem; color: var(--slate-600); margin: 0;">Pembelajaran tematik, sains, literasi, numerasi, dan materi keislaman.</p>
-          </div>
+              <div class="voyage-card">
+                <span class="voyage-time-badge">07.00 - 07.20</span>
+                <h4 class="voyage-card-title">Penyambutan &amp; English Morning Boost</h4>
+              </div>
+            </div>
 
-          <!-- 4. Sholat Dzuhur & Istirahat -->
-          <div class="card" style="padding: 1.5rem; border-top: 4px solid var(--color-gold); text-align: center;">
-            <div style="width: 44px; height: 44px; border-radius: 50%; background: #fef9c3; color: #a16207; display: inline-flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; margin: 0 auto 0.75rem;">4</div>
-            <div style="font-size: 0.8rem; font-weight: 700; color: #a16207; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.35rem;">11.45 - 12.45</div>
-            <h3 style="font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--color-dark-forest);">Dzuhur &amp; Istirahat</h3>
-            <p style="font-size: 0.88rem; color: var(--slate-600); margin: 0;">Sholat Dzuhur berjamaah, makan siang sehat, dan rehat tertib.</p>
-          </div>
+            <!-- 2. Pulau Dhuha & Tadarus (Atas: Kartu, Bawah: Gambar) -->
+            <div class="voyage-col" data-stop="2">
+              <div class="voyage-card">
+                <span class="voyage-time-badge gold">07.20 - 08.00</span>
+                <h4 class="voyage-card-title">Pembiasaan Sholat Dhuha &amp; Tadarus</h4>
+              </div>
 
-          <!-- 5. Ekskul & Pulang -->
-          <div class="card" style="padding: 1.5rem; border-top: 4px solid var(--color-emerald); text-align: center;">
-            <div style="width: 44px; height: 44px; border-radius: 50%; background: #e6f4f1; color: var(--color-emerald); display: inline-flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; margin: 0 auto 0.75rem;">5</div>
-            <div style="font-size: 0.8rem; font-weight: 700; color: var(--color-emerald); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.35rem;">12.45 - 14.30</div>
-            <h3 style="font-size: 1.05rem; margin-bottom: 0.4rem; color: var(--color-dark-forest);">Ekskul &amp; Pulang</h3>
-            <p style="font-size: 0.88rem; color: var(--slate-600); margin: 0;">Kegiatan ekstrakurikuler pilihan, doa penutup majelis, dan kepulangan.</p>
+              <div class="voyage-island-visual">
+                <span class="voyage-island-pin" style="margin-bottom: 0.35rem; margin-top: 0;">Pulau 2 • Ibadah</span>
+                <svg viewBox="0 0 140 95" width="135" height="92" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Pulau & Air -->
+                  <ellipse cx="70" cy="80" rx="55" ry="9" fill="#EAF5F2" />
+                  <path d="M20 79 C25 56, 48 45, 70 45 C92 45, 115 56, 120 79 Z" fill="#07594F" />
+                  <path d="M28 79 C32 60, 50 51, 70 51 C90 51, 108 60, 112 79 Z" fill="#2E8575" />
+                  <!-- Kubah Emas & Bulan Sabit -->
+                  <path d="M58 53 C58 38, 70 31, 70 27 C70 31, 82 38, 82 53 Z" fill="#C5B344" />
+                  <circle cx="70" cy="22" r="3" fill="#C5B344" />
+                  <!-- Pohon Kurma / Palem -->
+                  <path d="M42 75 C44 62, 46 52, 49 44" stroke="#6D4C41" stroke-width="2.5" stroke-linecap="round" />
+                  <path
+                    d="M49 44 C44 40, 36 41, 33 44 M49 44 C45 37, 42 30, 39 28 M49 44 C53 38, 57 32, 61 31 M49 44 C55 41, 61 43, 64 46"
+                    stroke="#10B981" stroke-width="2" stroke-linecap="round" />
+                </svg>
+              </div>
+            </div>
+
+            <!-- 3. Pulau Belajar di Kelas (Atas: Gambar, Bawah: Kartu) -->
+            <div class="voyage-col" data-stop="3">
+              <div class="voyage-island-visual">
+                <svg viewBox="0 0 140 95" width="135" height="92" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Pulau & Air -->
+                  <ellipse cx="70" cy="80" rx="55" ry="9" fill="#EAF5F2" />
+                  <path d="M18 79 C24 55, 48 42, 70 42 C92 42, 116 55, 122 79 Z" fill="#07594F" />
+                  <path d="M26 79 C32 60, 50 49, 70 49 C90 49, 108 60, 114 79 Z" fill="#2E8575" />
+                  <!-- Paviliun Buku & Ilmu -->
+                  <rect x="54" y="52" width="32" height="17" rx="2" fill="#F7F5EB" />
+                  <line x1="60" y1="52" x2="60" y2="69" stroke="#07594F" stroke-width="2" />
+                  <line x1="80" y1="52" x2="80" y2="69" stroke="#07594F" stroke-width="2" />
+                  <!-- Atap Bentuk Buku Terbuka Emas -->
+                  <path
+                    d="M70 45 C64 42, 52 43, 48 46 L50 37 C55 34, 65 34, 70 37 C75 34, 85 34, 90 37 L92 46 C88 43, 76 42, 70 45 Z"
+                    fill="#C5B344" />
+                  <circle cx="70" cy="25" r="5" fill="#FDE68A" stroke="#C5B344" stroke-width="1.5" />
+                </svg>
+                <span class="voyage-island-pin">Pulau 3 • Ilmu</span>
+              </div>
+
+              <div class="voyage-card">
+                <span class="voyage-time-badge">08.00 - 11.45</span>
+                <h4 class="voyage-card-title">Pembelajaran di Kelas</h4>
+              </div>
+            </div>
+
+            <!-- 4. Pulau Sholat Dzuhur & Istirahat (Atas: Kartu, Bawah: Gambar) -->
+            <div class="voyage-col" data-stop="4">
+              <div class="voyage-card">
+                <span class="voyage-time-badge gold">11.45 - 12.45</span>
+                <h4 class="voyage-card-title">Sholat Dzuhur Berjamaah &amp; Istirahat</h4>
+              </div>
+
+              <div class="voyage-island-visual">
+                <span class="voyage-island-pin" style="margin-bottom: 0.35rem; margin-top: 0;">Pulau 4 • Berkah</span>
+                <svg viewBox="0 0 140 95" width="135" height="92" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Pulau & Air -->
+                  <ellipse cx="70" cy="80" rx="55" ry="9" fill="#EAF5F2" />
+                  <path d="M20 79 C26 56, 48 45, 70 45 C92 45, 114 56, 120 79 Z" fill="#07594F" />
+                  <path d="M28 79 C34 61, 52 51, 70 51 C88 51, 106 61, 112 79 Z" fill="#2E8575" />
+                  <!-- Menara & Kubah Masjid -->
+                  <rect x="43" y="35" width="7" height="34" rx="1.5" fill="#F7F5EB" />
+                  <path d="M41 35 L46.5 24 L52 35 Z" fill="#C5B344" />
+                  <path d="M58 53 C58 41, 70 35, 70 31 C70 35, 82 41, 82 53 Z" fill="#C5B344" />
+                  <rect x="60" y="53" width="20" height="15" fill="#F7F5EB" />
+                  <!-- Aksen Daun Hijau / Makan Sehat -->
+                  <circle cx="95" cy="46" r="9" fill="#FDE68A" />
+                  <path d="M92 46 C94 41, 99 42, 98 48 C95 50, 91 48, 92 46 Z" fill="#07594F" />
+                </svg>
+              </div>
+            </div>
+
+            <!-- 5. Pulau Ekskul & Pulang (Atas: Gambar, Bawah: Kartu) -->
+            <div class="voyage-col" data-stop="5">
+              <div class="voyage-island-visual">
+                <svg viewBox="0 0 140 95" width="135" height="92" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Pulau & Air -->
+                  <ellipse cx="70" cy="80" rx="55" ry="9" fill="#EAF5F2" />
+                  <path d="M20 79 C26 58, 46 47, 70 47 C94 47, 114 58, 120 79 Z" fill="#07594F" />
+                  <path d="M28 79 C34 62, 50 53, 70 53 C90 53, 106 62, 112 79 Z" fill="#2E8575" />
+                  <!-- Mercusuar Penuntun Pulang -->
+                  <path d="M64 71 L66 35 L74 35 L76 71 Z" fill="#F7F5EB" />
+                  <path d="M65.2 56 L65.7 46 L74.3 46 L74.8 56 Z" fill="#07594F" />
+                  <!-- Ruang Lentera Emas -->
+                  <rect x="64" y="29" width="12" height="6" rx="1" fill="#C5B344" />
+                  <path d="M63 29 L70 21 L77 29 Z" fill="#07594F" />
+                  <path d="M76 32 L94 25 L92 39 Z" fill="#FDE68A" opacity="0.55" />
+                  <!-- Dermaga Pulang -->
+                  <rect x="90" y="70" width="22" height="6" rx="1.5" fill="#8D6E63" />
+                  <rect x="104" y="65" width="4" height="6" rx="1" fill="#4E342E" />
+                </svg>
+                <span class="voyage-island-pin">Pulau 5 • Kepulangan</span>
+              </div>
+
+              <div class="voyage-card">
+                <span class="voyage-time-badge">12.45 - 14.30</span>
+                <h4 class="voyage-card-title">Ekstrakurikuler &amp; Kepulangan</h4>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
     <!-- EKSTRAKURIKULER RESMI -->
     <section class="section section-ivory">
@@ -232,7 +419,101 @@
   <script>
     lucide.createIcons();
 
-    
+    // A Journey of Learning: Interactive Sailing Script
+    (function () {
+      const stopsDesktop = [
+        { left: 'calc(10% - 35px)', top: '158px' },
+        { left: 'calc(30% - 35px)', top: '188px' },
+        { left: 'calc(50% - 35px)', top: '158px' },
+        { left: 'calc(70% - 35px)', top: '188px' },
+        { left: 'calc(90% - 35px)', top: '158px' }
+      ];
+
+      let currentStop = 1;
+      let autoInterval = null;
+
+      const boatMarker = document.getElementById('voyageBoatMarker');
+      const stepBtns = document.querySelectorAll('.voyage-step-btn');
+      const cols = document.querySelectorAll('.voyage-col');
+      const btnAuto = document.getElementById('btnAutoVoyage');
+
+      function goToStop(stopNum) {
+        currentStop = stopNum;
+        const idx = stopNum - 1;
+
+        if (boatMarker && stopsDesktop[idx]) {
+          boatMarker.style.left = stopsDesktop[idx].left;
+          boatMarker.style.top = stopsDesktop[idx].top;
+        }
+
+        stepBtns.forEach(btn => {
+          btn.classList.toggle('active', parseInt(btn.dataset.stop) === stopNum);
+        });
+
+        cols.forEach(col => {
+          col.classList.toggle('active', parseInt(col.dataset.stop) === stopNum);
+        });
+
+        // Auto-scroll on mobile / tablet to center the active island and sailing boat
+        const wrapper = document.querySelector('.voyage-canvas-wrapper');
+        const activeCol = cols[idx];
+        if (wrapper && activeCol && window.innerWidth < 1024) {
+          const targetScroll = activeCol.offsetLeft - (wrapper.clientWidth / 2) + (activeCol.clientWidth / 2);
+          wrapper.scrollTo({ left: Math.max(0, targetScroll), behavior: 'smooth' });
+        }
+      }
+
+      stepBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          stopAuto();
+          goToStop(parseInt(btn.dataset.stop));
+        });
+      });
+
+      cols.forEach(col => {
+        col.addEventListener('click', () => {
+          stopAuto();
+          goToStop(parseInt(col.dataset.stop));
+        });
+      });
+
+      function toggleAuto() {
+        if (autoInterval) {
+          stopAuto();
+        } else {
+          startAuto();
+        }
+      }
+
+      function startAuto() {
+        if (btnAuto) {
+          btnAuto.innerHTML = '<i data-lucide="pause" style="width: 14px; height: 14px;"></i><span>Jeda Berlayar</span>';
+          if (window.lucide) lucide.createIcons();
+        }
+        autoInterval = setInterval(() => {
+          let next = currentStop + 1;
+          if (next > 5) next = 1;
+          goToStop(next);
+        }, 3600);
+      }
+
+      function stopAuto() {
+        if (autoInterval) {
+          clearInterval(autoInterval);
+          autoInterval = null;
+          if (btnAuto) {
+            btnAuto.innerHTML = '<i data-lucide="play" style="width: 14px; height: 14px;"></i><span>Jelajahi Hari</span>';
+            if (window.lucide) lucide.createIcons();
+          }
+        }
+      }
+
+      if (btnAuto) {
+        btnAuto.addEventListener('click', toggleAuto);
+      }
+
+      goToStop(1);
+    })();
   </script>
 </body>
 

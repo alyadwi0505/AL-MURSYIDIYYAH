@@ -1,3 +1,4 @@
+// SDIT Al-Mursyidiyyah - WhatsApp Automation Widget v2.0 (Updated 2026)
 /**
  * SDIT AL-MURSYIDIYYAH — WHATSAPP AUTOMATION & CHAT SIMULATOR
  * Nomor Resmi Admin PPDB: 081380327256 (https://wa.me/6281380327256)

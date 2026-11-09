@@ -1,3 +1,4 @@
+// SDIT Al-Mursyidiyyah - Main App Script v2.0 (Updated 2026)
 /* ==========================================================================
    SDIT AL-MURSYIDIYYAH — MAIN JAVASCRIPT
    Clean, interactive behaviors: Mobile drawer, sticky navbar,
