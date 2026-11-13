@@ -2319,29 +2319,30 @@ svg.lucide-loader {
 }
 
 .req-badge {
-  display: inline-flex;
-  align-items: center;
-  font-size: 0.68rem;
+  display: inline-block;
+  font-size: 0.72rem;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.6px;
-  padding: 0.2rem 0.65rem;
-  border-radius: 999px;
-  margin-bottom: 0.4rem;
-  line-height: 1;
+  letter-spacing: 0.05em;
+  padding: 0;
+  border-radius: 0;
+  border: none;
+  background: transparent;
+  margin-bottom: 0.25rem;
+  line-height: 1.2;
   width: fit-content;
 }
 
 .req-badge.wajib {
-  background: #E6F7ED;
-  color: #07594F;
-  border: 1px solid #BCEAD0;
+  background: transparent;
+  color: #dc2626;
+  border: none;
 }
 
 .req-badge.opsional {
-  background: #F1F3F5;
-  color: #606B78;
-  border: 1px solid #DCE1E7;
+  background: transparent;
+  color: #718096;
+  border: none;
 }
 
 .req-title {
