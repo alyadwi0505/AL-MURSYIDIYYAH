@@ -2186,17 +2186,19 @@ svg.lucide-loader {
     display: block;
     max-width: 520px;
     margin: 0 auto;
+    padding-left: 0.75rem;
+    padding-right: 0.25rem;
   }
   .serpentine-mobile-timeline {
     position: relative;
-    padding-left: 2.75rem;
+    padding-left: 4.5rem;
   }
   .serpentine-mobile-timeline::before {
     content: '';
     position: absolute;
     top: 20px;
     bottom: 20px;
-    left: 20px;
+    left: 33px;
     width: 6px;
     background: linear-gradient(180deg, #808F35 0%, #9A9F2E 40%, #07594F 85%, #10B981 100%);
     border-radius: 4px;
@@ -2217,11 +2219,11 @@ svg.lucide-loader {
   }
   .serpentine-mobile-badge {
     position: absolute;
-    left: -2.75rem;
+    left: -2.25rem;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 36px;
-    height: 36px;
+    width: 38px;
+    height: 38px;
     border-radius: 50%;
     background: #07594F;
     color: #FFFFFF;
@@ -2259,6 +2261,34 @@ svg.lucide-loader {
   .serpentine-mobile-card.finish-card {
     border: 1.5px solid #07594F;
     background: #F4FAF8;
+  }
+}
+
+@media (max-width: 480px) {
+  .alur-serpentine-mobile {
+    padding-left: 0.5rem;
+    padding-right: 0.25rem;
+  }
+  .serpentine-mobile-timeline {
+    padding-left: 4.25rem;
+  }
+  .serpentine-mobile-timeline::before {
+    left: 29px;
+    width: 6px;
+  }
+  .serpentine-mobile-badge {
+    left: -2.25rem;
+    width: 36px;
+    height: 36px;
+  }
+  .serpentine-mobile-card {
+    padding: 0.95rem 1.15rem;
+  }
+  .serpentine-mobile-title {
+    font-size: 0.95rem;
+  }
+  .serpentine-mobile-desc {
+    font-size: 0.82rem;
   }
 }
 

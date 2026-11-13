@@ -1,29 +1,24 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name=\"author\" content=\"SDIT Al-Mursyidiyyah\">
-  <meta name="description"
-    content="Pendaftaran Peserta Didik Baru (PPDB) Online SDIT Al-Mursyidiyyah — Informasi, Persyaratan, Jadwal, dan Formulir Pendaftaran Mandiri.">
+  <meta name="description" content="Pendaftaran Peserta Didik Baru (PPDB) Online SDIT Al-Mursyidiyyah — Informasi, Persyaratan, Jadwal, dan Formulir Pendaftaran Mandiri.">
   <title>PPDB Online 2027/2028 — SDIT Al-Mursyidiyyah</title>
 
   <!-- Google Fonts: M PLUS Rounded 1c, Nunito Sans & Zain -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700;800;900&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Zain:wght@400;700;800;900&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700;800;900&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Zain:wght@400;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="assets/css/style.css?v=3.5">
+  <link rel="stylesheet" href="assets/css/style.css?v=3.8">
   <link rel="icon" type="image/png" href="assets/img/logo-transparent.png">
 </head>
-
 <body>
 
   <!-- Navbar -->
@@ -95,324 +90,290 @@
     </section>
 
     <!-- ALUR PENDAFTARAN (Serpentine Roadmap Journey) -->
-    <section class="section section-ivory" id="alur-pendaftaran"
-      style="padding-top: 2rem; padding-bottom: 4.5rem; overflow: hidden;">
+    <section class="section section-ivory" id="alur-pendaftaran" style="padding-top: 2rem; padding-bottom: 4.5rem; overflow: hidden;">
       <div class="container">
         <div class="alur-serpentine-wrapper">
           <!-- Desktop Canvas (>= 900px): Jalur Berkelok Serpentine S-Curve -->
           <div class="alur-serpentine-desktop">
-            <svg class="serpentine-svg" viewBox="0 0 1000 680" fill="none" xmlns="http://www.w3.org/2000/svg"
-              style="width: 100%; height: auto; display: block;">
-              <defs>
-                <!-- Filter Drop Shadow untuk Pipa Jalur Berkelok -->
-                <filter id="pipeShadow" x="-10%" y="-10%" width="120%" height="130%" filterUnits="userSpaceOnUse">
-                  <feDropShadow dx="0" dy="7" stdDeviation="6" flood-color="#07594F" flood-opacity="0.18" />
-                </filter>
+<svg class="serpentine-svg" viewBox="0 0 1000 680" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: auto; display: block;">
+  <defs>
+    <!-- Filter Drop Shadow untuk Pipa Jalur Berkelok -->
+    <filter id="pipeShadow" x="-10%" y="-10%" width="120%" height="130%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="7" stdDeviation="6" flood-color="#07594F" flood-opacity="0.18" />
+    </filter>
 
-                <!-- Filter Drop Shadow untuk Kartu/Elemen -->
-                <filter id="nodeShadow" x="-20%" y="-20%" width="140%" height="140%" filterUnits="userSpaceOnUse">
-                  <feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#142B25" flood-opacity="0.12" />
-                </filter>
+    <!-- Filter Drop Shadow untuk Kartu/Elemen -->
+    <filter id="nodeShadow" x="-20%" y="-20%" width="140%" height="140%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#142B25" flood-opacity="0.12" />
+    </filter>
 
-                <!-- Gradien Warna Pipa Berkelok (Olive Gold / Emerald Glow) -->
-                <linearGradient id="pipeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#808F35" />
-                  <stop offset="35%" stop-color="#9A9F2E" />
-                  <stop offset="70%" stop-color="#889531" />
-                  <stop offset="100%" stop-color="#73862B" />
-                </linearGradient>
+    <!-- Gradien Warna Pipa Berkelok (Olive Gold / Emerald Glow) -->
+    <linearGradient id="pipeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#808F35" />
+      <stop offset="35%" stop-color="#9A9F2E" />
+      <stop offset="70%" stop-color="#889531" />
+      <stop offset="100%" stop-color="#73862B" />
+    </linearGradient>
 
-                <!-- Highlight Strip Refleksi 3D Tabung -->
-                <linearGradient id="pipeHighlight" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#FFFAD0" stop-opacity="0.85" />
-                  <stop offset="100%" stop-color="#E8E298" stop-opacity="0.6" />
-                </linearGradient>
+    <!-- Highlight Strip Refleksi 3D Tabung -->
+    <linearGradient id="pipeHighlight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFAD0" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#E8E298" stop-opacity="0.6" />
+    </linearGradient>
 
-                <!-- Pola Titik-Titik Halus Background -->
-                <pattern id="dotPattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-                  <circle cx="2" cy="2" r="1.2" fill="#D3E5E0" opacity="0.7" />
-                </pattern>
-              </defs>
+    <!-- Pola Titik-Titik Halus Background -->
+    <pattern id="dotPattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.2" fill="#D3E5E0" opacity="0.7"/>
+    </pattern>
+  </defs>
 
-              <!-- Background Ornamen Titik Halus di Sudut -->
-              <rect x="20" y="20" width="160" height="100" fill="url(#dotPattern)" opacity="0.6" />
-              <rect x="820" y="550" width="160" height="100" fill="url(#dotPattern)" opacity="0.6" />
+  <!-- Background Ornamen Titik Halus di Sudut -->
+  <rect x="20" y="20" width="160" height="100" fill="url(#dotPattern)" opacity="0.6"/>
+  <rect x="820" y="550" width="160" height="100" fill="url(#dotPattern)" opacity="0.6"/>
 
-              <!-- ==========================================
+  <!-- ==========================================
        HEADER KIRI: ALUR PENDAFTARAN CALON SISWA
        ========================================== -->
-              <g class="serpentine-left-title" transform="translate(50, 68)">
-                <text x="0" y="0" font-family="'M PLUS Rounded 1c', sans-serif" font-weight="900" font-size="22"
-                  fill="#07594F">Alur Pendaftaran</text>
-                <text x="0" y="28" font-family="'M PLUS Rounded 1c', sans-serif" font-weight="800" font-size="18"
-                  fill="#C5B344">Calon Siswa</text>
-                <rect x="0" y="38" width="48" height="3.5" rx="1.75" fill="#C5B344" />
-              </g>
+  <g class="serpentine-left-title" transform="translate(50, 68)">
+    <text x="0" y="0" font-family="'M PLUS Rounded 1c', sans-serif" font-weight="900" font-size="22" fill="#07594F">Alur Pendaftaran</text>
+    <text x="0" y="28" font-family="'M PLUS Rounded 1c', sans-serif" font-weight="800" font-size="18" fill="#C5B344">Calon Siswa</text>
+    <rect x="0" y="38" width="48" height="3.5" rx="1.75" fill="#C5B344"/>
+  </g>
 
-              <!-- 1. JALUR PIPA BERKELOK (SERPENTINE ROAD TRACK) -->
-              <!-- Bayangan & Tabung Utama -->
-              <path d="M 120,135 L 855,135 A 110,110 0 0,1 855,355 L 145,355 A 110,110 0 0,0 145,575 L 880,575"
-                stroke="url(#pipeGrad)" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" fill="none"
-                filter="url(#pipeShadow)" />
+  <!-- 1. JALUR PIPA BERKELOK (SERPENTINE ROAD TRACK) -->
+  <!-- Bayangan & Tabung Utama -->
+  <path d="M 120,135 L 855,135 A 110,110 0 0,1 855,355 L 145,355 A 110,110 0 0,0 145,575 L 880,575" 
+        stroke="url(#pipeGrad)" 
+        stroke-width="32" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"
+        fill="none" 
+        filter="url(#pipeShadow)" />
 
-              <!-- Highlight Kilau 3D di Bagian Atas Pipa -->
-              <path d="M 120,132 L 855,132 A 107,107 0 0,1 855,352 L 145,352 A 113,113 0 0,0 145,572 L 878,572"
-                stroke="url(#pipeHighlight)" stroke-width="6" stroke-linecap="round" fill="none" />
+  <!-- Highlight Kilau 3D di Bagian Atas Pipa -->
+  <path d="M 120,132 L 855,132 A 107,107 0 0,1 855,352 L 145,352 A 113,113 0 0,0 145,572 L 878,572" 
+        stroke="url(#pipeHighlight)" 
+        stroke-width="6" 
+        stroke-linecap="round" 
+        fill="none" />
 
-              <!-- Panah Petunjuk Arah Alur pada Tabung -->
-              <!-- Baris 1: Menuju Kanan -->
-              <polygon points="535,131 550,135 535,139" fill="#FFFAD0" opacity="0.8" />
-              <!-- Baris 2: Menuju Kiri -->
-              <polygon points="535,351 520,355 535,359" fill="#FFFAD0" opacity="0.8" />
-              <!-- Baris 3: Menuju Kanan -->
-              <polygon points="280,571 295,575 280,579" fill="#FFFAD0" opacity="0.8" />
+  <!-- Panah Petunjuk Arah Alur pada Tabung -->
+  <!-- Baris 1: Menuju Kanan -->
+  <polygon points="535,131 550,135 535,139" fill="#FFFAD0" opacity="0.8" />
+  <!-- Baris 2: Menuju Kiri -->
+  <polygon points="535,351 520,355 535,359" fill="#FFFAD0" opacity="0.8" />
+  <!-- Baris 3: Menuju Kanan -->
+  <polygon points="280,571 295,575 280,579" fill="#FFFAD0" opacity="0.8" />
 
-              <!-- ==========================================
+  <!-- ==========================================
        POS 1: PENGISIAN FORMULIR (NOMOR 1 - KIRI ATAS)
        ========================================== -->
-              <g class="serpentine-node" transform="translate(320, 0)">
-                <!-- Ilustrasi Clipboard & Formulir -->
-                <g transform="translate(-40, 30)" filter="url(#nodeShadow)">
-                  <!-- Board Papan Ujian -->
-                  <rect x="0" y="6" width="70" height="86" rx="8" fill="#146053" />
-                  <!-- Kertas Putih -->
-                  <rect x="6" y="14" width="58" height="72" rx="4" fill="#FFFFFF" />
-                  <!-- Klip Metal Emas di Atas -->
-                  <rect x="20" y="2" width="30" height="12" rx="3" fill="#C5B344" />
-                  <circle cx="35" cy="8" r="2.5" fill="#6A5C0E" />
+  <g class="serpentine-node" transform="translate(320, 0)">
+    <!-- Ilustrasi Clipboard & Formulir -->
+    <g transform="translate(-40, 30)" filter="url(#nodeShadow)">
+      <!-- Board Papan Ujian -->
+      <rect x="0" y="6" width="70" height="86" rx="8" fill="#146053"/>
+      <!-- Kertas Putih -->
+      <rect x="6" y="14" width="58" height="72" rx="4" fill="#FFFFFF"/>
+      <!-- Klip Metal Emas di Atas -->
+      <rect x="20" y="2" width="30" height="12" rx="3" fill="#C5B344"/>
+      <circle cx="35" cy="8" r="2.5" fill="#6A5C0E"/>
+      
+      <!-- Isian Form Garis-Garis -->
+      <rect x="14" y="24" width="30" height="5" rx="2" fill="#07594F"/>
+      <!-- Field 1 -->
+      <rect x="14" y="34" width="42" height="8" rx="2" fill="#F0F7F4" stroke="#C8E3DC" stroke-width="1"/>
+      <rect x="18" y="37" width="22" height="2" rx="1" fill="#8FB7AD"/>
+      <!-- Field 2 -->
+      <rect x="14" y="46" width="42" height="8" rx="2" fill="#F0F7F4" stroke="#C8E3DC" stroke-width="1"/>
+      <rect x="18" y="49" width="28" height="2" rx="1" fill="#8FB7AD"/>
+      <!-- Checklist Unggah -->
+      <circle cx="18" cy="62" r="3.5" fill="#10B981"/>
+      <path d="M 16,62 L 17.5,63.5 L 20.5,60.5" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" fill="none"/>
+      <rect x="25" y="60" width="26" height="3" rx="1" fill="#A4C7BE"/>
 
-                  <!-- Isian Form Garis-Garis -->
-                  <rect x="14" y="24" width="30" height="5" rx="2" fill="#07594F" />
-                  <!-- Field 1 -->
-                  <rect x="14" y="34" width="42" height="8" rx="2" fill="#F0F7F4" stroke="#C8E3DC" stroke-width="1" />
-                  <rect x="18" y="37" width="22" height="2" rx="1" fill="#8FB7AD" />
-                  <!-- Field 2 -->
-                  <rect x="14" y="46" width="42" height="8" rx="2" fill="#F0F7F4" stroke="#C8E3DC" stroke-width="1" />
-                  <rect x="18" y="49" width="28" height="2" rx="1" fill="#8FB7AD" />
-                  <!-- Checklist Unggah -->
-                  <circle cx="18" cy="62" r="3.5" fill="#10B981" />
-                  <path d="M 16,62 L 17.5,63.5 L 20.5,60.5" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round"
-                    fill="none" />
-                  <rect x="25" y="60" width="26" height="3" rx="1" fill="#A4C7BE" />
+      <circle cx="18" cy="72" r="3.5" fill="#10B981"/>
+      <path d="M 16,72 L 17.5,73.5 L 20.5,70.5" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" fill="none"/>
+      <rect x="25" y="70" width="20" height="3" rx="1" fill="#A4C7BE"/>
 
-                  <circle cx="18" cy="72" r="3.5" fill="#10B981" />
-                  <path d="M 16,72 L 17.5,73.5 L 20.5,70.5" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round"
-                    fill="none" />
-                  <rect x="25" y="70" width="20" height="3" rx="1" fill="#A4C7BE" />
+      <!-- Pena Menulis (Angled Pen) -->
+      <g transform="translate(56, 40) rotate(35)">
+        <rect x="0" y="0" width="7" height="38" rx="2" fill="#C5B344"/>
+        <path d="M 0,38 L 3.5,46 L 7,38 Z" fill="#263A35"/>
+        <circle cx="3.5" cy="45" r="0.8" fill="#FFFFFF"/>
+      </g>
+    </g>
 
-                  <!-- Pena Menulis (Angled Pen) -->
-                  <g transform="translate(56, 40) rotate(35)">
-                    <rect x="0" y="0" width="7" height="38" rx="2" fill="#C5B344" />
-                    <path d="M 0,38 L 3.5,46 L 7,38 Z" fill="#263A35" />
-                    <circle cx="3.5" cy="45" r="0.8" fill="#FFFFFF" />
-                  </g>
-                </g>
+    <!-- Badge Angka 1 -->
+    <circle cx="48" cy="32" r="17" fill="#07594F" stroke="#C5B344" stroke-width="2.5" filter="url(#nodeShadow)"/>
+    <text x="48" y="38" text-anchor="middle" font-family="'M PLUS Rounded 1c', sans-serif" font-weight="900" font-size="15" fill="#FFFFFF">1</text>
 
-                <!-- Badge Angka 1 -->
-                <circle cx="48" cy="32" r="17" fill="#07594F" stroke="#C5B344" stroke-width="2.5"
-                  filter="url(#nodeShadow)" />
-                <text x="48" y="38" text-anchor="middle" font-family="'M PLUS Rounded 1c', sans-serif" font-weight="900"
-                  font-size="15" fill="#FFFFFF">1</text>
+    <!-- Teks Pos 1 -->
+    <text x="0" y="180" text-anchor="middle" font-family="'M PLUS Rounded 1c', sans-serif" font-weight="800" font-size="16.5" fill="#07594F">Pengisian Formulir</text>
+    <text x="0" y="200" text-anchor="middle" font-family="'Nunito Sans', sans-serif" font-weight="600" font-size="12.5" fill="#52746B">Isi data calon siswa secara daring</text>
+  </g>
 
-                <!-- Teks Pos 1 -->
-                <text x="0" y="180" text-anchor="middle" font-family="'M PLUS Rounded 1c', sans-serif" font-weight="800"
-                  font-size="16.5" fill="#07594F">Pengisian Formulir</text>
-                <text x="0" y="200" text-anchor="middle" font-family="'Nunito Sans', sans-serif" font-weight="600"
-                  font-size="12.5" fill="#52746B">Isi data calon siswa secara daring</text>
-              </g>
-
-              <!-- ==========================================
+  <!-- ==========================================
        POS 2: VERIFIKASI DOKUMEN OLEH TIM PPDB (NOMOR 2 - KANAN ATAS)
        ========================================== -->
-              <g class="serpentine-node" transform="translate(740, 0)">
-                <!-- Ilustrasi Berkas Verifikasi -->
-                <g transform="translate(-40, 30)" filter="url(#nodeShadow)">
-                  <!-- Board Papan Biru/Toska -->
-                  <rect x="0" y="6" width="70" height="86" rx="8" fill="#1B6356" />
-                  <!-- Kertas Putih -->
-                  <rect x="6" y="14" width="58" height="72" rx="4" fill="#FFFFFF" />
-                  <!-- Klip Emas -->
-                  <rect x="20" y="2" width="30" height="12" rx="3" fill="#C5B344" />
-                  <circle cx="35" cy="8" r="2.5" fill="#6A5C0E" />
+  <g class="serpentine-node" transform="translate(740, 0)">
+    <!-- Ilustrasi Berkas Verifikasi -->
+    <g transform="translate(-40, 30)" filter="url(#nodeShadow)">
+      <!-- Board Papan Biru/Toska -->
+      <rect x="0" y="6" width="70" height="86" rx="8" fill="#1B6356"/>
+      <!-- Kertas Putih -->
+      <rect x="6" y="14" width="58" height="72" rx="4" fill="#FFFFFF"/>
+      <!-- Klip Emas -->
+      <rect x="20" y="2" width="30" height="12" rx="3" fill="#C5B344"/>
+      <circle cx="35" cy="8" r="2.5" fill="#6A5C0E"/>
 
-                  <!-- Checklist Baris 1 -->
-                  <circle cx="17" cy="28" r="4.5" fill="#10B981" />
-                  <path d="M 14.5,28 L 16.5,30 L 19.5,26.5" stroke="#FFFFFF" stroke-width="1.4" stroke-linecap="round"
-                    fill="none" />
-                  <rect x="25" y="26" width="30" height="4" rx="1.5" fill="#3E6B60" />
+      <!-- Checklist Baris 1 -->
+      <circle cx="17" cy="28" r="4.5" fill="#10B981"/>
+      <path d="M 14.5,28 L 16.5,30 L 19.5,26.5" stroke="#FFFFFF" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+      <rect x="25" y="26" width="30" height="4" rx="1.5" fill="#3E6B60"/>
 
-                  <!-- Checklist Baris 2 -->
-                  <circle cx="17" cy="40" r="4.5" fill="#10B981" />
-                  <path d="M 14.5,40 L 16.5,42 L 19.5,38.5" stroke="#FFFFFF" stroke-width="1.4" stroke-linecap="round"
-                    fill="none" />
-                  <rect x="25" y="38" width="26" height="4" rx="1.5" fill="#3E6B60" />
+      <!-- Checklist Baris 2 -->
+      <circle cx="17" cy="40" r="4.5" fill="#10B981"/>
+      <path d="M 14.5,40 L 16.5,42 L 19.5,38.5" stroke="#FFFFFF" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+      <rect x="25" y="38" width="26" height="4" rx="1.5" fill="#3E6B60"/>
 
-                  <!-- Checklist Baris 3 -->
-                  <circle cx="17" cy="52" r="4.5" fill="#10B981" />
-                  <path d="M 14.5,52 L 16.5,54 L 19.5,50.5" stroke="#FFFFFF" stroke-width="1.4" stroke-linecap="round"
-                    fill="none" />
-                  <rect x="25" y="50" width="32" height="4" rx="1.5" fill="#3E6B60" />
+      <!-- Checklist Baris 3 -->
+      <circle cx="17" cy="52" r="4.5" fill="#10B981"/>
+      <path d="M 14.5,52 L 16.5,54 L 19.5,50.5" stroke="#FFFFFF" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+      <rect x="25" y="50" width="32" height="4" rx="1.5" fill="#3E6B60"/>
 
-                  <!-- Cap Segel Emas Sah (Verified Stamp) -->
-                  <g transform="translate(44, 62) rotate(-12)">
-                    <circle cx="0" cy="0" r="12" fill="#FFFDF0" stroke="#C5B344" stroke-width="2" />
-                    <circle cx="0" cy="0" r="9" fill="none" stroke="#C5B344" stroke-width="1" stroke-dasharray="2 1" />
-                    <path d="M -4,0 L -1,3 L 5,-3" stroke="#C5B344" stroke-width="1.8" stroke-linecap="round"
-                      fill="none" />
-                  </g>
-                </g>
+      <!-- Cap Segel Emas Sah (Verified Stamp) -->
+      <g transform="translate(44, 62) rotate(-12)">
+        <circle cx="0" cy="0" r="12" fill="#FFFDF0" stroke="#C5B344" stroke-width="2"/>
+        <circle cx="0" cy="0" r="9" fill="none" stroke="#C5B344" stroke-width="1" stroke-dasharray="2 1"/>
+        <path d="M -4,0 L -1,3 L 5,-3" stroke="#C5B344" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+      </g>
+    </g>
 
-                <!-- Badge Angka 2 -->
-                <circle cx="48" cy="32" r="17" fill="#07594F" stroke="#C5B344" stroke-width="2.5"
-                  filter="url(#nodeShadow)" />
-                <text x="48" y="38" text-anchor="middle" font-family="'M PLUS Rounded 1c', sans-serif" font-weight="900"
-                  font-size="15" fill="#FFFFFF">2</text>
+    <!-- Badge Angka 2 -->
+    <circle cx="48" cy="32" r="17" fill="#07594F" stroke="#C5B344" stroke-width="2.5" filter="url(#nodeShadow)"/>
+    <text x="48" y="38" text-anchor="middle" font-family="'M PLUS Rounded 1c', sans-serif" font-weight="900" font-size="15" fill="#FFFFFF">2</text>
 
-                <!-- Teks Pos 2: Verifikasi Dokumen oleh Tim PPDB -->
-                <text x="0" y="178" text-anchor="middle" font-family="'M PLUS Rounded 1c', sans-serif" font-weight="800"
-                  font-size="16" fill="#07594F">Verifikasi Dokumen</text>
-                <text x="0" y="198" text-anchor="middle" font-family="'M PLUS Rounded 1c', sans-serif" font-weight="700"
-                  font-size="13.5" fill="#07594F">oleh Tim PPDB</text>
-              </g>
+    <!-- Teks Pos 2: Verifikasi Dokumen oleh Tim PPDB -->
+    <text x="0" y="178" text-anchor="middle" font-family="'M PLUS Rounded 1c', sans-serif" font-weight="800" font-size="16" fill="#07594F">Verifikasi Dokumen</text>
+    <text x="0" y="198" text-anchor="middle" font-family="'M PLUS Rounded 1c', sans-serif" font-weight="700" font-size="13.5" fill="#07594F">oleh Tim PPDB</text>
+  </g>
 
-              <!-- ==========================================
+  <!-- ==========================================
        POS 3: WAWANCARA WALI MURID (NOMOR 3 - KIRI TENGAH)
        ========================================== -->
-              <g class="serpentine-node" transform="translate(280, 220)">
-                <!-- Ilustrasi Wawancara / Diskusi Ramah -->
-                <g transform="translate(-40, 30)" filter="url(#nodeShadow)">
-                  <!-- Board Papan Ujian -->
-                  <rect x="0" y="6" width="70" height="86" rx="8" fill="#146053" />
-                  <!-- Kertas Putih -->
-                  <rect x="6" y="14" width="58" height="72" rx="4" fill="#FFFFFF" />
-                  <!-- Klip Emas -->
-                  <rect x="20" y="2" width="30" height="12" rx="3" fill="#C5B344" />
-                  <circle cx="35" cy="8" r="2.5" fill="#6A5C0E" />
+  <g class="serpentine-node" transform="translate(280, 220)">
+    <!-- Ilustrasi Wawancara / Diskusi Ramah -->
+    <g transform="translate(-40, 30)" filter="url(#nodeShadow)">
+      <!-- Board Papan Ujian -->
+      <rect x="0" y="6" width="70" height="86" rx="8" fill="#146053"/>
+      <!-- Kertas Putih -->
+      <rect x="6" y="14" width="58" height="72" rx="4" fill="#FFFFFF"/>
+      <!-- Klip Emas -->
+      <rect x="20" y="2" width="30" height="12" rx="3" fill="#C5B344"/>
+      <circle cx="35" cy="8" r="2.5" fill="#6A5C0E"/>
 
-                  <!-- Bubble Dialog Wawancara -->
-                  <g transform="translate(14, 24)">
-                    <!-- Bubble 1: Emerald -->
-                    <rect x="0" y="0" width="26" height="18" rx="5" fill="#EAF5F2" stroke="#07594F"
-                      stroke-width="1.2" />
-                    <path d="M 8,18 L 8,22 L 13,18 Z" fill="#EAF5F2" />
-                    <circle cx="7" cy="9" r="1.5" fill="#07594F" />
-                    <circle cx="13" cy="9" r="1.5" fill="#07594F" />
-                    <circle cx="19" cy="9" r="1.5" fill="#07594F" />
+      <!-- Bubble Dialog Wawancara -->
+      <g transform="translate(14, 24)">
+        <!-- Bubble 1: Emerald -->
+        <rect x="0" y="0" width="26" height="18" rx="5" fill="#EAF5F2" stroke="#07594F" stroke-width="1.2"/>
+        <path d="M 8,18 L 8,22 L 13,18 Z" fill="#EAF5F2"/>
+        <circle cx="7" cy="9" r="1.5" fill="#07594F"/>
+        <circle cx="13" cy="9" r="1.5" fill="#07594F"/>
+        <circle cx="19" cy="9" r="1.5" fill="#07594F"/>
 
-                    <!-- Bubble 2: Gold (Tatap Muka) -->
-                    <g transform="translate(18, 12)">
-                      <rect x="0" y="0" width="24" height="16" rx="5" fill="#FDFBF2" stroke="#C5B344"
-                        stroke-width="1.2" />
-                      <path d="M 16,16 L 16,19 L 12,16 Z" fill="#FDFBF2" />
-                      <path d="M 6,8 L 9,11 L 18,5" stroke="#C5B344" stroke-width="1.4" stroke-linecap="round"
-                        fill="none" />
-                    </g>
-                  </g>
+        <!-- Bubble 2: Gold (Tatap Muka) -->
+        <g transform="translate(18, 12)">
+          <rect x="0" y="0" width="24" height="16" rx="5" fill="#FDFBF2" stroke="#C5B344" stroke-width="1.2"/>
+          <path d="M 16,16 L 16,19 L 12,16 Z" fill="#FDFBF2"/>
+          <path d="M 6,8 L 9,11 L 18,5" stroke="#C5B344" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+        </g>
+      </g>
 
-                  <!-- Checklist Catatan Wawancara -->
-                  <rect x="14" y="56" width="32" height="3" rx="1.5" fill="#3E6B60" />
-                  <rect x="14" y="64" width="40" height="3" rx="1.5" fill="#8FB7AD" />
-                  <rect x="14" y="72" width="26" height="3" rx="1.5" fill="#8FB7AD" />
-                </g>
+      <!-- Checklist Catatan Wawancara -->
+      <rect x="14" y="56" width="32" height="3" rx="1.5" fill="#3E6B60"/>
+      <rect x="14" y="64" width="40" height="3" rx="1.5" fill="#8FB7AD"/>
+      <rect x="14" y="72" width="26" height="3" rx="1.5" fill="#8FB7AD"/>
+    </g>
 
-                <!-- Badge Angka 3 -->
-                <circle cx="48" cy="32" r="17" fill="#07594F" stroke="#C5B344" stroke-width="2.5"
-                  filter="url(#nodeShadow)" />
-                <text x="48" y="38" text-anchor="middle" font-family="'M PLUS Rounded 1c', sans-serif" font-weight="900"
-                  font-size="15" fill="#FFFFFF">3</text>
+    <!-- Badge Angka 3 -->
+    <circle cx="48" cy="32" r="17" fill="#07594F" stroke="#C5B344" stroke-width="2.5" filter="url(#nodeShadow)"/>
+    <text x="48" y="38" text-anchor="middle" font-family="'M PLUS Rounded 1c', sans-serif" font-weight="900" font-size="15" fill="#FFFFFF">3</text>
 
-                <!-- Teks Pos 3: Wawancara Wali Murid -->
-                <text x="0" y="180" text-anchor="middle" font-family="'M PLUS Rounded 1c', sans-serif" font-weight="800"
-                  font-size="16.5" fill="#07594F">Wawancara Wali Murid</text>
-                <text x="0" y="200" text-anchor="middle" font-family="'Nunito Sans', sans-serif" font-weight="600"
-                  font-size="12.5" fill="#52746B">Penyelarasan visi pendidikan santri</text>
-              </g>
+    <!-- Teks Pos 3: Wawancara Wali Murid -->
+    <text x="0" y="180" text-anchor="middle" font-family="'M PLUS Rounded 1c', sans-serif" font-weight="800" font-size="16.5" fill="#07594F">Wawancara Wali Murid</text>
+    <text x="0" y="200" text-anchor="middle" font-family="'Nunito Sans', sans-serif" font-weight="600" font-size="12.5" fill="#52746B">Penyelarasan visi pendidikan santri</text>
+  </g>
 
-              <!-- ==========================================
+  <!-- ==========================================
        POS 4: PENGUMUMAN & DAFTAR ULANG (NOMOR 4 - TENGAH BAWAH)
        ========================================== -->
-              <g class="serpentine-node" transform="translate(480, 440)">
-                <!-- Ilustrasi Sertifikat & Smartcard -->
-                <g transform="translate(-45, 30)" filter="url(#nodeShadow)">
-                  <!-- Sertifikat Piagam di Belakang -->
-                  <rect x="0" y="4" width="76" height="54" rx="6" fill="#FFFDF5" stroke="#C5B344" stroke-width="2" />
-                  <rect x="4" y="8" width="68" height="46" rx="4" fill="none" stroke="#E6DC9A" stroke-width="1" />
-                  <rect x="14" y="16" width="34" height="4" rx="2" fill="#07594F" />
-                  <rect x="14" y="24" width="48" height="2.5" rx="1" fill="#7FA89E" />
-                  <rect x="14" y="30" width="38" height="2.5" rx="1" fill="#7FA89E" />
+  <g class="serpentine-node" transform="translate(480, 440)">
+    <!-- Ilustrasi Sertifikat & Smartcard -->
+    <g transform="translate(-45, 30)" filter="url(#nodeShadow)">
+      <!-- Sertifikat Piagam di Belakang -->
+      <rect x="0" y="4" width="76" height="54" rx="6" fill="#FFFDF5" stroke="#C5B344" stroke-width="2"/>
+      <rect x="4" y="8" width="68" height="46" rx="4" fill="none" stroke="#E6DC9A" stroke-width="1"/>
+      <rect x="14" y="16" width="34" height="4" rx="2" fill="#07594F"/>
+      <rect x="14" y="24" width="48" height="2.5" rx="1" fill="#7FA89E"/>
+      <rect x="14" y="30" width="38" height="2.5" rx="1" fill="#7FA89E"/>
+      
+      <!-- Pita Emas & Bintang di Piagam -->
+      <circle cx="60" cy="40" r="7" fill="#C5B344"/>
+      <path d="M 58,45 L 56,54 L 60,51 L 64,54 L 62,45 Z" fill="#C5B344"/>
+      <path d="M 60,37 L 61,39 L 63,39 L 61.5,40.5 L 62,43 L 60,41.5 L 58,43 L 58.5,40.5 L 57,39 L 59,39 Z" fill="#FFFFFF"/>
 
-                  <!-- Pita Emas & Bintang di Piagam -->
-                  <circle cx="60" cy="40" r="7" fill="#C5B344" />
-                  <path d="M 58,45 L 56,54 L 60,51 L 64,54 L 62,45 Z" fill="#C5B344" />
-                  <path d="M 60,37 L 61,39 L 63,39 L 61.5,40.5 L 62,43 L 60,41.5 L 58,43 L 58.5,40.5 L 57,39 L 59,39 Z"
-                    fill="#FFFFFF" />
+      <!-- Smartcard Siswa / Bukti Daftar Ulang (Overlapping di Depan) -->
+      <g transform="translate(18, 38)">
+        <rect x="0" y="0" width="64" height="44" rx="6" fill="#FFFFFF" stroke="#07594F" stroke-width="1.5"/>
+        <!-- Header Card Emerald -->
+        <path d="M 0,6 Q 0,0 6,0 L 58,0 Q 64,0 64,6 L 64,12 L 0,12 Z" fill="#07594F"/>
+        <!-- Chip Kartu Emas -->
+        <rect x="8" y="18" width="10" height="8" rx="1.5" fill="#E2D479" stroke="#9A8C2D" stroke-width="0.8"/>
+        <!-- Garis Data Siswa -->
+        <rect x="22" y="18" width="34" height="3" rx="1" fill="#263A35"/>
+        <rect x="22" y="24" width="24" height="2" rx="1" fill="#6B8881"/>
+        <rect x="8" y="32" width="30" height="2" rx="1" fill="#6B8881"/>
+        <!-- Stempel Lulus -->
+        <circle cx="52" cy="30" r="6" fill="#10B981"/>
+        <path d="M 49,30 L 51,32 L 55,28" stroke="#FFFFFF" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+      </g>
+    </g>
 
-                  <!-- Smartcard Siswa / Bukti Daftar Ulang (Overlapping di Depan) -->
-                  <g transform="translate(18, 38)">
-                    <rect x="0" y="0" width="64" height="44" rx="6" fill="#FFFFFF" stroke="#07594F"
-                      stroke-width="1.5" />
-                    <!-- Header Card Emerald -->
-                    <path d="M 0,6 Q 0,0 6,0 L 58,0 Q 64,0 64,6 L 64,12 L 0,12 Z" fill="#07594F" />
-                    <!-- Chip Kartu Emas -->
-                    <rect x="8" y="18" width="10" height="8" rx="1.5" fill="#E2D479" stroke="#9A8C2D"
-                      stroke-width="0.8" />
-                    <!-- Garis Data Siswa -->
-                    <rect x="22" y="18" width="34" height="3" rx="1" fill="#263A35" />
-                    <rect x="22" y="24" width="24" height="2" rx="1" fill="#6B8881" />
-                    <rect x="8" y="32" width="30" height="2" rx="1" fill="#6B8881" />
-                    <!-- Stempel Lulus -->
-                    <circle cx="52" cy="30" r="6" fill="#10B981" />
-                    <path d="M 49,30 L 51,32 L 55,28" stroke="#FFFFFF" stroke-width="1.3" stroke-linecap="round"
-                      fill="none" />
-                  </g>
-                </g>
+    <!-- Badge Angka 4 -->
+    <circle cx="48" cy="32" r="17" fill="#07594F" stroke="#C5B344" stroke-width="2.5" filter="url(#nodeShadow)"/>
+    <text x="48" y="38" text-anchor="middle" font-family="'M PLUS Rounded 1c', sans-serif" font-weight="900" font-size="15" fill="#FFFFFF">4</text>
 
-                <!-- Badge Angka 4 -->
-                <circle cx="48" cy="32" r="17" fill="#07594F" stroke="#C5B344" stroke-width="2.5"
-                  filter="url(#nodeShadow)" />
-                <text x="48" y="38" text-anchor="middle" font-family="'M PLUS Rounded 1c', sans-serif" font-weight="900"
-                  font-size="15" fill="#FFFFFF">4</text>
+    <!-- Teks Pos 4 -->
+    <text x="0" y="180" text-anchor="middle" font-family="'M PLUS Rounded 1c', sans-serif" font-weight="800" font-size="16.5" fill="#07594F">Pengumuman &amp; Daftar Ulang</text>
+    <text x="0" y="200" text-anchor="middle" font-family="'Nunito Sans', sans-serif" font-weight="600" font-size="12.5" fill="#52746B">Pemberitahuan kelulusan &amp; penyelesaian registrasi</text>
+  </g>
 
-                <!-- Teks Pos 4 -->
-                <text x="0" y="180" text-anchor="middle" font-family="'M PLUS Rounded 1c', sans-serif" font-weight="800"
-                  font-size="16.5" fill="#07594F">Pengumuman &amp; Daftar Ulang</text>
-                <text x="0" y="200" text-anchor="middle" font-family="'Nunito Sans', sans-serif" font-weight="600"
-                  font-size="12.5" fill="#52746B">Pemberitahuan kelulusan &amp; penyelesaian registrasi</text>
-              </g>
-
-              <!-- ==========================================
+  <!-- ==========================================
        FINISH: BADGE SELESAI (RESMI DITERIMA)
        ========================================== -->
-              <g class="serpentine-node" transform="translate(860, 520)" filter="url(#nodeShadow)">
-                <!-- Kartu Kotak Hijau Emerald -->
-                <rect x="-65" y="0" width="130" height="110" rx="20" fill="#07594F" stroke="#C5B344"
-                  stroke-width="2.5" />
+  <g class="serpentine-node" transform="translate(860, 520)" filter="url(#nodeShadow)">
+    <!-- Kartu Kotak Hijau Emerald -->
+    <rect x="-65" y="0" width="130" height="110" rx="20" fill="#07594F" stroke="#C5B344" stroke-width="2.5"/>
+    
+    <!-- Lingkaran Hijau Terang Centang -->
+    <circle cx="0" cy="36" r="22" fill="#10B981" stroke="#FFFFFF" stroke-width="2.5"/>
+    <!-- Ikon Centang Tebal -->
+    <path d="M -9,36 L -3,42 L 9,29" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
 
-                <!-- Lingkaran Hijau Terang Centang -->
-                <circle cx="0" cy="36" r="22" fill="#10B981" stroke="#FFFFFF" stroke-width="2.5" />
-                <!-- Ikon Centang Tebal -->
-                <path d="M -9,36 L -3,42 L 9,29" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round"
-                  stroke-linejoin="round" fill="none" />
-
-                <!-- Teks Selesai -->
-                <text x="0" y="78" text-anchor="middle" font-family="'M PLUS Rounded 1c', sans-serif" font-weight="900"
-                  font-size="18" fill="#FFFFFF">Selesai</text>
-                <text x="0" y="96" text-anchor="middle" font-family="'Nunito Sans', sans-serif" font-weight="700"
-                  font-size="11" fill="#F4EFA6">Resmi Santri SDIT</text>
-              </g>
-            </svg>
+    <!-- Teks Selesai -->
+    <text x="0" y="78" text-anchor="middle" font-family="'M PLUS Rounded 1c', sans-serif" font-weight="900" font-size="18" fill="#FFFFFF">Selesai</text>
+    <text x="0" y="96" text-anchor="middle" font-family="'Nunito Sans', sans-serif" font-weight="700" font-size="11" fill="#F4EFA6">Resmi Santri SDIT</text>
+  </g>
+</svg>
           </div>
 
           <!-- Mobile Timeline (< 900px): Jalur Vertikal Ramah Sentuhan -->
           <div class="alur-serpentine-mobile">
-            <div style="margin-bottom: 1.5rem; text-align: left;">
-              <h3
-                style="color: #07594F; font-family: var(--font-heading); font-size: 1.35rem; font-weight: 900; margin: 0 0 0.25rem 0;">
-                Alur Pendaftaran</h3>
-              <div style="color: #C5B344; font-family: var(--font-heading); font-size: 1.1rem; font-weight: 800;">Calon
-                Siswa</div>
-              <div style="width: 44px; height: 3px; background: #C5B344; border-radius: 2px; margin-top: 0.35rem;">
-              </div>
+            <div style="margin-bottom: 1.5rem; text-align: left; padding-left: 0.5rem;">
+              <h3 style="color: #07594F; font-family: var(--font-heading); font-size: 1.35rem; font-weight: 900; margin: 0 0 0.25rem 0;">Alur Pendaftaran</h3>
+              <div style="color: #C5B344; font-family: var(--font-heading); font-size: 1.1rem; font-weight: 800;">Calon Siswa</div>
+              <div style="width: 44px; height: 3px; background: #C5B344; border-radius: 2px; margin-top: 0.35rem;"></div>
             </div>
 
             <div class="serpentine-mobile-timeline">
@@ -459,8 +420,7 @@
                 </div>
                 <div class="serpentine-mobile-content">
                   <h4 class="serpentine-mobile-title" style="color: #07594F;">Selesai</h4>
-                  <p class="serpentine-mobile-desc" style="color: #8A7A1C; font-weight:700;">Resmi Menjadi Santri SDIT
-                  </p>
+                  <p class="serpentine-mobile-desc" style="color: #8A7A1C; font-weight:700;">Resmi Menjadi Santri SDIT</p>
                 </div>
               </div>
             </div>
@@ -474,8 +434,7 @@
       <div class="container container-narrow">
         <div class="section-header" style="text-align: center; margin-bottom: 2rem;">
           <h2>Persyaratan Berkas Pendaftaran</h2>
-          <p>Mohon persiapkan berkas resmi berikut dalam format dokumen JPG, PNG, atau PDF (maksimal 5MB per berkas):
-          </p>
+          <p>Mohon persiapkan berkas resmi berikut dalam format dokumen JPG, PNG, atau PDF (maksimal 5MB per berkas):</p>
         </div>
 
         <div class="ppdb-requirements-grid">
@@ -539,8 +498,7 @@
             <i data-lucide="pen-tool" style="width: 18px; height: 18px;"></i>
             Mulai Isi Formulir Pendaftaran
           </a>
-          <a href="cek-status.html" class="btn btn-outline-emerald btn-lg"
-            style="padding: 0.85rem 1.75rem; font-weight: 700;">
+          <a href="cek-status.html" class="btn btn-outline-emerald btn-lg" style="padding: 0.85rem 1.75rem; font-weight: 700;">
             <i data-lucide="search" style="width: 18px; height: 18px;"></i>
             Cek Status Pendaftaran
           </a>
@@ -554,8 +512,7 @@
     <div class="container">
       <div class="footer-simple">
         <div class="footer-simple-contact">
-          <a href="https://www.google.com/maps/search/?api=1&query=SDIT+Al-Mursyidiyyah+Klender+Duren+Sawit+Jakarta+Timur"
-            target="_blank" title="Buka di Google Maps">
+          <a href="https://www.google.com/maps/search/?api=1&query=SDIT+Al-Mursyidiyyah+Klender+Duren+Sawit+Jakarta+Timur" target="_blank" title="Buka di Google Maps">
             <i data-lucide="map-pin" style="width:16px;height:16px;color:var(--color-gold);flex-shrink:0;"></i>
             <span>Jl. Kapitan, RT.8/RW.4, Klender, Kec. Duren Sawit, Kota Jakarta Timur 13470</span>
           </a>
@@ -569,8 +526,7 @@
   </footer>
 
   <!-- WhatsApp Floating Pill -->
-  <a href="https://wa.me/6281380327256?text=Halo%20SDIT%20Al-Mursyidiyyah,%20saya%20ingin%20bertanya%20informasi%20sekolah"
-    target="_blank" class="whatsapp-float">
+  <a href="https://wa.me/6281380327256?text=Halo%20SDIT%20Al-Mursyidiyyah,%20saya%20ingin%20bertanya%20informasi%20sekolah" target="_blank" class="whatsapp-float">
     <i data-lucide="message-circle" style="width:20px;height:20px;"></i>
     <span>Chat WhatsApp</span>
   </a>
@@ -583,5 +539,5 @@
     lucide.createIcons();
   </script>
 </body>
-
 </html>
+
