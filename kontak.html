@@ -93,19 +93,33 @@
     <section class="section section-white">
       <div class="container">
         <div class="contact-clean-grid">
-          <!-- Item 1: Alamat Sekolah -->
+          <!-- Item 1: Alamat Sekolah & Peta Interaktif Langsung -->
           <div class="contact-clean-item">
             <div class="contact-clean-icon" style="background: var(--color-emerald-surface); color: var(--color-emerald);">
               <i data-lucide="map-pin" style="width:24px;height:24px;"></i>
             </div>
             <h3 class="contact-clean-title">Alamat Sekolah</h3>
-            <p class="contact-clean-desc">
+            <p class="contact-clean-desc" style="margin-bottom: 0.85rem;">
               Jl. Kapitan, RT.8/RW.4, Klender, Kec. Duren Sawit, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13470
             </p>
-            <div>
-              <a href="https://www.google.com/maps/search/?api=1&query=SDIT+Al-Mursyidiyyah+Klender+Duren+Sawit+Jakarta+Timur" target="_blank" class="btn btn-outline-emerald btn-sm">
-                <i data-lucide="map-pin" style="width:14px;height:14px;"></i>
-                Buka di Google Maps
+            
+            <!-- Peta Google Maps Interaktif Langsung -->
+            <div style="border-radius: 12px; overflow: hidden; border: 1.5px solid var(--color-border); height: 200px; margin-bottom: 1rem; background: #e0ded0; position: relative;">
+              <iframe 
+                src="https://maps.google.com/maps?q=SDIT+Al-Mursyidiyyah,+Jl.+Kapitan,+Klender,+Duren+Sawit,+Jakarta+Timur&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+
+            <div style="margin-top: auto;">
+              <a href="https://www.google.com/maps/dir/?api=1&destination=SDIT+Al-Mursyidiyyah+Klender+Duren+Sawit+Jakarta+Timur" target="_blank" class="btn btn-outline-emerald btn-sm" style="width: 100%; justify-content: center;">
+                <i data-lucide="navigation" style="width:14px;height:14px;"></i>
+                Petunjuk Arah Google Maps
               </a>
             </div>
           </div>
@@ -117,13 +131,16 @@
             </div>
             <h3 class="contact-clean-title">WhatsApp Resmi</h3>
             <div class="contact-clean-desc">
-              <div style="margin-bottom: 0.25rem;"><strong>WhatsApp PPDB / Sekolah:</strong></div>
-              <div><a href="https://wa.me/6281380327256" target="_blank" style="color: var(--color-emerald); font-weight: 700; font-size: 1.05rem;">+62 813-8032-7256</a></div>
+              <div style="margin-bottom: 0.35rem;"><strong>WhatsApp PPDB &amp; Sekretariat:</strong></div>
+              <div style="margin-bottom: 0.85rem;"><a href="https://wa.me/6281380327256" target="_blank" style="color: var(--color-emerald); font-weight: 700; font-size: 1.15rem;">+62 813-8032-7256</a></div>
+              <div style="font-size: 0.88rem; color: var(--color-dark-forest-muted); line-height: 1.5;">
+                Hubungi panitia untuk informasi pendaftaran, survei lokasi, rincian biaya masuk, dan kurikulum sekolah.
+              </div>
             </div>
-            <div>
-              <a href="https://wa.me/6281380327256" target="_blank" class="btn btn-outline-emerald btn-sm" style="width: 100%; justify-content: center;">
+            <div style="margin-top: auto;">
+              <a href="https://wa.me/6281380327256" target="_blank" class="btn btn-gold btn-sm" style="width: 100%; justify-content: center; font-weight: 700;">
                 <i data-lucide="message-circle" style="width:14px;height:14px;"></i>
-                Chat WhatsApp
+                Chat WhatsApp Sekarang
               </a>
             </div>
           </div>
@@ -135,41 +152,16 @@
             </div>
             <h3 class="contact-clean-title">Jam Pelayanan Kantor</h3>
             <div class="contact-clean-desc">
-              <div style="margin-bottom: 0.35rem;"><strong>Senin – Jumat:</strong> 07.00 – 15.30 WIB</div>
-              <div><strong>Sabtu:</strong> 08.00 – 12.00 WIB <span style="font-size: 0.85rem; color: var(--color-dark-forest-muted);">(Perjanjian)</span></div>
+              <div style="margin-bottom: 0.45rem;"><strong>Senin – Jumat:</strong> 07.00 – 15.30 WIB</div>
+              <div style="margin-bottom: 0.85rem;"><strong>Sabtu:</strong> 08.00 – 12.00 WIB <span style="font-size: 0.82rem; color: var(--color-dark-forest-muted);">(Perjanjian)</span></div>
+              <div style="font-size: 0.85rem; color: var(--color-dark-forest-muted); line-height: 1.5;">
+                Pendaftaran online melalui website tetap aktif selama 24 jam setiap hari.
+              </div>
             </div>
-            <div style="font-size: 0.82rem; color: var(--color-emerald); background: var(--color-emerald-surface); padding: 0.45rem 0.85rem; border-radius: var(--radius-sm); font-weight: 600;">
+            <div style="margin-top: auto; font-size: 0.82rem; color: var(--color-emerald); background: var(--color-emerald-surface); padding: 0.55rem 0.85rem; border-radius: var(--radius-sm); font-weight: 600; text-align: center;">
               Survei sekolah dapat dikonfirmasi via WhatsApp
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- GOOGLE MAPS EMBED -->
-    <section class="section section-ivory" style="padding-top: 3.25rem;">
-      <div class="container">
-        <div class="section-header" style="text-align: center; margin-bottom: 2rem;">
-          <h2>Peta Lokasi SDIT Al-Mursyidiyyah</h2>
-        </div>
-
-        <div style="border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); border: 2px solid var(--color-border); height: clamp(320px, 45vh, 420px); background: #e0ded0; position: relative;">
-          <iframe 
-            src="https://maps.google.com/maps?q=SDIT+Al-Mursyidiyyah,+Jl.+Kapitan,+Klender,+Duren+Sawit,+Jakarta+Timur&t=&z=17&ie=UTF8&iwloc=&output=embed" 
-            width="100%" 
-            height="100%" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-        </div>
-
-        <div style="text-align: center; margin-top: 1.5rem; display: flex; justify-content: center;">
-          <a href="https://www.google.com/maps/dir/?api=1&destination=SDIT+Al-Mursyidiyyah+Klender+Duren+Sawit+Jakarta+Timur" target="_blank" class="btn btn-gold btn-maps-nav">
-            <i data-lucide="navigation" style="width:18px;height:18px;flex-shrink:0;"></i>
-            <span>Petunjuk Arah di Google Maps</span>
-          </a>
         </div>
       </div>
     </section>
