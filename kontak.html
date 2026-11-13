@@ -124,24 +124,67 @@
             </div>
           </div>
 
-          <!-- Item 2: WhatsApp Resmi -->
+          <!-- Item 2: WhatsApp Resmi & Kotak Chat Admin -->
           <div class="contact-clean-item">
-            <div class="contact-clean-icon" style="background: var(--color-gold-light); color: var(--color-gold);">
-              <i data-lucide="message-circle" style="width:24px;height:24px;"></i>
-            </div>
-            <h3 class="contact-clean-title">WhatsApp Resmi</h3>
-            <div class="contact-clean-desc">
-              <div style="margin-bottom: 0.35rem;"><strong>WhatsApp PPDB &amp; Sekretariat:</strong></div>
-              <div style="margin-bottom: 0.85rem;"><a href="https://wa.me/6281380327256" target="_blank" style="color: var(--color-emerald); font-weight: 700; font-size: 1.15rem;">+62 813-8032-7256</a></div>
-              <div style="font-size: 0.88rem; color: var(--color-dark-forest-muted); line-height: 1.5;">
-                Hubungi panitia untuk informasi pendaftaran, survei lokasi, rincian biaya masuk, dan kurikulum sekolah.
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem;">
+              <div class="contact-clean-icon" style="background: var(--color-gold-light); color: var(--color-gold); margin-bottom: 0;">
+                <i data-lucide="message-circle" style="width:24px;height:24px;"></i>
               </div>
+              <span class="contact-status-badge">
+                <span class="status-pulse-dot"></span> Admin Online
+              </span>
             </div>
-            <div style="margin-top: auto;">
-              <a href="https://wa.me/6281380327256" target="_blank" class="btn btn-gold btn-sm" style="width: 100%; justify-content: center; font-weight: 700;">
-                <i data-lucide="message-circle" style="width:14px;height:14px;"></i>
-                Chat WhatsApp Sekarang
+            
+            <h3 class="contact-clean-title" style="margin-bottom: 0.25rem;">WhatsApp Resmi</h3>
+            <div style="margin-bottom: 0.75rem;">
+              <span style="font-size: 0.82rem; color: var(--color-dark-forest-muted); display: block;">WhatsApp PPDB &amp; Sekretariat:</span>
+              <a href="https://wa.me/6281380327256" target="_blank" style="color: var(--color-emerald); font-weight: 700; font-size: 1.15rem; display: inline-flex; align-items: center; gap: 0.35rem;">
+                +62 813-8032-7256
               </a>
+            </div>
+
+            <!-- Poin Topik Pertanyaan Cepat -->
+            <div style="font-size: 0.78rem; font-weight: 600; color: var(--color-dark-forest); margin-bottom: 0.35rem;">
+              Pilih topik pertanyaan:
+            </div>
+            <div class="contact-quick-topics">
+              <button type="button" class="topic-chip-btn active" data-msg="Assalamu'alaikum Admin, mohon info rincian biaya masuk dan SPP terbaru di SDIT Al-Mursyidiyyah.">
+                Biaya &amp; SPP
+              </button>
+              <button type="button" class="topic-chip-btn" data-msg="Assalamu'alaikum Admin, saya ingin menanyakan berkas syarat dan alur pendaftaran PPDB.">
+                Syarat PPDB
+              </button>
+              <button type="button" class="topic-chip-btn" data-msg="Assalamu'alaikum Admin, apakah bisa menjadwalkan kunjungan / survei langsung ke sekolah?">
+                Survei Lokasi
+              </button>
+              <button type="button" class="topic-chip-btn" data-msg="Assalamu'alaikum Admin, mohon info program unggulan tahfidz Quran dan ekstrakurikuler.">
+                Tahfidz &amp; Ekskul
+              </button>
+            </div>
+
+            <!-- Kotak Chat Admin Langsung -->
+            <div class="contact-chat-box">
+              <div class="contact-chat-label">
+                <i data-lucide="edit-3" style="width:13px;height:13px;color:var(--color-emerald);"></i>
+                Tulis pertanyaan untuk admin:
+              </div>
+              <div class="contact-chat-input-wrap">
+                <input 
+                  type="text" 
+                  id="contactWaInput" 
+                  class="contact-chat-input" 
+                  placeholder="Ketik pertanyaan atau klik pilihan di atas..." 
+                  value="Assalamu'alaikum Admin, mohon info rincian biaya masuk dan SPP terbaru di SDIT Al-Mursyidiyyah." 
+                />
+              </div>
+              <button type="button" id="btnSendContactWa" class="btn btn-gold btn-sm contact-chat-send-btn">
+                <i data-lucide="send" style="width:14px;height:14px;"></i>
+                Kirim ke WhatsApp Admin
+              </button>
+            </div>
+
+            <div style="margin-top: auto; font-size: 0.78rem; color: var(--color-dark-forest-muted); text-align: center;">
+              Atau konsultasi via <a href="javascript:void(0)" id="openBotWidgetLink" style="color: var(--color-emerald); font-weight: 600; text-decoration: underline;">Asisten Chat Web</a>
             </div>
           </div>
 
@@ -195,6 +238,64 @@
   <script src="assets/js/main.js"></script>
   <script src="assets/js/wa-widget.js"></script>
   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const waInput = document.getElementById('contactWaInput');
+      const sendBtn = document.getElementById('btnSendContactWa');
+      const topicChips = document.querySelectorAll('.topic-chip-btn');
+      const openBotLink = document.getElementById('openBotWidgetLink');
+      const ADMIN_WA = '6281380327256';
+
+      // Klik Chip Pertanyaan Cepat
+      topicChips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          topicChips.forEach(c => c.classList.remove('active'));
+          chip.classList.add('active');
+          const msg = chip.getAttribute('data-msg');
+          if (waInput && msg) {
+            waInput.value = msg;
+            waInput.focus();
+          }
+        });
+      });
+
+      // Buka percakapan WhatsApp resmi dengan pesan yang diketik/dipilih
+      function sendToWhatsApp() {
+        let text = waInput ? waInput.value.trim() : '';
+        if (!text) {
+          text = "Assalamu'alaikum Admin SDIT Al-Mursyidiyyah, saya ingin bertanya informasi sekolah.";
+        }
+        const url = `https://wa.me/${ADMIN_WA}?text=${encodeURIComponent(text)}`;
+        window.open(url, '_blank');
+      }
+
+      if (sendBtn) {
+        sendBtn.addEventListener('click', sendToWhatsApp);
+      }
+
+      if (waInput) {
+        waInput.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            sendToWhatsApp();
+          }
+        });
+      }
+
+      // Shortcut Buka Chatbot Web
+      if (openBotLink) {
+        openBotLink.addEventListener('click', (e) => {
+          e.preventDefault();
+          const trigger = document.getElementById('waTriggerBtn');
+          if (trigger) {
+            trigger.click();
+          } else {
+            const chatWin = document.getElementById('waChatWindow');
+            if (chatWin) chatWin.classList.add('open');
+          }
+        });
+      }
+    });
+
     lucide.createIcons();
   </script>
 </body>
