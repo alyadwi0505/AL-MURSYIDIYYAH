@@ -16,7 +16,7 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="assets/css/style.css?v=3.5">
+  <link rel="stylesheet" href="assets/css/style.css?v=3.6">
   <link rel="icon" type="image/png" href="assets/img/logo-transparent.png">
 </head>
 
@@ -101,13 +101,12 @@
               type="text" 
               id="inputCekQuery" 
               class="form-input" 
-              placeholder="Nomor Registrasi (cth: REG-2026-SDIT-6653) atau No. WA" 
+              placeholder="Nomor Registrasi atau No. WhatsApp" 
               required
-              autofocus
             >
-            <button type="submit" id="btnCekStatus" class="btn btn-primary" style="padding: 0.75rem 1.5rem; white-space: nowrap;">
+            <button type="submit" id="btnCekStatus" class="btn btn-primary btn-cek-action">
               <i data-lucide="search" style="width:18px;height:18px;"></i>
-              Periksa Status
+              <span>Periksa Status</span>
             </button>
           </form>
 
@@ -122,14 +121,14 @@
         </div>
 
         <!-- Extra CTA Box -->
-        <div style="margin-top: 2.5rem; padding: 1.5rem; background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--radius-sm); text-align: center; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
-          <div style="text-align: left;">
-            <div style="font-family: var(--font-heading); font-weight: 700; color: var(--color-dark-forest); font-size: 1.05rem;">Belum mendaftar sebagai calon peserta didik baru?</div>
-            <div style="font-size: 0.85rem; color: var(--color-dark-forest-muted);">Pendaftaran Tahun Ajaran 2027/2028 saat ini sedang dibuka.</div>
+        <div class="tracking-cta-box">
+          <div class="tracking-cta-text">
+            <div class="tracking-cta-title">Belum mendaftar sebagai calon peserta didik baru?</div>
+            <div class="tracking-cta-subtitle">Pendaftaran Tahun Ajaran 2027/2028 saat ini sedang dibuka.</div>
           </div>
-          <a href="daftar.html" class="btn btn-emerald" style="padding: 0.65rem 1.25rem; font-size: 0.9rem;">
+          <a href="daftar.html" class="btn btn-emerald tracking-cta-btn">
             <i data-lucide="pen-tool" style="width:16px;height:16px;"></i>
-            Isi Formulir Pendaftaran
+            <span>Isi Formulir Pendaftaran</span>
           </a>
         </div>
       </div>
