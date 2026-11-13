@@ -3948,6 +3948,70 @@ svg.lucide-loader {
 }
 
 /* ==========================================================================
+   PROGRAM UNGGULAN & PILAR KURIKULUM
+   ========================================================================== */
+.program-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.program-pillar-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.program-pillar-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-gold);
+}
+
+.pillar-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.15rem;
+  flex-shrink: 0;
+}
+
+.pillar-title {
+  font-family: var(--font-heading);
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: var(--color-dark-forest);
+  margin-bottom: 0.65rem;
+  letter-spacing: -0.01em;
+}
+
+.pillar-desc {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--color-muted);
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .program-pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .program-pillar-card {
+    padding: 1.35rem;
+  }
+}
+
+/* ==========================================================================
    A JOURNEY OF LEARNING — JADWAL KEGIATAN HARIAN (VOYAGE & ISLANDS)
    ========================================================================== */
 .voyage-section {
@@ -4032,6 +4096,12 @@ svg.lucide-loader {
   cursor: pointer;
   padding: 0.5rem 1.15rem;
   border-radius: var(--radius-full);
+}
+
+.voyage-step-btn:focus-visible,
+.voyage-play-btn:focus-visible {
+  outline: 2.5px solid var(--color-gold);
+  outline-offset: 2px;
 }
 
 /* Desktop Canvas */
