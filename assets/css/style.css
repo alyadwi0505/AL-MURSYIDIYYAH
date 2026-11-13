@@ -2357,15 +2357,15 @@ svg.lucide-loader {
 
 .req-badge {
   display: inline-block;
-  font-size: 0.72rem;
-  font-weight: 800;
+  font-size: 0.65rem;
+  font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   padding: 0;
   border-radius: 0;
   border: none;
   background: transparent;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem;
   line-height: 1.2;
   width: fit-content;
 }
@@ -2374,12 +2374,14 @@ svg.lucide-loader {
   background: transparent;
   color: #dc2626;
   border: none;
+  font-weight: 400;
 }
 
 .req-badge.opsional {
   background: transparent;
   color: #718096;
   border: none;
+  font-weight: 400;
 }
 
 .req-title {
