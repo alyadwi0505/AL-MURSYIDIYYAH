@@ -2369,13 +2369,29 @@ svg.lucide-loader {
 }
 
 /* --- CEK STATUS PENDAFTARAN (Senior UI/UX Design System) --- */
+.tracking-section {
+  min-height: 65vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(2.5rem, 5vw, 4.5rem) 0;
+}
+
+.tracking-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
 .tracking-wrapper {
   background: var(--color-white);
   border-radius: var(--radius-md);
   border: 1px solid var(--color-border);
-  box-shadow: 0 4px 20px rgba(38, 58, 53, 0.05);
+  box-shadow: 0 6px 24px rgba(38, 58, 53, 0.06);
   padding: clamp(1.35rem, 3.5vw, 2.25rem);
-  max-width: 580px;
+  max-width: 520px;
   width: 100%;
   box-sizing: border-box;
   margin: 0 auto;
@@ -2404,44 +2420,46 @@ svg.lucide-loader {
 
 /* Extra CTA Box for Cek Status */
 .tracking-cta-box {
-  margin-top: 1.75rem;
-  padding: clamp(1.25rem, 3vw, 1.65rem);
+  margin-top: 1.5rem;
+  padding: clamp(1.2rem, 3vw, 1.5rem);
   background: var(--color-white);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   box-shadow: 0 4px 20px rgba(38, 58, 53, 0.04);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1.25rem;
+  text-align: center;
+  gap: 1rem;
   box-sizing: border-box;
-  max-width: 580px;
+  max-width: 520px;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
 
 .tracking-cta-text {
-  text-align: left;
+  text-align: center;
 }
 
 .tracking-cta-title {
   font-family: var(--font-heading);
   font-weight: 700;
   color: var(--color-dark-forest);
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   line-height: 1.35;
+  text-align: center;
 }
 
 .tracking-cta-subtitle {
   font-size: 0.85rem;
   color: var(--color-dark-forest-muted);
-  margin-top: 0.2rem;
+  margin-top: 0.25rem;
+  text-align: center;
 }
 
 .tracking-cta-btn {
-  padding: 0.65rem 1.25rem;
+  padding: 0.7rem 1.35rem;
   font-size: 0.9rem;
   white-space: nowrap;
   flex-shrink: 0;
@@ -2814,14 +2832,17 @@ svg.lucide-loader {
 }
 
 @media (max-width: 640px) {
+  .tracking-section {
+    min-height: 55vh;
+    padding: 2.25rem 0 3.25rem;
+  }
   .tracking-wrapper,
   .tracking-cta-box {
-    width: calc(100% - 1.5rem);
-    max-width: 480px;
+    width: min(90%, 460px);
     margin-left: auto;
     margin-right: auto;
     padding: 1.35rem 1.15rem;
-    border-radius: 14px;
+    border-radius: 16px;
     box-shadow: 0 4px 18px rgba(38, 58, 53, 0.05);
   }
   .tracking-search-form {
@@ -2922,9 +2943,9 @@ svg.lucide-loader {
 @media (max-width: 480px) {
   .tracking-wrapper,
   .tracking-cta-box {
-    width: calc(100% - 1rem);
+    width: min(88%, 390px);
     padding: 1.25rem 1rem;
-    border-radius: 12px;
+    border-radius: 14px;
   }
 }
 
