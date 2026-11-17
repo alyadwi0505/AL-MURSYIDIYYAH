@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name=\"author\" content=\"SDIT Al-Mursyidiyyah\">
+  <title>Admin Dashboard PPDB & Database — SDIT Al-Mursyidiyyah</title>
+
+  <!-- Google Fonts: Inter (Standar Formal Dashboard Admin) & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+
+  <!-- Base Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css?v=3.5">
+  <link rel="icon" type="image/png" href="assets/img/logo-transparent.png">
+
+  <style>
+    /* ==========================================================================
+       ENTERPRISE ADMIN DASHBOARD STYLING
+       Font System: Inter (Formal, Ultra-clean, High Legibility)
+       Monospace: JetBrains Mono (For Registration Codes & IDs)
+       ========================================================================== */
+    :root {
+      --admin-font: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --admin-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      
+      --slate-50: #f8fafc;
+      --slate-100: #f1f5f9;
+      --slate-200: #e2e8f0;
+      --slate-300: #cbd5e1;
+      --slate-400: #333333;
+      --slate-500: #000000;
+      --slate-600: #000000;
+      --slate-700: #000000;
+      --slate-800: #000000;
+      --slate-900: #000000;
+    }
+
+    body.admin-body {
+      font-family: var(--admin-font);
+      background-color: var(--slate-50);
+      color: #000000;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Admin Navigation Bar */
+    .admin-header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--slate-200);
+      padding: 0.85rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+    .admin-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .admin-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+    }
+    .admin-brand-title {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--color-emerald);
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+    .admin-brand-subtitle {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--color-emerald);
+      opacity: 0.85;
+    }
+    .admin-title-badge {
+      background: var(--color-emerald-surface);
+      color: var(--color-emerald);
+      font-weight: 600;
+      font-size: 0.72rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 9999px;
+      margin-left: 0.5rem;
+      border: 1px solid rgba(7, 89, 79, 0.15);
+      letter-spacing: 0.02em;
+    }
+
+    /* Stat Cards */
+    .stat-card-admin {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 1.25rem 1.4rem;
+      border: 1px solid var(--slate-200);
+      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+      display: flex;
+      align-items: center;
+      gap: 1.15rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .stat-card-admin:hover {
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+    }
+    .stat-icon-wrap {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #000000;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.2rem;
+    }
+    .stat-number {
+      font-family: var(--admin-font);
+      font-weight: 800;
+      font-size: 1.85rem;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: #000000;
+    }
+
+    /* Card Wrapper */
+    .admin-table-card {
+      background: #ffffff;
+      border-radius: 10px;
+      border: 1px solid var(--slate-300);
+      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
+      overflow: hidden;
+      margin-top: 1.75rem;
+    }
+    .table-toolbar {
+      padding: 1.15rem 1.35rem;
+      border-bottom: 1px solid var(--slate-300);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      background: #ffffff;
+    }
+
+    /* Search Box */
+    .search-box {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--slate-50);
+      border: 1px solid var(--slate-300);
+      border-radius: 7px;
+      padding: 0.45rem 0.85rem;
+      min-width: 260px;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .search-box:focus-within {
+      background: #ffffff;
+      border-color: var(--color-emerald);
+      box-shadow: 0 0 0 3px rgba(7, 89, 79, 0.1);
+    }
+    .search-box input {
+      border: none;
+      background: transparent;
+      outline: none;
+      width: 100%;
+      font-family: var(--admin-font);
+      font-size: 0.85rem;
+      color: #000000;
+    }
+    .search-box input::placeholder {
+      color: #555555;
+    }
+
+    .filter-select {
+      padding: 0.45rem 0.85rem;
+      border-radius: 7px;
+      border: 1px solid var(--slate-300);
+      background: #ffffff;
+      font-family: var(--admin-font);
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: #000000;
+      outline: none;
+      cursor: pointer;
+    }
+    .filter-select:focus {
+      border-color: #000000;
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Formal Table Grid Styling (Bordered Grid) */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: center;
+      font-size: 0.84rem;
+      font-family: var(--admin-font);
+      background: #ffffff;
+    }
+    .data-table thead th {
+      background: #f1f5f9;
+      padding: 0.75rem 0.95rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #000000;
+      border-top: 1px solid var(--slate-300);
+      border-bottom: 2px solid var(--slate-300);
+      border-right: 1px solid var(--slate-300);
+      white-space: nowrap;
+      vertical-align: middle;
+      text-align: center;
+    }
+    .data-table thead th:last-child {
+      border-right: none;
+    }
+    .data-table tbody td {
+      padding: 0.8rem 0.95rem;
+      border-bottom: 1px solid var(--slate-200);
+      border-right: 1px solid var(--slate-200);
+      vertical-align: middle;
+      text-align: center;
+      color: #000000;
+      line-height: 1.45;
+    }
+    .data-table tbody td:last-child {
+      border-right: none;
+    }
+    .data-table tbody tr:nth-child(even) {
+      background-color: #fafbfd;
+    }
+    .data-table tbody tr:hover {
+      background-color: #f1f5f9;
+    }
+    .data-table tbody tr:last-child td {
+      border-bottom: 1px solid var(--slate-300);
+    }
+
+    /* Clean Empty State */
+    .table-empty-cell {
+      text-align: center !important;
+      padding: 2.5rem 1rem !important;
+      color: #000000 !important;
+      font-size: 0.88rem !important;
+      background: #ffffff !important;
+      border-bottom: 1px solid var(--slate-200) !important;
+      border-right: none !important;
+    }
+
+    /* Monospace Registration Badge */
+    .reg-code-badge {
+      font-family: var(--admin-mono);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #07594f;
+      background: #e6f4f1;
+      padding: 0.25rem 0.55rem;
+      border-radius: 6px;
+      border: 1px solid #c2e5de;
+      display: inline-block;
+      white-space: nowrap;
+      letter-spacing: -0.01em;
+    }
+    .reg-time-sub {
+      font-size: 0.74rem;
+      color: var(--slate-400);
+      margin-top: 0.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    /* Student Name & Meta */
+    .student-cell-name {
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: var(--slate-900);
+    }
+    .student-cell-meta {
+      font-size: 0.76rem;
+      color: var(--slate-500);
+      margin-top: 0.15rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .gender-pill {
+      font-weight: 700;
+      font-size: 0.7rem;
+      padding: 0.1rem 0.4rem;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+    .gender-pill.male {
+      background: #e0f2fe;
+      color: #0369a1;
+    }
+    .gender-pill.female {
+      background: #fce7f3;
+      color: #be185d;
+    }
+
+    /* Formal Status Badges with Indicator Dot */
+    .status-badge-formal {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.3rem 0.65rem;
+      border-radius: 9999px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    /* Status styles */
+    .st-amber {
+      background: #fffbeb;
+      color: #92400e;
+      border: 1px solid #fde68a;
+    }
+    .st-amber .status-dot { background: #f59e0b; }
+
+    .st-blue {
+      background: #eff6ff;
+      color: #1e40af;
+      border: 1px solid #bfdbfe;
+    }
+    .st-blue .status-dot { background: #3b82f6; }
+
+    .st-green {
+      background: #ecfdf5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+    }
+    .st-green .status-dot { background: #10b981; }
+
+    .st-emerald {
+      background: #e6f4f1;
+      color: #07594f;
+      border: 1px solid #b7e3db;
+    }
+    .st-emerald .status-dot { background: #07594f; }
+
+    .st-red {
+      background: #fef2f2;
+      color: #991b1b;
+      border: 1px solid #fecaca;
+    }
+    .st-red .status-dot { background: #ef4444; }
+
+    /* Action Buttons in Table */
+    .table-actions {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 0.4rem;
+    }
+    .btn-table-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: #ffffff;
+      border: 1px solid var(--slate-200);
+      color: var(--slate-700);
+      padding: 0.4rem 0.75rem;
+      border-radius: 6px;
+      font-family: var(--admin-font);
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+    .btn-table-action:hover {
+      background: var(--color-emerald-surface);
+      border-color: var(--color-emerald);
+      color: var(--color-emerald);
+    }
+    .btn-table-delete {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      background: #ffffff;
+      border: 1px solid var(--slate-200);
+      color: var(--slate-400);
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .btn-table-delete:hover {
+      background: #fef2f2;
+      border-color: #fca5a5;
+      color: #dc2626;
+    }
+
+    /* WhatsApp Link Cell */
+    .wa-cell-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      color: #15803d;
+      font-weight: 600;
+      font-size: 0.82rem;
+      text-decoration: none;
+      background: #f0fdf4;
+      padding: 0.25rem 0.55rem;
+      border-radius: 6px;
+      border: 1px solid #bbf7d0;
+      transition: background-color 0.15s ease;
+    }
+    .wa-cell-link:hover {
+      background: #dcfce7;
+      text-decoration: none;
+    }
+
+    /* Modal Detail Formal Styling */
+    .admin-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+    .admin-modal.active { display: flex; }
+    .admin-modal-box {
+      background: #ffffff;
+      border-radius: 14px;
+      max-width: 780px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 2rem 2.25rem;
+      position: relative;
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.25);
+      border: 1px solid var(--slate-200);
+      font-family: var(--admin-font);
+    }
+    .modal-section-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #000000;
+      margin-bottom: 0.85rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--slate-200);
+    }
+    .modal-info-row {
+      display: flex;
+      margin-bottom: 0.45rem;
+      font-size: 0.86rem;
+      line-height: 1.5;
+    }
+    .modal-info-label {
+      width: 140px;
+      color: #000000;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+    .modal-info-val {
+      color: #000000;
+      font-weight: 600;
+      word-break: break-word;
+    }
+
+    /* File preview card */
+    .file-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      padding: 0.45rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #000000;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+    .file-chip:hover {
+      background: #f1f5f9;
+      border-color: #000000;
+      color: #000000;
+    }
+
+    /* ==========================================================================
+       RESPONSIVE UTILITY CLASSES & ADAPTATIONS (Desktop, Tablet, Mobile)
+       ========================================================================== */
+    .admin-main {
+      padding: 2rem 0 4.5rem;
+    }
+    .admin-header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .admin-page-header {
+      margin-bottom: 1.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .admin-page-title {
+      font-size: clamp(1.25rem, 2.5vw + 0.5rem, 1.65rem);
+      font-weight: 800;
+      color: #000000;
+      margin: 0;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+    }
+    .admin-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    .table-responsive {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      position: relative;
+    }
+    .mobile-table-hint {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--color-emerald);
+      background: #e6f4f1;
+      padding: 0.5rem 0.75rem;
+      border-radius: 6px;
+      margin: 0.5rem 0.75rem 0.65rem;
+      border: 1px dashed rgba(7, 89, 79, 0.3);
+    }
+    .modal-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .modal-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      border-top: 1px solid var(--slate-200);
+      padding-top: 1.25rem;
+    }
+    .modal-footer-status-group {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .modal-footer-actions-group {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Tablet (max-width: 1024px) */
+    @media (max-width: 1024px) {
+      .admin-stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.85rem;
+      }
+      .stat-card-admin {
+        padding: 1rem 1.15rem;
+        gap: 0.85rem;
+      }
+      .stat-number {
+        font-size: 1.6rem;
+      }
+    }
+
+    /* Small Tablet & Mobile (max-width: 768px) */
+    @media (max-width: 768px) {
+      .admin-stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.65rem;
+      }
+      .admin-main {
+        padding: 1.25rem 0 3.5rem;
+      }
+      .admin-nav {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.85rem;
+      }
+      .admin-brand {
+        justify-content: flex-start;
+      }
+      .admin-header-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+        width: 100%;
+      }
+      .admin-header-actions .btn {
+        justify-content: center;
+        font-size: 0.78rem !important;
+        padding: 0.45rem 0.6rem !important;
+      }
+      .admin-page-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+        margin-bottom: 1.25rem;
+      }
+      .admin-page-header #btnRefresh {
+        width: 100%;
+        justify-content: center;
+      }
+      .mobile-table-hint {
+        display: flex;
+      }
+      .table-toolbar {
+        padding: 0.85rem;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.65rem;
+      }
+      .table-toolbar > div {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem !important;
+      }
+      .search-box {
+        width: 100% !important;
+        min-width: 0 !important;
+      }
+      .filter-select {
+        width: 100% !important;
+      }
+      .data-table thead th {
+        padding: 0.65rem 0.7rem;
+        font-size: 0.68rem;
+      }
+      .data-table tbody td {
+        padding: 0.65rem 0.7rem;
+        font-size: 0.8rem;
+      }
+
+      /* Modal Mobile */
+      .admin-modal {
+        padding: 0.75rem;
+      }
+      .admin-modal-box {
+        padding: 1.25rem 1rem;
+        border-radius: 12px;
+        max-height: 92vh;
+      }
+      .modal-grid-2 {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        margin-bottom: 1.25rem;
+      }
+      .modal-footer {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.85rem;
+      }
+      .modal-footer-status-group {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        gap: 0.5rem;
+      }
+      .modal-footer-status-group select,
+      .modal-footer-status-group button {
+        width: 100%;
+        justify-content: center;
+      }
+      .modal-footer-actions-group {
+        width: 100%;
+      }
+      .modal-footer-actions-group #btnModalWa {
+        flex: 1;
+        justify-content: center;
+        padding: 0.6rem 0.85rem;
+      }
+    }
+
+    /* Small Mobile Phones (max-width: 480px) */
+    @media (max-width: 480px) {
+      .admin-brand-title {
+        font-size: 0.95rem;
+      }
+      .admin-brand-subtitle {
+        font-size: 0.68rem;
+      }
+      .admin-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+      }
+      .stat-card-admin {
+        padding: 0.75rem 0.65rem;
+        gap: 0.5rem;
+      }
+      .stat-icon-wrap {
+        width: 36px;
+        height: 36px;
+      }
+      .stat-icon-wrap i,
+      .stat-icon-wrap svg {
+        width: 18px !important;
+        height: 18px !important;
+      }
+      .stat-label {
+        font-size: 0.65rem;
+        line-height: 1.2;
+      }
+      .stat-number {
+        font-size: 1.3rem;
+      }
+      .modal-info-row {
+        flex-direction: column;
+        gap: 0.15rem;
+        margin-bottom: 0.55rem;
+        border-bottom: 1px dashed var(--slate-200);
+        padding-bottom: 0.35rem;
+      }
+      .modal-info-label {
+        width: auto;
+        font-size: 0.75rem;
+        color: #555555;
+      }
+      .modal-info-val {
+        font-size: 0.86rem;
+      }
+      .data-table thead th,
+      .data-table tbody td {
+        padding: 0.55rem 0.5rem;
+        font-size: 0.76rem;
+      }
+    }
+
+    @media (max-width: 340px) {
+      .admin-stats-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body class="admin-body">
+
+  <!-- File Protocol Warning Banner -->
+  <div id="fileProtocolBanner" style="display:none; background:#FFF3CD; color:#856404; border-bottom:1px solid #FFEEBA; padding:0.75rem 1.25rem; text-align:center; font-size:0.85rem; font-weight:600;">
+    ⚠️ Halaman dibuka via <code>file://</code>. Buka melalui link server agar database aktif: 
+    <a href="http://localhost:3000/admin.html" style="color:#07594F; font-weight:700; text-decoration:underline;">http://localhost:3000/admin.html</a>
+  </div>
+
+  <!-- Admin Header -->
+  <header class="admin-header">
+    <div class="container admin-nav">
+      <a href="admin.html" class="admin-brand">
+        <img src="assets/img/logo-transparent.png" alt="Logo SDIT" style="width: 40px; height: 40px; object-fit: contain;">
+        <div>
+          <div class="admin-brand-title">SDIT AL-MURSYIDIYYAH</div>
+          <div class="admin-brand-subtitle">Portal Database & Verifikasi PPDB Online</div>
+        </div>
+      </a>
+
+      <div class="admin-header-actions">
+        <a href="index.html" class="btn btn-outline-emerald btn-sm" target="_blank" style="font-size: 0.82rem; padding: 0.45rem 0.85rem;">
+          <i data-lucide="external-link" style="width:14px;height:14px;"></i>
+          Buka Website
+        </a>
+        <a href="/api/ppdb/export" class="btn btn-gold btn-sm" style="font-size: 0.82rem; padding: 0.45rem 0.85rem;">
+          <i data-lucide="download" style="width:14px;height:14px;"></i>
+          Export Excel/CSV
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="admin-main">
+    <div class="container">
+
+      <!-- Header Title & Action -->
+      <div class="admin-page-header">
+        <div>
+          <h1 class="admin-page-title">
+            Database Pendaftar Peserta Didik Baru
+          </h1>
+        </div>
+        
+        <div>
+          <button id="btnRefresh" class="btn btn-outline-emerald btn-sm" style="font-size: 0.82rem; padding: 0.45rem 0.85rem;">
+            <i data-lucide="refresh-cw" style="width:14px;height:14px;"></i>
+            Segarkan Data
+          </button>
+        </div>
+      </div>
+
+      <!-- Live Statistics Cards -->
+      <div class="admin-stats-grid">
+        <div class="stat-card-admin">
+          <div class="stat-icon-wrap" style="background: #e6f4f1; color: var(--color-emerald);">
+            <i data-lucide="users" style="width:24px;height:24px;"></i>
+          </div>
+          <div>
+            <div class="stat-label">Total Pendaftar</div>
+            <div id="statTotal" class="stat-number" style="color: #000000;">-</div>
+          </div>
+        </div>
+
+        <div class="stat-card-admin">
+          <div class="stat-icon-wrap" style="background: #fffbeb; color: #b45309;">
+            <i data-lucide="clock" style="width:24px;height:24px;"></i>
+          </div>
+          <div>
+            <div class="stat-label">Menunggu Verifikasi</div>
+            <div id="statPending" class="stat-number" style="color: #000000;">-</div>
+          </div>
+        </div>
+
+        <div class="stat-card-admin">
+          <div class="stat-icon-wrap" style="background: #ecfdf5; color: #047857;">
+            <i data-lucide="check-circle-2" style="width:24px;height:24px;"></i>
+          </div>
+          <div>
+            <div class="stat-label">Terverifikasi / Lulus</div>
+            <div id="statVerified" class="stat-number" style="color: #000000;">-</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Data Table Card -->
+      <div class="admin-table-card">
+        <div class="table-toolbar">
+          <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; width: 100%;">
+            <div class="search-box" style="flex: 1; min-width: 260px;">
+              <i data-lucide="search" style="width:15px;height:15px;color:var(--slate-400);"></i>
+              <input type="text" id="searchInput" placeholder="Cari nama, no. registrasi, no HP...">
+            </div>
+
+            <select id="filterStatus" class="filter-select">
+              <option value="all">Semua Status</option>
+              <option value="Submitted">Submitted (Baru Masuk)</option>
+              <option value="In Verification">In Verification</option>
+              <option value="Menunggu Verifikasi">Menunggu Verifikasi</option>
+              <option value="Terverifikasi">Terverifikasi</option>
+              <option value="Lulus Wawancara">Lulus Wawancara</option>
+              <option value="Lulus Observasi">Lulus Observasi</option>
+              <option value="Diterima">Diterima</option>
+              <option value="Ditolak">Ditolak</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="mobile-table-hint">
+          <i data-lucide="chevrons-right" style="width:14px;height:14px;"></i>
+          <span>Geser tabel ke samping untuk melihat seluruh data</span>
+        </div>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th style="width: 170px;">No. Registrasi</th>
+                <th>Calon Siswa</th>
+                <th>Orang Tua / Wali</th>
+                <th style="width: 150px;">WhatsApp Ortu</th>
+                <th>Asal TK/PAUD</th>
+                <th style="width: 100px;">Dokumen</th>
+                <th style="width: 170px;">Status Verifikasi</th>
+                <th style="width: 130px;">Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="ppdbTableBody">
+              <tr>
+                <td colspan="8" class="table-empty-cell">
+                  Memuat data...
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Modal Detail Pendaftar -->
+  <div class="admin-modal" id="detailModal">
+    <div class="admin-modal-box">
+      <!-- Modal Header -->
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.5rem; border-bottom: 1px solid var(--slate-200); padding-bottom: 1rem;">
+        <div>
+          <span class="reg-code-badge" id="modalRegNum">REG-2026-SDIT-XXXX</span>
+          <h2 id="modalNamaSiswa" style="font-size: 1.35rem; font-weight: 800; color: var(--slate-900); margin: 0.35rem 0 0.15rem 0;">-</h2>
+          <div id="modalStatusBadge" style="margin-top: 0.35rem;"></div>
+        </div>
+        <button id="modalClose" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--slate-400); line-height: 1; padding: 0.25rem; border-radius: 6px;" title="Tutup">&times;</button>
+      </div>
+
+      <!-- Modal Body (2 Columns on Desktop, 1 Column on Mobile) -->
+      <div class="modal-grid-2">
+        <!-- Column 1: Siswa -->
+        <div>
+          <div class="modal-section-title">Informasi Calon Siswa</div>
+          <div class="modal-info-row"><span class="modal-info-label">Nama Panggilan:</span> <span class="modal-info-val" id="mNamaPanggilan">-</span></div>
+          <div class="modal-info-row"><span class="modal-info-label">NIK:</span> <span class="modal-info-val" id="mNik" style="font-family: var(--admin-mono);">-</span></div>
+          <div class="modal-info-row"><span class="modal-info-label">Jenis Kelamin:</span> <span class="modal-info-val" id="mJk">-</span></div>
+          <div class="modal-info-row"><span class="modal-info-label">Tempat, Tgl Lahir:</span> <span class="modal-info-val" id="mTtl">-</span></div>
+          <div class="modal-info-row"><span class="modal-info-label">Asal TK/PAUD:</span> <span class="modal-info-val" id="mAsalTk">-</span></div>
+          <div class="modal-info-row"><span class="modal-info-label">Alamat:</span> <span class="modal-info-val" id="mAlamat">-</span></div>
+          <div class="modal-info-row"><span class="modal-info-label">Catatan Kesehatan:</span> <span class="modal-info-val" id="mKesehatan" style="font-style: italic;">-</span></div>
+        </div>
+
+        <!-- Column 2: Orang Tua -->
+        <div>
+          <div class="modal-section-title">Data Orang Tua / Wali</div>
+          <div class="modal-info-row"><span class="modal-info-label">Nama Ayah:</span> <span class="modal-info-val"><span id="mAyah">-</span> (<span id="mKerjaAyah">-</span>)</span></div>
+          <div class="modal-info-row"><span class="modal-info-label">Nama Ibu:</span> <span class="modal-info-val"><span id="mIbu">-</span> (<span id="mKerjaIbu">-</span>)</span></div>
+          <div class="modal-info-row"><span class="modal-info-label">No. WhatsApp:</span> <span class="modal-info-val" id="mHp" style="font-family: var(--admin-mono); color: #000000;">-</span></div>
+          <div class="modal-info-row"><span class="modal-info-label">Email:</span> <span class="modal-info-val" id="mEmail">-</span></div>
+          <div class="modal-info-row"><span class="modal-info-label">Waktu Daftar:</span> <span class="modal-info-val" id="mTglDaftar">-</span></div>
+        </div>
+      </div>
+
+      <!-- Uploaded Documents Preview -->
+      <div style="background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: 10px; padding: 1.15rem 1.25rem; margin-bottom: 1.5rem;">
+        <div style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: #000000; margin-bottom: 0.65rem;">
+          Berkas Dokumen Persyaratan Terunggah
+        </div>
+        <div id="mFilesList" style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+          <!-- Loaded dynamically -->
+        </div>
+      </div>
+
+      <!-- Action Footer: Update Status & WhatsApp -->
+      <div class="modal-footer">
+        <div class="modal-footer-status-group">
+          <label for="mStatusSelect" style="font-weight: 600; font-size: 0.85rem; color: #000000;">Ubah Status:</label>
+          <select id="mStatusSelect" class="filter-select">
+            <option value="Menunggu Verifikasi">Menunggu Verifikasi</option>
+            <option value="Sedang Diverifikasi">Sedang Diverifikasi</option>
+            <option value="Terverifikasi">Terverifikasi</option>
+            <option value="Lulus Wawancara">Lulus Wawancara</option>
+            <option value="Lulus Observasi">Lulus Observasi</option>
+            <option value="Diterima">Diterima</option>
+            <option value="Ditolak">Ditolak</option>
+          </select>
+          <button id="btnSaveStatus" class="btn btn-primary btn-sm" style="font-size: 0.82rem; padding: 0.45rem 0.9rem;">
+            Simpan Perubahan
+          </button>
+        </div>
+
+        <div class="modal-footer-actions-group">
+          <a id="btnModalWa" href="javascript:void(0)" target="_blank" class="btn btn-gold btn-sm" style="font-size: 0.82rem; padding: 0.45rem 0.85rem;">
+            <i data-lucide="message-circle" style="width:15px;height:15px;"></i>
+            Chat WhatsApp Ortu
+          </a>
+          <button id="btnModalDelete" class="btn-table-delete" style="width: 34px; height: 34px;" title="Hapus Data Ini">
+            <i data-lucide="trash-2" style="width:16px;height:16px;"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Admin Controller -->
+  <script>
+    // Helper: Resolve API endpoint for file:// or alternate dev server ports
+    const resolveApiUrl = (endpoint) => {
+      if (window.location.protocol === 'file:' || (window.location.port && window.location.port !== '3000')) {
+        return `http://localhost:3000${endpoint}`;
+      }
+      return endpoint;
+    };
+
+    if (window.location.protocol === 'file:') {
+      const banner = document.getElementById('fileProtocolBanner');
+      if (banner) banner.style.display = 'block';
+    }
+
+    let currentRegistrations = [];
+    let activeRegistrationId = null;
+
+    // Helper: Status text generator (Natural, Solid Black)
+    function getStatusBadgeHtml(statusText) {
+      let label = statusText || 'Menunggu Verifikasi';
+      return `<span style="font-weight: 600; color: #000000;">${label}</span>`;
+    }
+
+    // Helper: Format Indonesian Date safely
+    function formatIndoDate(dateStr, includeTime = false) {
+      if (!dateStr) return '-';
+      try {
+        const d = new Date(String(dateStr).trim().replace(' ', 'T'));
+        if (isNaN(d.getTime())) return String(dateStr);
+        const dateFormatted = d.toLocaleDateString('id-ID', {
+          day: 'numeric',
+          month: 'short',
+          year: 'numeric'
+        });
+        if (includeTime) {
+          const timeFormatted = d.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' }).replace('.', ':');
+          return `${dateFormatted}, ${timeFormatted}`;
+        }
+        return dateFormatted;
+      } catch {
+        return String(dateStr);
+      }
+    }
+
+    // Helper: Format phone number into readable groups (0813-8032-7256)
+    function formatPhoneNumber(rawPhone) {
+      if (!rawPhone) return '-';
+      const clean = String(rawPhone).replace(/[^0-9]/g, '');
+      if (clean.length >= 10) {
+        return clean.replace(/(\d{4})(\d{4})(\d{3,4})/, '$1-$2-$3');
+      }
+      return clean;
+    }
+
+    // Helper: Clean & convert phone number into international WhatsApp format (628xxx)
+    function cleanWaPhone(rawPhone) {
+      if (!rawPhone) return '';
+      let clean = String(rawPhone).replace(/\D/g, '');
+      if (!clean) return '';
+      if (clean.startsWith('00')) clean = clean.slice(2);
+      if (clean.startsWith('0')) {
+        clean = '62' + clean.slice(1);
+      } else if (clean.startsWith('8')) {
+        clean = '62' + clean;
+      }
+      return clean;
+    }
+
+    // Helper: Format Indonesian phone number to international WhatsApp format (628...)
+    function formatWaUrlNumber(rawPhone) {
+      return cleanWaPhone(rawPhone);
+    }
+
+    // Helper: Generate direct WhatsApp chat URL
+    // Laptop / Desktop: Automatically uses web.whatsapp.com to enter the chat room directly without error popups or intermediary landing pages
+    // Mobile / Smartphone: Uses api.whatsapp.com to directly launch native WhatsApp mobile app
+    function getDirectWaUrl(rawPhone, text = '') {
+      const clean = cleanWaPhone(rawPhone);
+      if (!clean) return '';
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      const encodedText = text ? encodeURIComponent(text) : '';
+      if (isMobile) {
+        return encodedText 
+          ? `https://api.whatsapp.com/send?phone=${clean}&text=${encodedText}`
+          : `https://api.whatsapp.com/send?phone=${clean}`;
+      } else {
+        return encodedText
+          ? `https://web.whatsapp.com/send?phone=${clean}&text=${encodedText}`
+          : `https://web.whatsapp.com/send?phone=${clean}`;
+      }
+    }
+
+    // Helper: Action to open direct WhatsApp chat
+    function openDirectWaChat(rawPhone, text = '') {
+      const clean = cleanWaPhone(rawPhone);
+      if (!clean || clean.length < 8) {
+        alert('Nomor WhatsApp orang tua tidak valid atau belum diisi.');
+        return false;
+      }
+      const targetUrl = getDirectWaUrl(clean, text);
+      if (targetUrl) {
+        window.open(targetUrl, '_blank', 'noopener,noreferrer');
+      }
+      return false;
+    }
+
+    async function loadStats() {
+      try {
+        const res = await fetch(resolveApiUrl('/api/stats'));
+        const json = await res.json();
+        if (json.success) {
+          document.getElementById('statTotal').textContent = json.stats.totalPendaftar;
+          document.getElementById('statPending').textContent = json.stats.menunggu;
+          document.getElementById('statVerified').textContent = json.stats.terverifikasi;
+          if (document.getElementById('statMessages')) {
+            document.getElementById('statMessages').textContent = json.stats.totalPesan;
+          }
+        }
+      } catch (e) {
+        console.warn('Gagal memuat stats:', e);
+      }
+    }
+
+    async function loadRegistrations() {
+      const q = document.getElementById('searchInput').value.trim();
+      const status = document.getElementById('filterStatus').value;
+
+      try {
+        const res = await fetch(resolveApiUrl(`/api/ppdb?q=${encodeURIComponent(q)}&status=${encodeURIComponent(status)}`));
+        const json = await res.json();
+        if (json.success) {
+          currentRegistrations = json.data;
+          renderTable(json.data);
+          const countEl = document.getElementById('recordCount');
+          if (countEl) countEl.textContent = json.data.length;
+        }
+      } catch (e) {
+        console.warn('Gagal memuat pendaftar:', e);
+        const tbody = document.getElementById('ppdbTableBody');
+        if (tbody) {
+          tbody.innerHTML = `<tr><td colspan="8" style="text-align:center; padding:2.5rem; color:#b91c1c;">
+            <div style="font-weight:700; font-size:1.05rem; margin-bottom:0.4rem;">⚠️ Tidak Dapat Terhubung ke Database Server</div>
+            <div style="font-size:0.85rem; color:var(--slate-600); max-width:550px; margin:0 auto;">
+              Pastikan server backend Node.js sedang aktif (<code>node server.js</code>) dan buka halaman melalui link server:<br>
+              <div style="margin-top:0.75rem;"><a href="http://localhost:3000/admin.html" class="btn btn-emerald btn-sm" style="display:inline-block;">Buka via http://localhost:3000/admin.html</a></div>
+            </div>
+          </td></tr>`;
+        }
+      }
+    }
+
+    function renderTable(data) {
+      const tbody = document.getElementById('ppdbTableBody');
+      if (!data || data.length === 0) {
+        tbody.innerHTML = `
+          <tr>
+            <td colspan="8" class="table-empty-cell">
+              Tidak ada data
+            </td>
+          </tr>
+        `;
+        return;
+      }
+
+      tbody.innerHTML = data.map(item => {
+        // Count uploaded documents
+        let docCount = 0;
+        if (item.file_foto) docCount++;
+        if (item.file_akta) docCount++;
+        if (item.file_kk) docCount++;
+        if (item.file_kia) docCount++;
+        if (item.file_ktp_ayah) docCount++;
+        if (item.file_ktp_ibu) docCount++;
+        if (item.file_ijazah) docCount++;
+
+        const waPhone = cleanWaPhone(item.no_hp_ortu);
+        const displayPhone = formatPhoneNumber(item.no_hp_ortu);
+        const directWaUrl = waPhone ? getDirectWaUrl(item.no_hp_ortu) : '';
+        const escapedPhone = (item.no_hp_ortu || '').replace(/'/g, "\\'");
+
+        return `
+          <tr>
+            <!-- 1. No Registrasi -->
+            <td>
+              <span style="font-family: var(--admin-mono); font-weight: 600; color: #000000;">${item.reg_number}</span>
+            </td>
+
+            <!-- 2. Calon Siswa -->
+            <td>
+              <span style="font-weight: 600; color: #000000;">${item.nama_siswa}</span>
+            </td>
+
+            <!-- 3. Orang Tua / Wali -->
+            <td>
+              <span style="color: #000000;">${item.nama_ayah || item.nama_ibu || '-'}</span>
+            </td>
+
+            <!-- 4. WhatsApp -->
+            <td>
+              ${waPhone ? `
+                <a href="${directWaUrl}" onclick="openDirectWaChat('${escapedPhone}'); return false;" target="_blank" style="color: #000000; font-weight: 600; text-decoration: underline;" title="Buka Chat WhatsApp Langsung">
+                  ${displayPhone}
+                </a>
+              ` : '<span style="color:#000000;">-</span>'}
+            </td>
+
+            <!-- 5. Asal TK/PAUD -->
+            <td>
+              <span style="color: #000000;">${item.asal_tk || '-'}</span>
+            </td>
+
+            <!-- 6. Berkas Dokumen -->
+            <td>
+              <span style="color: #000000;">${docCount > 0 ? `${docCount} berkas` : '-'}</span>
+            </td>
+
+            <!-- 7. Status Verifikasi -->
+            <td>
+              ${getStatusBadgeHtml(item.status)}
+            </td>
+
+            <!-- 8. Aksi -->
+            <td style="text-align: center; white-space: nowrap;">
+              <a href="javascript:void(0)" onclick="openDetail(${item.id})" style="color: #000000; font-weight: 600; font-size: 0.82rem; text-decoration: underline; margin-right: 0.6rem;">Detail</a>
+              <span style="color: #000000;">|</span>
+              <a href="javascript:void(0)" onclick="deleteRegistration(${item.id}, '${item.reg_number}', '${encodeURIComponent(item.nama_siswa)}')" style="color: #000000; font-size: 0.82rem; text-decoration: underline; margin-left: 0.6rem;">Hapus</a>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    function openDetail(id) {
+      const item = currentRegistrations.find(r => r.id === id);
+      if (!item) return;
+
+      activeRegistrationId = id;
+      document.getElementById('modalRegNum').textContent = item.reg_number;
+      document.getElementById('modalNamaSiswa').textContent = item.nama_siswa;
+      document.getElementById('modalStatusBadge').innerHTML = getStatusBadgeHtml(item.status);
+      document.getElementById('mNamaPanggilan').textContent = item.nama_panggilan || '-';
+      document.getElementById('mNik').textContent = item.nik_siswa || '-';
+      document.getElementById('mJk').textContent = item.jenis_kelamin || '-';
+      document.getElementById('mTtl').textContent = `${item.tempat_lahir || '-'}, ${item.tanggal_lahir || '-'}`;
+      document.getElementById('mAsalTk').textContent = item.asal_tk || '-';
+      document.getElementById('mAlamat').textContent = item.alamat_siswa || '-';
+      document.getElementById('mKesehatan').textContent = item.catatan_kesehatan || 'Tidak ada catatan alergi/kesehatan';
+
+      document.getElementById('mAyah').textContent = item.nama_ayah || '-';
+      document.getElementById('mKerjaAyah').textContent = item.pekerjaan_ayah || '-';
+      document.getElementById('mIbu').textContent = item.nama_ibu || '-';
+      document.getElementById('mKerjaIbu').textContent = item.pekerjaan_ibu || '-';
+      document.getElementById('mHp').textContent = formatPhoneNumber(item.no_hp_ortu);
+      document.getElementById('mEmail').textContent = item.email_ortu || '-';
+      document.getElementById('mTglDaftar').textContent = formatIndoDate(item.created_at, true);
+
+      // Set select status dropdown safely
+      const statusSelect = document.getElementById('mStatusSelect');
+      const currentVal = item.status || 'Menunggu Verifikasi';
+      const optionExists = Array.from(statusSelect.options).some(o => o.value === currentVal);
+      if (!optionExists) {
+        const opt = document.createElement('option');
+        opt.value = currentVal;
+        opt.textContent = currentVal;
+        statusSelect.appendChild(opt);
+      }
+      statusSelect.value = currentVal;
+
+      // WhatsApp Button (Direct Chat without intermediate page)
+      const btnModalWa = document.getElementById('btnModalWa');
+      if (btnModalWa) {
+        const waClean = cleanWaPhone(item.no_hp_ortu);
+        if (waClean) {
+          const waMsgRaw = `Assalamu'alaikum Bapak/Ibu orang tua dari ananda *${item.nama_siswa}*,\n\nKami dari Panitia PPDB SDIT Al-Mursyidiyyah menginformasikan bahwa berkas pendaftaran dengan No. Registrasi *${item.reg_number}* saat ini berstatus: *${item.status}*.\n\nTerima kasih!`;
+          btnModalWa.href = getDirectWaUrl(item.no_hp_ortu, waMsgRaw);
+          btnModalWa.onclick = (e) => {
+            e.preventDefault();
+            openDirectWaChat(item.no_hp_ortu, waMsgRaw);
+          };
+        } else {
+          btnModalWa.href = 'javascript:void(0)';
+          btnModalWa.onclick = (e) => {
+            e.preventDefault();
+            alert('Nomor WhatsApp orang tua tidak tersedia atau belum diisi.');
+          };
+        }
+      }
+
+      // Files list
+      const filesContainer = document.getElementById('mFilesList');
+      const files = [];
+      if (item.file_foto) files.push({ name: 'Foto 3x4 Siswa', url: resolveApiUrl(item.file_foto), icon: 'image' });
+      if (item.file_akta) files.push({ name: 'Akta Kelahiran', url: resolveApiUrl(item.file_akta), icon: 'file-text' });
+      if (item.file_kk) files.push({ name: 'Kartu Keluarga (KK)', url: resolveApiUrl(item.file_kk), icon: 'file-text' });
+      if (item.file_kia) files.push({ name: 'KIA Siswa', url: resolveApiUrl(item.file_kia), icon: 'file-text' });
+      if (item.file_ktp_ayah) files.push({ name: 'KTP Ayah', url: resolveApiUrl(item.file_ktp_ayah), icon: 'file-text' });
+      if (item.file_ktp_ibu) files.push({ name: 'KTP Ibu', url: resolveApiUrl(item.file_ktp_ibu), icon: 'file-text' });
+      if (item.file_ijazah) files.push({ name: 'Ijazah TK/PAUD', url: resolveApiUrl(item.file_ijazah), icon: 'file-text' });
+
+      if (files.length === 0) {
+        filesContainer.innerHTML = '<span style="font-size:0.84rem; color:var(--slate-400);">Tidak ada berkas digital yang diunggah.</span>';
+      } else {
+        filesContainer.innerHTML = files.map(f => `
+          <a href="${f.url}" target="_blank" class="file-chip">
+            <i data-lucide="${f.icon}" style="width:14px;height:14px;color:var(--color-emerald);"></i>
+            <span>${f.name}</span>
+          </a>
+        `).join('');
+      }
+
+      // Configure Modal Delete Button
+      const btnModalDelete = document.getElementById('btnModalDelete');
+      if (btnModalDelete) {
+        btnModalDelete.onclick = () => {
+          deleteRegistration(item.id, item.reg_number, encodeURIComponent(item.nama_siswa), true);
+        };
+      }
+
+      document.getElementById('detailModal').classList.add('active');
+      if (window.lucide) lucide.createIcons();
+    }
+
+    // Delete Registration Function
+    async function deleteRegistration(id, regNum, encodedNama, fromModal = false) {
+      const nama = decodeURIComponent(encodedNama || '');
+      const confirmDelete = confirm(`Apakah Anda yakin ingin menghapus data pendaftar:\n\n• No. Registrasi: ${regNum}\n• Nama: ${nama}\n\nData yang dihapus tidak dapat dikembalikan.`);
+      if (!confirmDelete) return;
+
+      try {
+        const res = await fetch(resolveApiUrl(`/api/ppdb/${id}`), {
+          method: 'DELETE',
+          headers: { 'Accept': 'application/json' }
+        });
+        const json = await res.json();
+        if (res.ok && json.success) {
+          alert(`✓ Data pendaftar ${regNum} berhasil dihapus.`);
+          if (fromModal) {
+            document.getElementById('detailModal').classList.remove('active');
+          }
+          await loadRegistrations();
+          await loadStats();
+        } else {
+          alert('Gagal menghapus: ' + (json.error || 'Terjadi kesalahan'));
+        }
+      } catch (err) {
+        alert('Gagal menghubungi server: ' + err.message);
+      }
+    }
+
+    document.getElementById('modalClose').addEventListener('click', () => {
+      document.getElementById('detailModal').classList.remove('active');
+    });
+
+    // Close modal on backdrop click
+    document.getElementById('detailModal').addEventListener('click', (e) => {
+      if (e.target.id === 'detailModal') {
+        document.getElementById('detailModal').classList.remove('active');
+      }
+    });
+
+    document.getElementById('btnSaveStatus').addEventListener('click', async () => {
+      if (!activeRegistrationId) {
+        alert('Silakan pilih salah satu data pendaftar terlebih dahulu.');
+        return;
+      }
+      const newStatus = document.getElementById('mStatusSelect').value;
+      const btn = document.getElementById('btnSaveStatus');
+      const originalText = btn.textContent;
+
+      try {
+        btn.disabled = true;
+        btn.textContent = 'Menyimpan...';
+
+        const res = await fetch(resolveApiUrl(`/api/ppdb/${activeRegistrationId}/status`), {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({ status: newStatus })
+        });
+
+        let json;
+        const contentType = res.headers.get('content-type') || '';
+        if (contentType.includes('application/json')) {
+          json = await res.json();
+        } else {
+          const rawText = await res.text();
+          throw new Error(`Server tidak mengembalikan respons JSON (HTTP ${res.status}): ${rawText.slice(0, 100)}`);
+        }
+
+        if (res.ok && json.success) {
+          const target = currentRegistrations.find(r => r.id === activeRegistrationId);
+          if (target) {
+            target.status = newStatus;
+          }
+
+          alert(`✓ Status berhasil diperbarui menjadi: "${newStatus}"`);
+          document.getElementById('detailModal').classList.remove('active');
+          await loadRegistrations();
+          await loadStats();
+        } else {
+          alert('Gagal menyimpan: ' + (json.error || 'Terjadi kesalahan'));
+        }
+      } catch (e) {
+        console.error('Error saat menyimpan status:', e);
+        alert('Gagal: ' + e.message);
+      } finally {
+        btn.disabled = false;
+        btn.textContent = originalText;
+      }
+    });
+
+    // Event listeners
+    document.getElementById('searchInput').addEventListener('input', loadRegistrations);
+    document.getElementById('filterStatus').addEventListener('change', loadRegistrations);
+
+    document.getElementById('btnRefresh').addEventListener('click', () => {
+      loadStats();
+      loadRegistrations();
+    });
+
+    // Initial load
+    document.addEventListener('DOMContentLoaded', () => {
+      loadStats();
+      loadRegistrations();
+      if (window.lucide) lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
