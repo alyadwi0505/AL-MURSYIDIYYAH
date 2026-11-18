@@ -22,7 +22,7 @@ Website **SDIT Al-Mursyidiyyah** adalah platform web profil lembaga pendidikan I
 
 ### Fitur Utama:
 - **Desain Modern & Responsif:** Tampilan elegan bernuansa Islam modern dengan palet warna Emerald (`#07594F`), Emas/Gold (`#D4AF37`), dan Ivory (`#F7F5EB`).
-- **Formulir PPDB Online:** Pendaftaran calon santri/siswa baru lengkap dengan validasi form dan upload dokumen (Akta Kelahiran, Kartu Keluarga, Pas Foto).
+- **Formulir PPDB Online:** Pendaftaran calon siswa baru lengkap dengan validasi form dan upload dokumen (Akta Kelahiran, Kartu Keluarga, Pas Foto).
 - **Dashboard Admin Terintegrasi:** Manajemen data pendaftar, ubah status pendaftaran (Menunggu / Diterima / Ditolak), dan ekspor data ke format CSV.
 - **WhatsApp Floating Widget:** Interaksi instan orang tua/wali murid dengan admin sekolah via WhatsApp.
 - **Ringan & Cepat:** Berjalan di atas Node.js murni dengan SQLite bawaan tanpa dependensi npm eksternal yang membengkak.
@@ -67,7 +67,7 @@ Semua halaman publik dapat diakses melalui navigasi utama website:
 | **Program Unggulan** | `http://localhost:3000/program.html` | Kurikulum terpadu, tahfidz, bahasa Arab/Inggris |
 | **Fasilitas** | `http://localhost:3000/fasilitas.html` | Gedung, ruang kelas ber-AC, lab, perpustakaan, masjid |
 | **Guru & Staff** | `http://localhost:3000/guru.html` | Profil dewan pendidik dan staf profesional |
-| **Berita & Kegiatan** | `http://localhost:3000/berita.html` | Artikel seputar aktivitas santri dan pengumuman |
+| **Berita & Kegiatan** | `http://localhost:3000/berita.html` | Artikel seputar aktivitas siswa dan pengumuman |
 | **Galeri Foto** | `http://localhost:3000/galeri.html` | Dokumentasi kegiatan belajar dan ekstrakurikuler |
 | **Kontak & Lokasi** | `http://localhost:3000/kontak.html` | Alamat sekolah, Google Maps, form kontak, nomor WhatsApp |
 | **Pendaftaran PPDB** | `http://localhost:3000/ppdb.html` | Formulir pendaftaran calon siswa baru |
@@ -202,7 +202,7 @@ Berikut rangkuman pembaruan dan penyempurnaan yang telah disimpan pada tanggal *
 
 3. **Penyempurnaan Galeri Foto (`galeri.html`):**
    * Mengorganisasi dokumentasi foto menjadi sistem **Per Angkatan** (*Semua Angkatan*, *Angkatan Pertama (I)*, *Angkatan Kedua (II)*, *Angkatan Ketiga (III)*).
-   * Memasukkan foto dokumentasi asli santri & guru: **Peringatan Hari Sumpah Pemuda** (`assets/img/galeri-sumpah-pemuda.jpg`) ke dalam Angkatan Pertama dengan dukungan popup Lightbox layar penuh.
+   * Memasukkan foto dokumentasi asli siswa & guru: **Peringatan Hari Sumpah Pemuda** (`assets/img/galeri-sumpah-pemuda.jpg`) ke dalam Angkatan Pertama dengan dukungan popup Lightbox layar penuh.
 
 4. **Penyempurnaan Fasilitas (`fasilitas.html`):**
    * Menghapus teks deskripsi panjang pada kartu fasilitas sehingga tampilan menjadi ringkas, modern, dan simetris (*Gedung 3 Lantai*, *Ruangan Kelas Full AC*, *Lapangan Sekolah*, *Halaman Sekolah yang Nyaman*).
