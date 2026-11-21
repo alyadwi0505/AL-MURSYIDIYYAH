@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name=\"author\" content=\"SDIT Al-Mursyidiyyah\">
+  <meta name="author" content="SDIT Al-Mursyidiyyah">
   <meta name="description" content="Formulir Pendaftaran Peserta Didik Baru (PPDB) Online SDIT Al-Mursyidiyyah Tahun Ajaran 2027/2028.">
   <title>Formulir Pendaftaran PPDB Online — SDIT Al-Mursyidiyyah</title>
 
@@ -16,7 +16,7 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="assets/css/style.css?v=3.5">
+  <link rel="stylesheet" href="assets/css/style.css?v=4.4">
   <link rel="icon" type="image/png" href="assets/img/logo-transparent.png">
 </head>
 
@@ -96,8 +96,86 @@
     <section class="section section-ivory" style="min-height: 70vh;">
       <div class="container container-narrow">
         
-        <!-- WIZARD CONTAINER -->
-        <div class="ppdb-wizard" id="ppdbWizard">
+        <!-- REGISTRATION ACCESS GATE -->
+        <div class="ppdb-gate-card" id="ppdbGate">
+          <div class="ppdb-gate-header">
+            <span class="ppdb-gate-badge">PPDB ONLINE 2027/2028</span>
+            <div class="ppdb-gate-quota-pill" id="gateQuotaPill">
+              <i data-lucide="users" style="width:16px;height:16px;"></i>
+              <span id="gateQuotaText">Sisa Kuota: Memuat...</span>
+            </div>
+          </div>
+
+          <h2 class="ppdb-gate-title">Gerbang Pendaftaran Calon Siswa Baru</h2>
+          <p class="ppdb-gate-desc">
+            Sesuai alur resmi SDIT Al-Mursyidiyyah, calon wali murid wajib melakukan <strong>konfirmasi pembayaran formulir</strong> terlebih dahulu kepada Admin PPDB via WhatsApp untuk mendapatkan <strong>Nomor Registrasi</strong> resmi.
+          </p>
+
+          <!-- Step Guide Mini -->
+          <div class="ppdb-gate-steps">
+            <div class="gate-step-item">
+              <span class="gate-step-num">1</span>
+              <span>Chat Admin via WhatsApp</span>
+            </div>
+            <div class="gate-step-item">
+              <span class="gate-step-num">2</span>
+              <span>Konfirmasi Pembayaran</span>
+            </div>
+            <div class="gate-step-item">
+              <span class="gate-step-num">3</span>
+              <span>Terima No. Registrasi</span>
+            </div>
+            <div class="gate-step-item">
+              <span class="gate-step-num">4</span>
+              <span>Buka &amp; Isi Formulir</span>
+            </div>
+          </div>
+
+          <!-- Primary CTA: WhatsApp Admin -->
+          <div class="gate-cta-box">
+            <a href="https://wa.me/6281380327256?text=Halo%20Admin%20SDIT%20Al-Mursyidiyyah,%20saya%20ingin%20mendaftarkan%20calon%20siswa%20baru%20T.A.%202027/2028%20dan%20konfirmasi%20pembayaran%20formulir."
+              target="_blank" class="btn btn-emerald btn-lg gate-wa-btn" id="btnGateWa">
+              <i data-lucide="message-circle" style="width:20px;height:20px;"></i>
+              <span>Hubungi Admin WhatsApp untuk Dapatkan No. Registrasi</span>
+            </a>
+          </div>
+
+          <!-- Divider -->
+          <div class="gate-divider">
+            <span>Sudah Memiliki Nomor Registrasi dari Admin?</span>
+          </div>
+
+          <!-- Unlock Form Section -->
+          <div class="gate-unlock-box">
+            <label for="gateRegInput" class="gate-unlock-label">Masukkan Nomor Registrasi Resmi:</label>
+            <div class="gate-input-group">
+              <div class="gate-input-wrap">
+                <i data-lucide="key" class="gate-input-icon"></i>
+                <input type="text" id="gateRegInput" class="gate-input" placeholder="Contoh: REG-2027-001" autocomplete="off" spellcheck="false">
+              </div>
+              <button type="button" id="btnVerifyGate" class="btn btn-gold gate-unlock-btn">
+                <span>Buka Formulir</span>
+                <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
+              </button>
+            </div>
+            <div id="gateFeedback" class="gate-feedback" style="display: none;"></div>
+          </div>
+        </div>
+
+        <!-- WIZARD CONTAINER (Hidden until unlocked with verified registration number) -->
+        <div class="ppdb-wizard" id="ppdbWizard" style="display: none;">
+          <!-- Unlocked Token Banner -->
+          <div class="ppdb-unlocked-banner" id="unlockedBanner">
+            <div class="unlocked-banner-content">
+              <i data-lucide="check-circle-2" style="width:20px;height:20px; color:#10B981; flex-shrink:0;"></i>
+              <div>
+                <strong>Nomor Registrasi Terverifikasi:</strong> <span id="unlockedRegNumber" class="unlocked-code">-</span>
+                <span class="unlocked-sub">(Kuota 30 Siswa T.A. 2027/2028 Terjamin)</span>
+              </div>
+            </div>
+            <button type="button" id="btnChangeReg" class="unlocked-change-btn" title="Kunci nomor lain">Ganti Nomor</button>
+          </div>
+
           <!-- Step Indicator -->
           <div class="wizard-steps">
             <div class="wizard-step-item active">
@@ -117,6 +195,7 @@
           </div>
 
           <form id="ppdbForm" novalidate>
+            <input type="hidden" id="verifiedRegNumber" name="regNumber">
             <!-- STEP 1: DATA SISWA -->
             <div class="form-step active" data-step="1">
               <h3 style="font-size: 1.25rem; margin-bottom: 1.25rem; color: var(--color-emerald);">1. Identitas Calon Peserta Didik</h3>

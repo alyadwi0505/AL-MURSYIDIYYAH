@@ -819,7 +819,11 @@
           </h1>
         </div>
         
-        <div>
+        <div style="display: flex; gap: 0.6rem; flex-wrap: wrap;">
+          <button id="btnIssueReg" class="btn btn-gold btn-sm" style="font-size: 0.82rem; padding: 0.45rem 0.95rem; font-weight: 700; display: inline-flex; align-items: center; gap: 0.4rem;">
+            <i data-lucide="plus-circle" style="width:15px;height:15px;"></i>
+            Terbitkan No. Registrasi
+          </button>
           <button id="btnRefresh" class="btn btn-outline-emerald btn-sm" style="font-size: 0.82rem; padding: 0.45rem 0.85rem;">
             <i data-lucide="refresh-cw" style="width:14px;height:14px;"></i>
             Segarkan Data
@@ -856,6 +860,17 @@
           <div>
             <div class="stat-label">Terverifikasi / Lulus</div>
             <div id="statVerified" class="stat-number" style="color: #000000;">-</div>
+          </div>
+        </div>
+
+        <div class="stat-card-admin" style="border-left: 3.5px solid var(--color-gold);">
+          <div class="stat-icon-wrap" style="background: #FFFDF0; color: #8A7A1C;">
+            <i data-lucide="pie-chart" style="width:24px;height:24px;"></i>
+          </div>
+          <div>
+            <div class="stat-label">Kuota T.A. 2027/2028</div>
+            <div id="statQuota" class="stat-number" style="color: #000000;">- / 30</div>
+            <div id="statQuotaSub" style="font-size: 0.75rem; color: #666; margin-top: 2px;">Sisa: Memuat...</div>
           </div>
         </div>
       </div>
@@ -995,6 +1010,66 @@
     </div>
   </div>
 
+  <!-- Modal Terbitkan Nomor Registrasi Baru -->
+  <div class="admin-modal" id="modalIssueToken">
+    <div class="admin-modal-box" style="max-width: 540px;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1.25rem; border-bottom: 1px solid var(--slate-200); padding-bottom: 0.85rem;">
+        <div>
+          <span style="font-size: 0.75rem; font-weight: 800; color: #8A7A1C; background: #FFFDF0; border: 1px solid #E6DC9A; padding: 0.2rem 0.6rem; border-radius: 999px;">
+            KUOTA RESMI 30 SISWA T.A. 2027/2028
+          </span>
+          <h2 style="font-size: 1.25rem; font-weight: 800; color: var(--color-emerald); margin: 0.45rem 0 0.15rem 0;">
+            Terbitkan Nomor Registrasi Baru
+          </h2>
+        </div>
+        <button id="modalIssueClose" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--slate-400); line-height: 1; padding: 0.25rem; border-radius: 6px;" title="Tutup">&times;</button>
+      </div>
+
+      <div style="margin-bottom: 1.25rem;">
+        <label for="issueNote" style="font-size: 0.85rem; font-weight: 700; color: var(--slate-700); display: block; margin-bottom: 0.45rem;">
+          Catatan Calon Siswa / No. WA (Opsional):
+        </label>
+        <input type="text" id="issueNote" class="filter-select" style="width: 100%; box-sizing: border-box; padding: 0.65rem 0.85rem; font-size: 0.9rem;" placeholder="Contoh: Ananda Fatih / 08123456789">
+      </div>
+
+      <div style="text-align: center; margin-bottom: 1.25rem;">
+        <button type="button" id="btnConfirmIssue" class="btn btn-gold btn-lg" style="width: 100%; font-weight: 800; padding: 0.75rem 1rem;">
+          <i data-lucide="plus-circle" style="width: 18px; height: 18px;"></i>
+          Generate &amp; Terbitkan Nomor Berikutnya
+        </button>
+      </div>
+
+      <!-- Result Card (Hidden until issued) -->
+      <div id="issueResultBox" style="display: none; background: #F4F9F7; border: 1.5px solid #A4C7BE; border-radius: 8px; padding: 1.15rem; margin-top: 1rem;">
+        <div style="font-size: 0.82rem; font-weight: 700; color: var(--color-emerald); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.45rem;">
+          ✓ Nomor Registrasi Resmi Berhasil Diterbitkan:
+        </div>
+        <div style="font-family: monospace; font-size: 1.35rem; font-weight: 900; color: var(--color-emerald); background: #ffffff; border: 1px solid #C8E3DC; padding: 0.45rem 0.85rem; border-radius: 6px; text-align: center; letter-spacing: 0.08em; margin-bottom: 0.75rem;" id="issuedTokenDisplay">
+          REG-2027-001
+        </div>
+        <div style="font-size: 0.82rem; color: #555; margin-bottom: 0.65rem;" id="issuedRemainingInfo">
+          Sisa kuota: 29 siswa
+        </div>
+
+        <label style="font-size: 0.82rem; font-weight: 700; color: var(--slate-700); display: block; margin-bottom: 0.35rem;">
+          Template Pesan Konfirmasi WhatsApp untuk Wali Murid:
+        </label>
+        <textarea id="issuedWaTemplate" readonly style="width: 100%; height: 110px; font-family: var(--admin-font); font-size: 0.8rem; border: 1px solid var(--slate-300); border-radius: 6px; padding: 0.5rem; box-sizing: border-box; background: #ffffff; resize: none; margin-bottom: 0.75rem;"></textarea>
+
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <button type="button" id="btnCopyWaMsg" class="btn btn-primary btn-sm" style="flex: 1; font-weight: 700; padding: 0.55rem 0.85rem;">
+            <i data-lucide="copy" style="width: 15px; height: 15px;"></i>
+            Salin Pesan
+          </button>
+          <a id="btnDirectWaSend" href="#" target="_blank" class="btn btn-gold btn-sm" style="flex: 1; font-weight: 700; padding: 0.55rem 0.85rem; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem;">
+            <i data-lucide="message-circle" style="width: 15px; height: 15px;"></i>
+            Buka WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- JavaScript Admin Controller -->
   <script>
     // Helper: Resolve API endpoint for file:// or alternate dev server ports
@@ -1112,6 +1187,14 @@
           document.getElementById('statVerified').textContent = json.stats.terverifikasi;
           if (document.getElementById('statMessages')) {
             document.getElementById('statMessages').textContent = json.stats.totalPesan;
+          }
+          if (json.stats.quota) {
+            if (document.getElementById('statQuota')) {
+              document.getElementById('statQuota').textContent = `${json.stats.quota.used} / ${json.stats.quota.total}`;
+            }
+            if (document.getElementById('statQuotaSub')) {
+              document.getElementById('statQuotaSub').textContent = `Sisa: ${json.stats.quota.remaining} Siswa (${json.stats.quota.assigned} terbit)`;
+            }
           }
         }
       } catch (e) {
@@ -1408,6 +1491,82 @@
         btn.textContent = originalText;
       }
     });
+
+    // Modal Issue Token Logic
+    const btnIssueReg = document.getElementById('btnIssueReg');
+    const modalIssueToken = document.getElementById('modalIssueToken');
+    const modalIssueClose = document.getElementById('modalIssueClose');
+    const btnConfirmIssue = document.getElementById('btnConfirmIssue');
+    const issueResultBox = document.getElementById('issueResultBox');
+    const issuedTokenDisplay = document.getElementById('issuedTokenDisplay');
+    const issuedRemainingInfo = document.getElementById('issuedRemainingInfo');
+    const issuedWaTemplate = document.getElementById('issuedWaTemplate');
+    const btnCopyWaMsg = document.getElementById('btnCopyWaMsg');
+    const btnDirectWaSend = document.getElementById('btnDirectWaSend');
+    const issueNote = document.getElementById('issueNote');
+
+    if (btnIssueReg) {
+      btnIssueReg.addEventListener('click', () => {
+        if (issueResultBox) issueResultBox.style.display = 'none';
+        if (issueNote) issueNote.value = '';
+        if (modalIssueToken) modalIssueToken.classList.add('active');
+        if (window.lucide) lucide.createIcons();
+      });
+    }
+
+    if (modalIssueClose) {
+      modalIssueClose.addEventListener('click', () => {
+        if (modalIssueToken) modalIssueToken.classList.remove('active');
+      });
+    }
+
+    if (btnConfirmIssue) {
+      btnConfirmIssue.addEventListener('click', async () => {
+        const note = issueNote ? issueNote.value.trim() : '';
+        btnConfirmIssue.disabled = true;
+        btnConfirmIssue.textContent = 'Menerbitkan...';
+
+        try {
+          const res = await fetch(resolveApiUrl('/api/admin/issue-token'), {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ note })
+          });
+          const json = await res.json();
+
+          if (res.ok && json.success) {
+            issuedTokenDisplay.textContent = json.token;
+            issuedRemainingInfo.textContent = `Sisa kuota pendaftaran: ${json.remaining} siswa`;
+            issuedWaTemplate.value = json.messageTemplate;
+            btnDirectWaSend.href = `https://wa.me/?text=${encodeURIComponent(json.messageTemplate)}`;
+            issueResultBox.style.display = 'block';
+            loadStats();
+          } else {
+            alert('Peringatan: ' + (json.error || 'Gagal menerbitkan nomor registrasi.'));
+          }
+        } catch (err) {
+          alert('Gagal menghubungi server: ' + err.message);
+        } finally {
+          btnConfirmIssue.disabled = false;
+          btnConfirmIssue.innerHTML = `<i data-lucide="plus-circle" style="width: 18px; height: 18px;"></i> Generate &amp; Terbitkan Nomor Berikutnya`;
+          if (window.lucide) lucide.createIcons();
+        }
+      });
+    }
+
+    if (btnCopyWaMsg) {
+      btnCopyWaMsg.addEventListener('click', () => {
+        if (issuedWaTemplate) {
+          issuedWaTemplate.select();
+          navigator.clipboard.writeText(issuedWaTemplate.value).then(() => {
+            alert('✓ Pesan WhatsApp berhasil disalin ke clipboard! Silakan paste/tempel ke chat orang tua.');
+          }).catch(() => {
+            document.execCommand('copy');
+            alert('✓ Pesan WhatsApp berhasil disalin!');
+          });
+        }
+      });
+    }
 
     // Event listeners
     document.getElementById('searchInput').addEventListener('input', loadRegistrations);

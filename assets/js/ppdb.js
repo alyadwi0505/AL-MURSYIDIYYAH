@@ -32,6 +32,130 @@ function formatIndonesianDate(dateStr) {
 
 document.addEventListener('DOMContentLoaded', () => {
   const wizard = document.getElementById('ppdbWizard');
+  const ppdbGate = document.getElementById('ppdbGate');
+  const gateRegInput = document.getElementById('gateRegInput');
+  const btnVerifyGate = document.getElementById('btnVerifyGate');
+  const gateFeedback = document.getElementById('gateFeedback');
+  const gateQuotaText = document.getElementById('gateQuotaText');
+  const gateQuotaPill = document.getElementById('gateQuotaPill');
+  const unlockedBanner = document.getElementById('unlockedBanner');
+  const unlockedRegNumber = document.getElementById('unlockedRegNumber');
+  const btnChangeReg = document.getElementById('btnChangeReg');
+  const verifiedRegNumberInput = document.getElementById('verifiedRegNumber');
+
+  // --- PPDB REGISTRATION GATE LOGIC ---
+  async function loadQuota() {
+    if (!gateQuotaText) return;
+    try {
+      const res = await fetch(resolveApiUrl('/api/ppdb/quota'));
+      if (res.ok) {
+        const data = await res.json();
+        if (data.success) {
+          if (data.isFull) {
+            gateQuotaText.textContent = 'Kuota Penuh (30/30 Siswa)';
+            if (gateQuotaPill) gateQuotaPill.classList.add('full');
+          } else {
+            gateQuotaText.textContent = `Sisa Kuota: ${data.remainingQuota} dari ${data.totalQuota} Siswa`;
+          }
+        }
+      }
+    } catch (_) {
+      if (gateQuotaText) gateQuotaText.textContent = 'Kuota T.A. 2027/2028: 30 Siswa';
+    }
+  }
+  loadQuota();
+
+  function showGateFeedback(msg, type) {
+    if (!gateFeedback) return;
+    if (type === 'clear' || !msg) {
+      gateFeedback.style.display = 'none';
+      gateFeedback.textContent = '';
+      return;
+    }
+    gateFeedback.style.display = 'block';
+    gateFeedback.className = `gate-feedback feedback-${type}`;
+    gateFeedback.textContent = msg;
+  }
+
+  async function verifyAndUnlockToken(token) {
+    const cleanToken = (token || '').trim().toUpperCase();
+    if (!cleanToken) {
+      showGateFeedback('Nomor Registrasi wajib diisi.', 'error');
+      return;
+    }
+
+    if (btnVerifyGate) {
+      btnVerifyGate.disabled = true;
+      btnVerifyGate.innerHTML = `<i data-lucide="loader" class="spin" style="width:16px;height:16px;"></i> Memeriksa...`;
+      if (window.lucide) lucide.createIcons();
+    }
+
+    try {
+      const res = await fetch(resolveApiUrl('/api/ppdb/verify-token'), {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ token: cleanToken })
+      });
+      const data = await res.json();
+
+      if (res.ok && data.success) {
+        // Unlock Wizard
+        if (verifiedRegNumberInput) verifiedRegNumberInput.value = data.token;
+        if (unlockedRegNumber) unlockedRegNumber.textContent = data.token;
+        if (unlockedBanner) unlockedBanner.style.display = 'flex';
+
+        if (ppdbGate) ppdbGate.style.display = 'none';
+        if (wizard) wizard.style.display = 'block';
+
+        showGateFeedback('', 'clear');
+        wizard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (window.lucide) lucide.createIcons();
+      } else {
+        showGateFeedback(data.error || 'Nomor Registrasi tidak valid atau belum terdaftar.', 'error');
+      }
+    } catch (err) {
+      showGateFeedback('Gagal menghubungi server untuk memvalidasi nomor registrasi.', 'error');
+    } finally {
+      if (btnVerifyGate) {
+        btnVerifyGate.disabled = false;
+        btnVerifyGate.innerHTML = `<span>Buka Formulir</span><i data-lucide="arrow-right" style="width:16px;height:16px;"></i>`;
+        if (window.lucide) lucide.createIcons();
+      }
+    }
+  }
+
+  if (btnVerifyGate && gateRegInput) {
+    btnVerifyGate.addEventListener('click', () => {
+      verifyAndUnlockToken(gateRegInput.value);
+    });
+    gateRegInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        verifyAndUnlockToken(gateRegInput.value);
+      }
+    });
+  }
+
+  if (btnChangeReg) {
+    btnChangeReg.addEventListener('click', () => {
+      if (wizard) wizard.style.display = 'none';
+      if (ppdbGate) ppdbGate.style.display = 'block';
+      if (gateRegInput) {
+        gateRegInput.value = '';
+        gateRegInput.focus();
+      }
+      showGateFeedback('', 'clear');
+    });
+  }
+
+  // Auto-check URL parameter e.g. ?reg=REG-2027-001
+  const urlParams = new URLSearchParams(window.location.search);
+  const regParam = urlParams.get('reg') || urlParams.get('token');
+  if (regParam) {
+    if (gateRegInput) gateRegInput.value = regParam.toUpperCase();
+    verifyAndUnlockToken(regParam);
+  }
+
   if (wizard) {
     let currentStep = 1;
     const totalSteps = 3;
@@ -252,6 +376,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (fileKTPIbu) formData.append('fileKTPIbu', fileKTPIbu);
     if (fileIjazah) formData.append('fileIjazah', fileIjazah);
 
+    // Append verified Registration Number
+    const verifiedToken = document.getElementById('verifiedRegNumber')?.value || '';
+    if (verifiedToken) {
+      formData.append('regNumber', verifiedToken);
+    }
+
     // Show loading indicator
     if (btnSubmit) {
       btnSubmit.disabled = true;
@@ -259,7 +389,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (window.lucide) lucide.createIcons();
     }
 
-    let regNumber = `REG-2026-SDIT-${Math.floor(1000 + Math.random() * 9000)}`;
+    let regNumber = verifiedToken || 'REG-2027-001';
 
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 12000);
