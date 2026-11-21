@@ -86,6 +86,27 @@ db.exec(`
   );
 `);
 
+// Helper: Normalize Registration Token (e.g. "1" or "001" or "reg-2027-001" -> "REG-2027-001")
+function normalizeToken(raw) {
+  let clean = (raw || '').trim().toUpperCase().replace(/\s+/g, '-');
+  if (!clean) return '';
+  if (/^\d{1,3}$/.test(clean)) {
+    const num = parseInt(clean, 10);
+    return `REG-2027-${String(num).padStart(3, '0')}`;
+  }
+  const matchShort = clean.match(/^REG-(\d{1,3})$/);
+  if (matchShort) {
+    const num = parseInt(matchShort[1], 10);
+    return `REG-2027-${String(num).padStart(3, '0')}`;
+  }
+  const matchYear = clean.match(/^2027-(\d{1,3})$/);
+  if (matchYear) {
+    const num = parseInt(matchYear[1], 10);
+    return `REG-2027-${String(num).padStart(3, '0')}`;
+  }
+  return clean;
+}
+
 // Total Quota Siswa Baru T.A. 2027/2028 (Sesuai arahan: 30 Siswa)
 const TOTAL_PPDB_QUOTA = 30;
 
@@ -252,7 +273,7 @@ const server = http.createServer((req, res) => {
         }
 
         // Validate Registration Number against Quota of 30
-        let regNumber = (fields.regNumber || '').trim().toUpperCase();
+        let regNumber = normalizeToken(fields.regNumber || '');
         if (!regNumber) {
           // Check quota if no token passed
           const usedCount = db.prepare('SELECT COUNT(*) as c FROM ppdb_registrations').get().c;
@@ -602,7 +623,7 @@ const server = http.createServer((req, res) => {
     req.on('end', () => {
       try {
         const payload = JSON.parse(body || '{}');
-        const token = (payload.token || '').trim().toUpperCase();
+        const token = normalizeToken(payload.token || '');
 
         if (!token) {
           return jsonResponse(400, { success: false, error: 'Nomor Registrasi wajib diisi.' });
@@ -610,7 +631,7 @@ const server = http.createServer((req, res) => {
 
         const match = token.match(/^REG-2027-(\d{3})$/);
         if (!match) {
-          return jsonResponse(400, { success: false, error: 'Format Nomor Registrasi tidak sesuai. Contoh: REG-2027-001' });
+          return jsonResponse(400, { success: false, error: 'Format Nomor Registrasi tidak sesuai. Contoh: REG-2027-001 (atau ketik nomor urut, misal: 1).' });
         }
 
         const num = parseInt(match[1], 10);

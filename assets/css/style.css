@@ -4430,6 +4430,96 @@ svg.lucide-loader {
   margin-bottom: 1.75rem;
 }
 
+/* 6-Step Pipeline on Registration Gate */
+.ppdb-gate-steps-full {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.5rem;
+  background: var(--color-ivory);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 0.65rem;
+  margin-bottom: 1.75rem;
+}
+.gate-step-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.35rem;
+  padding: 0.5rem 0.25rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+.gate-step-card.done {
+  background: rgba(7, 89, 79, 0.04);
+}
+.gate-step-card.current {
+  background: #FFFDF0;
+  border: 1.5px solid var(--color-gold);
+  box-shadow: 0 2px 8px rgba(197, 179, 68, 0.18);
+}
+.gate-step-card.future {
+  opacity: 0.75;
+}
+.gate-step-badge {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--color-emerald);
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 900;
+  font-family: var(--font-heading);
+}
+.gate-step-card.current .gate-step-badge {
+  background: var(--color-gold);
+  color: var(--color-dark-forest);
+}
+.gate-step-detail {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+.gate-step-name {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--color-emerald);
+}
+.gate-step-desc {
+  font-size: 0.68rem;
+  color: var(--color-dark-forest-muted);
+}
+.gate-demo-hint {
+  margin-top: 0.75rem;
+  font-size: 0.8rem;
+  color: var(--color-dark-forest-muted);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.btn-demo-link {
+  background: none;
+  border: none;
+  color: var(--color-emerald);
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 0.8rem;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.btn-demo-link:hover {
+  color: var(--color-emerald-dark);
+}
+
 .gate-step-item {
   display: flex;
   flex-direction: column;
@@ -4679,6 +4769,11 @@ svg.lucide-loader {
     gap: 0.65rem;
     padding: 0.75rem 0.65rem;
   }
+  .ppdb-gate-steps-full {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    padding: 0.65rem 0.5rem;
+  }
   .gate-step-item {
     font-size: 0.75rem;
     gap: 0.3rem;
@@ -4726,6 +4821,10 @@ svg.lucide-loader {
   .ppdb-gate-steps {
     grid-template-columns: 1fr;
     gap: 0.55rem;
+  }
+  .ppdb-gate-steps-full {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.45rem;
   }
   .gate-step-item {
     flex-direction: row;

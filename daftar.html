@@ -111,23 +111,49 @@
             Sesuai alur resmi SDIT Al-Mursyidiyyah, calon wali murid wajib melakukan <strong>konfirmasi pembayaran formulir</strong> terlebih dahulu kepada Admin PPDB via WhatsApp untuk mendapatkan <strong>Nomor Registrasi</strong> resmi.
           </p>
 
-          <!-- Step Guide Mini -->
-          <div class="ppdb-gate-steps">
-            <div class="gate-step-item">
-              <span class="gate-step-num">1</span>
-              <span>Chat Admin via WhatsApp</span>
+          <!-- Alur Resmi 6 Tahapan PPDB SDIT Al-Mursyidiyyah -->
+          <div class="ppdb-gate-steps-full">
+            <div class="gate-step-card done">
+              <span class="gate-step-badge">1</span>
+              <div class="gate-step-detail">
+                <span class="gate-step-name">Chat Admin</span>
+                <span class="gate-step-desc">WhatsApp</span>
+              </div>
             </div>
-            <div class="gate-step-item">
-              <span class="gate-step-num">2</span>
-              <span>Konfirmasi Pembayaran</span>
+            <div class="gate-step-card done">
+              <span class="gate-step-badge">2</span>
+              <div class="gate-step-detail">
+                <span class="gate-step-name">Pembayaran</span>
+                <span class="gate-step-desc">Biaya Formulir</span>
+              </div>
             </div>
-            <div class="gate-step-item">
-              <span class="gate-step-num">3</span>
-              <span>Terima No. Registrasi</span>
+            <div class="gate-step-card done">
+              <span class="gate-step-badge">3</span>
+              <div class="gate-step-detail">
+                <span class="gate-step-name">No. Registrasi</span>
+                <span class="gate-step-desc">Diberikan Admin</span>
+              </div>
             </div>
-            <div class="gate-step-item">
-              <span class="gate-step-num">4</span>
-              <span>Buka &amp; Isi Formulir</span>
+            <div class="gate-step-card current">
+              <span class="gate-step-badge">4</span>
+              <div class="gate-step-detail">
+                <span class="gate-step-name">Isi Formulir</span>
+                <span class="gate-step-desc">Online di Sini</span>
+              </div>
+            </div>
+            <div class="gate-step-card future">
+              <span class="gate-step-badge">5</span>
+              <div class="gate-step-detail">
+                <span class="gate-step-name">Ukur Baju</span>
+                <span class="gate-step-desc">Di Sekolah</span>
+              </div>
+            </div>
+            <div class="gate-step-card future">
+              <span class="gate-step-badge">6</span>
+              <div class="gate-step-detail">
+                <span class="gate-step-name">Pertemuan</span>
+                <span class="gate-step-desc">Kepala Sekolah</span>
+              </div>
             </div>
           </div>
 
@@ -151,11 +177,17 @@
             <div class="gate-input-group">
               <div class="gate-input-wrap">
                 <i data-lucide="key" class="gate-input-icon"></i>
-                <input type="text" id="gateRegInput" class="gate-input" placeholder="Contoh: REG-2027-001" autocomplete="off" spellcheck="false">
+                <input type="text" id="gateRegInput" class="gate-input" placeholder="Ketik nomor (misal: 1 atau REG-2027-001)" autocomplete="off" spellcheck="false">
               </div>
               <button type="button" id="btnVerifyGate" class="btn btn-gold gate-unlock-btn">
                 <span>Buka Formulir</span>
                 <i data-lucide="arrow-right" style="width:16px;height:16px;"></i>
+              </button>
+            </div>
+            <div class="gate-demo-hint">
+              <span>Bisa ketik angka langsung: <code>1</code> s/d <code>30</code> atau format penuh <code>REG-2027-001</code></span>
+              <button type="button" id="btnQuickDemoUnlock" class="btn-demo-link">
+                <i data-lucide="play" style="width:13px;height:13px;"></i> Coba Demo (REG-2027-001)
               </button>
             </div>
             <div id="gateFeedback" class="gate-feedback" style="display: none;"></div>
@@ -414,7 +446,7 @@
             </div>
 
             <div style="text-align: center; margin-bottom: 1.75rem;">
-              <span class="reg-num-badge" id="cardRegNumber">REG-2026-SDIT-XXXX</span>
+              <span class="reg-num-badge" id="cardRegNumber">REG-2027-001</span>
               <div style="font-size: 0.82rem; color: var(--color-dark-forest-muted); margin-top: 0.4rem;">Simpan nomor registrasi ini sebagai identitas saat verifikasi.</div>
             </div>
 
@@ -448,6 +480,18 @@
                 <td style="padding: 0.6rem 0; font-weight: 600;" id="cardTglDaftar">-</td>
               </tr>
             </table>
+
+            <!-- Next Steps Information (Step 5 & 6) -->
+            <div class="reg-next-steps-banner" style="margin-bottom: 1.75rem; background: #FFFDF0; border: 1.5px solid #E6DC9A; border-radius: 12px; padding: 1.15rem 1.25rem; text-align: left;">
+              <div style="font-weight: 800; font-size: 0.95rem; color: #8A7A1C; display: flex; align-items: center; gap: 0.45rem; margin-bottom: 0.5rem;">
+                <i data-lucide="info" style="width:18px;height:18px; flex-shrink:0;"></i>
+                <span>Tahapan Selanjutnya Setelah Pendaftaran:</span>
+              </div>
+              <ul style="margin: 0; padding-left: 1.2rem; font-size: 0.86rem; color: var(--color-dark-forest); line-height: 1.6;">
+                <li><strong>Langkah 5 — Pengukuran Baju:</strong> Jadwal pengukuran seragam sekolah calon peserta didik akan diinformasikan panitia via WhatsApp.</li>
+                <li><strong>Langkah 6 — Pertemuan Kepala Sekolah:</strong> Pertemuan dan silaturahmi seluruh calon wali murid bersama Kepala Sekolah SDIT Al-Mursyidiyyah.</li>
+              </ul>
+            </div>
 
             <div class="reg-actions-group" style="display: flex; flex-direction: column; gap: 0.85rem;">
               <a href="https://wa.me/6281380327256" id="btnWhatsAppConfirm" target="_blank" class="btn btn-gold reg-action-btn" style="width: 100%;">
@@ -496,7 +540,7 @@
   <!-- Scripts -->
   <script src="assets/js/main.js"></script>
   <script src="assets/js/wa-widget.js"></script>
-  <script src="assets/js/ppdb.js?v=4.1"></script>
+  <script src="assets/js/ppdb.js?v=4.2"></script>
   <script>
     lucide.createIcons();
   </script>
