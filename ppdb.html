@@ -20,7 +20,7 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="assets/css/style.css?v=4.2">
+  <link rel="stylesheet" href="assets/css/style.css?v=4.3">
   <link rel="icon" type="image/png" href="assets/img/logo-transparent.png">
 </head>
 
@@ -161,18 +161,175 @@
 
               <!-- Panah Petunjuk Arah Alur pada Tabung -->
               <!-- Baris 1: Menuju Kanan -->
-              <polygon points="535,131 550,135 535,139" fill="#FFFAD0" opacity="0.8" />
+              <polygon points="545,131 560,135 545,139" fill="#FFFAD0" opacity="0.8" />
               <!-- Baris 2: Menuju Kiri -->
-              <polygon points="535,351 520,355 535,359" fill="#FFFAD0" opacity="0.8" />
+              <polygon points="465,351 450,355 465,359" fill="#FFFAD0" opacity="0.8" />
               <!-- Baris 3: Menuju Kanan -->
-              <polygon points="280,571 295,575 280,579" fill="#FFFAD0" opacity="0.8" />
+              <polygon points="435,571 450,575 435,579" fill="#FFFAD0" opacity="0.8" />
 
               <!-- ==========================================
-       POS 1: PENGISIAN FORMULIR (NOMOR 1 - KIRI ATAS)
+       POS 1: CHAT ADMIN (NOMOR 1 - KIRI ATAS)
        ========================================== -->
-              <g class="serpentine-node" transform="translate(320, 0)">
-                <!-- Ilustrasi Clipboard & Formulir -->
-                <g transform="translate(-40, 30)" filter="url(#nodeShadow)">
+              <g class="serpentine-node" transform="translate(350, 0)">
+                <!-- Ilustrasi Smartphone Chat WhatsApp -->
+                <g transform="translate(-36, 26)" filter="url(#nodeShadow)">
+                  <!-- Bodi Smartphone -->
+                  <rect x="0" y="4" width="72" height="92" rx="10" fill="#07594F" stroke="#146053" stroke-width="2" />
+                  <!-- Layar Handphone -->
+                  <rect x="4" y="10" width="64" height="80" rx="6" fill="#F4F8F6" />
+                  <!-- Speaker & Kamera Depan -->
+                  <rect x="26" y="6" width="20" height="2.5" rx="1.2" fill="#C5B344" />
+
+                  <!-- Header Chat Bar Hijau WhatsApp -->
+                  <path d="M 4,14 Q 4,10 10,10 L 62,10 Q 68,10 68,14 L 68,26 L 4,26 Z" fill="#0E705F" />
+                  <!-- Avatar Admin Bulat -->
+                  <circle cx="16" cy="18" r="5" fill="#FFFDF0" />
+                  <circle cx="16" cy="16.5" r="2.2" fill="#07594F" />
+                  <path d="M 12.5,21.5 Q 16,19 19.5,21.5 Z" fill="#07594F" />
+                  <!-- Nama Admin Bar -->
+                  <rect x="25" y="15" width="26" height="3" rx="1.5" fill="#FFFFFF" />
+                  <rect x="25" y="20" width="16" height="2" rx="1" fill="#C5B344" />
+
+                  <!-- Chat Bubble 1 (Masuk dari User - Putih) -->
+                  <rect x="8" y="32" width="44" height="15" rx="4" fill="#FFFFFF" stroke="#D3E5E0" stroke-width="1" />
+                  <path d="M 8,38 L 4,40 L 8,43 Z" fill="#FFFFFF" />
+                  <rect x="12" y="36" width="34" height="2.5" rx="1" fill="#263A35" />
+                  <rect x="12" y="41" width="22" height="2" rx="1" fill="#6B8881" />
+
+                  <!-- Chat Bubble 2 (Balasan Admin - Emerald Light) -->
+                  <rect x="20" y="52" width="44" height="17" rx="4" fill="#E2F1ED" stroke="#0E705F" stroke-width="1" />
+                  <path d="M 64,58 L 68,60 L 64,63 Z" fill="#E2F1ED" />
+                  <rect x="24" y="56" width="30" height="2.5" rx="1" fill="#07594F" />
+                  <rect x="24" y="61" width="34" height="2" rx="1" fill="#4B776E" />
+                  <!-- Centang Ganda Hijau -->
+                  <path d="M 54,65 L 56,66.5 L 59,64" stroke="#10B981" stroke-width="1.2" stroke-linecap="round" fill="none" />
+                  <path d="M 57,65 L 59,66.5 L 62,64" stroke="#10B981" stroke-width="1.2" stroke-linecap="round" fill="none" />
+
+                  <!-- Tombol Chat Bawah -->
+                  <circle cx="36" cy="78" r="7" fill="#25D366" />
+                  <path d="M 33,76 Q 33,74 36,74 Q 39,74 39,76 Q 39,78 36,78 L 34,80 L 34.5,78 Z" fill="#FFFFFF" />
+                </g>
+
+                <!-- Badge Angka 1 -->
+                <circle cx="48" cy="32" r="17" fill="#07594F" stroke="#C5B344" stroke-width="2.5"
+                  filter="url(#nodeShadow)" />
+                <text x="48" y="38" text-anchor="middle" font-family="'M PLUS Rounded 1c', sans-serif" font-weight="900"
+                  font-size="15" fill="#FFFFFF">1</text>
+
+                <!-- Teks Pos 1 -->
+                <text x="0" y="180" text-anchor="middle" font-family="'M PLUS Rounded 1c', sans-serif" font-weight="800"
+                  font-size="16.5" fill="#07594F">Chat Admin</text>
+                <text x="0" y="200" text-anchor="middle" font-family="'Nunito Sans', sans-serif" font-weight="600"
+                  font-size="12.5" fill="#52746B">Hubungi admin via WhatsApp</text>
+              </g>
+
+              <!-- ==========================================
+       POS 2: PEMBAYARAN (NOMOR 2 - KANAN ATAS)
+       ========================================== -->
+              <g class="serpentine-node" transform="translate(740, 0)">
+                <!-- Ilustrasi Kuitansi & Kartu Pembayaran Transfer -->
+                <g transform="translate(-40, 26)" filter="url(#nodeShadow)">
+                  <!-- Kartu Kuitansi / Bukti Bayar di Belakang -->
+                  <rect x="0" y="6" width="70" height="88" rx="7" fill="#FFFFFF" stroke="#D3E5E0" stroke-width="1.5" />
+                  <!-- Header Kuitansi Emerald -->
+                  <path d="M 0,13 Q 0,6 7,6 L 63,6 Q 70,6 70,13 L 70,22 L 0,22 Z" fill="#07594F" />
+                  <rect x="14" y="12" width="42" height="4" rx="2" fill="#FFFDF0" />
+
+                  <!-- Garis Isi Rincian Pembayaran -->
+                  <rect x="10" y="28" width="34" height="3" rx="1.5" fill="#263A35" />
+                  <rect x="10" y="35" width="50" height="2" rx="1" fill="#A4C7BE" />
+                  <rect x="10" y="41" width="42" height="2" rx="1" fill="#A4C7BE" />
+                  <!-- Total Nominal Emas -->
+                  <rect x="10" y="49" width="50" height="8" rx="2" fill="#FDFBF2" stroke="#E6DC9A" stroke-width="1" />
+                  <text x="35" y="55.5" text-anchor="middle" font-family="'Nunito Sans', sans-serif" font-weight="800"
+                    font-size="6.5" fill="#8A7A1C">RP • LUNAS</text>
+
+                  <!-- Kartu ATM / Mobile Banking Overlap -->
+                  <g transform="translate(18, 56) rotate(-8)">
+                    <rect x="0" y="0" width="56" height="34" rx="5" fill="#146053" stroke="#C5B344" stroke-width="1.2" />
+                    <rect x="6" y="6" width="9" height="7" rx="1.5" fill="#E2D479" />
+                    <rect x="18" y="7" width="22" height="2.5" rx="1" fill="#FFFFFF" opacity="0.9" />
+                    <rect x="6" y="19" width="28" height="2" rx="1" fill="#C5B344" />
+                    <circle cx="44" cy="24" r="5" fill="#10B981" />
+                    <path d="M 41.5,24 L 43.5,26 L 46.5,22.5" stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="round"
+                      fill="none" />
+                  </g>
+                </g>
+
+                <!-- Badge Angka 2 -->
+                <circle cx="48" cy="32" r="17" fill="#07594F" stroke="#C5B344" stroke-width="2.5"
+                  filter="url(#nodeShadow)" />
+                <text x="48" y="38" text-anchor="middle" font-family="'M PLUS Rounded 1c', sans-serif" font-weight="900"
+                  font-size="15" fill="#FFFFFF">2</text>
+
+                <!-- Teks Pos 2 -->
+                <text x="0" y="180" text-anchor="middle" font-family="'M PLUS Rounded 1c', sans-serif" font-weight="800"
+                  font-size="16.5" fill="#07594F">Pembayaran</text>
+                <text x="0" y="200" text-anchor="middle" font-family="'Nunito Sans', sans-serif" font-weight="600"
+                  font-size="12.5" fill="#52746B">Biaya formulir pendaftaran</text>
+              </g>
+
+              <!-- ==========================================
+       POS 3: ADMIN MEMBERIKAN NO REGIST (NOMOR 3 - KANAN TENGAH)
+       ========================================== -->
+              <g class="serpentine-node" transform="translate(660, 220)">
+                <!-- Ilustrasi Kartu ID / Nomor Registrasi Resmi -->
+                <g transform="translate(-40, 26)" filter="url(#nodeShadow)">
+                  <!-- Kartu Sertifikat / ID Registrasi -->
+                  <rect x="0" y="6" width="78" height="88" rx="8" fill="#FFFDF8" stroke="#C5B344" stroke-width="2" />
+                  <rect x="4" y="10" width="70" height="80" rx="5" fill="#FFFFFF" stroke="#E6DC9A" stroke-width="1"
+                    stroke-dasharray="3 2" />
+
+                  <!-- Pita Hijau SDIT di Atas -->
+                  <rect x="18" y="15" width="42" height="6" rx="3" fill="#07594F" />
+                  <text x="39" y="19.5" text-anchor="middle" font-family="'M PLUS Rounded 1c', sans-serif" font-weight="900"
+                    font-size="4.5" fill="#FFFFFF">SDIT AL-MURSYIDIYYAH</text>
+
+                  <!-- Kotak Nomor Registrasi Emas Menonjol -->
+                  <rect x="8" y="28" width="62" height="24" rx="4" fill="#07594F" stroke="#C5B344" stroke-width="1.2" />
+                  <text x="39" y="37" text-anchor="middle" font-family="'Nunito Sans', sans-serif" font-weight="700"
+                    font-size="5.5" fill="#C5B344">KODE REGISTRASI</text>
+                  <text x="39" y="46" text-anchor="middle" font-family="'Courier New', monospace" font-weight="900"
+                    font-size="7.5" fill="#FFFFFF" letter-spacing="0.5">REG-2027-OK</text>
+
+                  <!-- Barcode & Verifikasi Segel -->
+                  <g transform="translate(14, 58)">
+                    <rect x="0" y="0" width="2" height="16" fill="#263A35" />
+                    <rect x="4" y="0" width="1.5" height="16" fill="#263A35" />
+                    <rect x="7" y="0" width="3" height="16" fill="#263A35" />
+                    <rect x="12" y="0" width="1.5" height="16" fill="#263A35" />
+                    <rect x="15" y="0" width="2.5" height="16" fill="#263A35" />
+                    <rect x="20" y="0" width="1.5" height="16" fill="#263A35" />
+                    <rect x="23" y="0" width="3" height="16" fill="#263A35" />
+                    <rect x="28" y="0" width="1" height="16" fill="#263A35" />
+                  </g>
+
+                  <!-- Stempel Verifikasi Admin -->
+                  <g transform="translate(56, 68)">
+                    <circle cx="0" cy="0" r="10" fill="#E8F5F1" stroke="#10B981" stroke-width="1.5" />
+                    <path d="M -4,0 L -1,3 L 5,-3" stroke="#10B981" stroke-width="1.8" stroke-linecap="round" fill="none" />
+                  </g>
+                </g>
+
+                <!-- Badge Angka 3 -->
+                <circle cx="48" cy="32" r="17" fill="#07594F" stroke="#C5B344" stroke-width="2.5"
+                  filter="url(#nodeShadow)" />
+                <text x="48" y="38" text-anchor="middle" font-family="'M PLUS Rounded 1c', sans-serif" font-weight="900"
+                  font-size="15" fill="#FFFFFF">3</text>
+
+                <!-- Teks Pos 3 -->
+                <text x="0" y="178" text-anchor="middle" font-family="'M PLUS Rounded 1c', sans-serif" font-weight="800"
+                  font-size="16" fill="#07594F">Nomor Registrasi</text>
+                <text x="0" y="198" text-anchor="middle" font-family="'Nunito Sans', sans-serif" font-weight="600"
+                  font-size="12.5" fill="#52746B">Admin memberikan No. Regist</text>
+              </g>
+
+              <!-- ==========================================
+       POS 4: MENGISI FORMULIR (NOMOR 4 - KIRI TENGAH)
+       ========================================== -->
+              <g class="serpentine-node" transform="translate(260, 220)">
+                <!-- Ilustrasi Clipboard & Pengisian Data Siswa -->
+                <g transform="translate(-40, 26)" filter="url(#nodeShadow)">
                   <!-- Board Papan Ujian -->
                   <rect x="0" y="6" width="70" height="86" rx="8" fill="#146053" />
                   <!-- Kertas Putih -->
@@ -189,7 +346,7 @@
                   <!-- Field 2 -->
                   <rect x="14" y="46" width="42" height="8" rx="2" fill="#F0F7F4" stroke="#C8E3DC" stroke-width="1" />
                   <rect x="18" y="49" width="28" height="2" rx="1" fill="#8FB7AD" />
-                  <!-- Checklist Unggah -->
+                  <!-- Checklist Unggah Dokumen -->
                   <circle cx="18" cy="62" r="3.5" fill="#10B981" />
                   <path d="M 16,62 L 17.5,63.5 L 20.5,60.5" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round"
                     fill="none" />
@@ -200,170 +357,11 @@
                     fill="none" />
                   <rect x="25" y="70" width="20" height="3" rx="1" fill="#A4C7BE" />
 
-                  <!-- Pena Menulis (Angled Pen) -->
+                  <!-- Pena Menulis Emas -->
                   <g transform="translate(56, 40) rotate(35)">
                     <rect x="0" y="0" width="7" height="38" rx="2" fill="#C5B344" />
                     <path d="M 0,38 L 3.5,46 L 7,38 Z" fill="#263A35" />
                     <circle cx="3.5" cy="45" r="0.8" fill="#FFFFFF" />
-                  </g>
-                </g>
-
-                <!-- Badge Angka 1 -->
-                <circle cx="48" cy="32" r="17" fill="#07594F" stroke="#C5B344" stroke-width="2.5"
-                  filter="url(#nodeShadow)" />
-                <text x="48" y="38" text-anchor="middle" font-family="'M PLUS Rounded 1c', sans-serif" font-weight="900"
-                  font-size="15" fill="#FFFFFF">1</text>
-
-                <!-- Teks Pos 1 -->
-                <text x="0" y="180" text-anchor="middle" font-family="'M PLUS Rounded 1c', sans-serif" font-weight="800"
-                  font-size="16.5" fill="#07594F">Pengisian Formulir</text>
-                <text x="0" y="200" text-anchor="middle" font-family="'Nunito Sans', sans-serif" font-weight="600"
-                  font-size="12.5" fill="#52746B">Isi data calon siswa secara daring</text>
-              </g>
-
-              <!-- ==========================================
-       POS 2: VERIFIKASI DOKUMEN OLEH TIM PPDB (NOMOR 2 - KANAN ATAS)
-       ========================================== -->
-              <g class="serpentine-node" transform="translate(740, 0)">
-                <!-- Ilustrasi Berkas Verifikasi -->
-                <g transform="translate(-40, 30)" filter="url(#nodeShadow)">
-                  <!-- Board Papan Biru/Toska -->
-                  <rect x="0" y="6" width="70" height="86" rx="8" fill="#1B6356" />
-                  <!-- Kertas Putih -->
-                  <rect x="6" y="14" width="58" height="72" rx="4" fill="#FFFFFF" />
-                  <!-- Klip Emas -->
-                  <rect x="20" y="2" width="30" height="12" rx="3" fill="#C5B344" />
-                  <circle cx="35" cy="8" r="2.5" fill="#6A5C0E" />
-
-                  <!-- Checklist Baris 1 -->
-                  <circle cx="17" cy="28" r="4.5" fill="#10B981" />
-                  <path d="M 14.5,28 L 16.5,30 L 19.5,26.5" stroke="#FFFFFF" stroke-width="1.4" stroke-linecap="round"
-                    fill="none" />
-                  <rect x="25" y="26" width="30" height="4" rx="1.5" fill="#3E6B60" />
-
-                  <!-- Checklist Baris 2 -->
-                  <circle cx="17" cy="40" r="4.5" fill="#10B981" />
-                  <path d="M 14.5,40 L 16.5,42 L 19.5,38.5" stroke="#FFFFFF" stroke-width="1.4" stroke-linecap="round"
-                    fill="none" />
-                  <rect x="25" y="38" width="26" height="4" rx="1.5" fill="#3E6B60" />
-
-                  <!-- Checklist Baris 3 -->
-                  <circle cx="17" cy="52" r="4.5" fill="#10B981" />
-                  <path d="M 14.5,52 L 16.5,54 L 19.5,50.5" stroke="#FFFFFF" stroke-width="1.4" stroke-linecap="round"
-                    fill="none" />
-                  <rect x="25" y="50" width="32" height="4" rx="1.5" fill="#3E6B60" />
-
-                  <!-- Cap Segel Emas Sah (Verified Stamp) -->
-                  <g transform="translate(44, 62) rotate(-12)">
-                    <circle cx="0" cy="0" r="12" fill="#FFFDF0" stroke="#C5B344" stroke-width="2" />
-                    <circle cx="0" cy="0" r="9" fill="none" stroke="#C5B344" stroke-width="1" stroke-dasharray="2 1" />
-                    <path d="M -4,0 L -1,3 L 5,-3" stroke="#C5B344" stroke-width="1.8" stroke-linecap="round"
-                      fill="none" />
-                  </g>
-                </g>
-
-                <!-- Badge Angka 2 -->
-                <circle cx="48" cy="32" r="17" fill="#07594F" stroke="#C5B344" stroke-width="2.5"
-                  filter="url(#nodeShadow)" />
-                <text x="48" y="38" text-anchor="middle" font-family="'M PLUS Rounded 1c', sans-serif" font-weight="900"
-                  font-size="15" fill="#FFFFFF">2</text>
-
-                <!-- Teks Pos 2: Verifikasi Dokumen oleh Tim PPDB -->
-                <text x="0" y="178" text-anchor="middle" font-family="'M PLUS Rounded 1c', sans-serif" font-weight="800"
-                  font-size="16" fill="#07594F">Verifikasi Dokumen</text>
-                <text x="0" y="198" text-anchor="middle" font-family="'M PLUS Rounded 1c', sans-serif" font-weight="700"
-                  font-size="13.5" fill="#07594F">oleh Tim PPDB</text>
-              </g>
-
-              <!-- ==========================================
-       POS 3: WAWANCARA WALI MURID (NOMOR 3 - KIRI TENGAH)
-       ========================================== -->
-              <g class="serpentine-node" transform="translate(280, 220)">
-                <!-- Ilustrasi Wawancara / Diskusi Ramah -->
-                <g transform="translate(-40, 30)" filter="url(#nodeShadow)">
-                  <!-- Board Papan Ujian -->
-                  <rect x="0" y="6" width="70" height="86" rx="8" fill="#146053" />
-                  <!-- Kertas Putih -->
-                  <rect x="6" y="14" width="58" height="72" rx="4" fill="#FFFFFF" />
-                  <!-- Klip Emas -->
-                  <rect x="20" y="2" width="30" height="12" rx="3" fill="#C5B344" />
-                  <circle cx="35" cy="8" r="2.5" fill="#6A5C0E" />
-
-                  <!-- Bubble Dialog Wawancara -->
-                  <g transform="translate(14, 24)">
-                    <!-- Bubble 1: Emerald -->
-                    <rect x="0" y="0" width="26" height="18" rx="5" fill="#EAF5F2" stroke="#07594F"
-                      stroke-width="1.2" />
-                    <path d="M 8,18 L 8,22 L 13,18 Z" fill="#EAF5F2" />
-                    <circle cx="7" cy="9" r="1.5" fill="#07594F" />
-                    <circle cx="13" cy="9" r="1.5" fill="#07594F" />
-                    <circle cx="19" cy="9" r="1.5" fill="#07594F" />
-
-                    <!-- Bubble 2: Gold (Tatap Muka) -->
-                    <g transform="translate(18, 12)">
-                      <rect x="0" y="0" width="24" height="16" rx="5" fill="#FDFBF2" stroke="#C5B344"
-                        stroke-width="1.2" />
-                      <path d="M 16,16 L 16,19 L 12,16 Z" fill="#FDFBF2" />
-                      <path d="M 6,8 L 9,11 L 18,5" stroke="#C5B344" stroke-width="1.4" stroke-linecap="round"
-                        fill="none" />
-                    </g>
-                  </g>
-
-                  <!-- Checklist Catatan Wawancara -->
-                  <rect x="14" y="56" width="32" height="3" rx="1.5" fill="#3E6B60" />
-                  <rect x="14" y="64" width="40" height="3" rx="1.5" fill="#8FB7AD" />
-                  <rect x="14" y="72" width="26" height="3" rx="1.5" fill="#8FB7AD" />
-                </g>
-
-                <!-- Badge Angka 3 -->
-                <circle cx="48" cy="32" r="17" fill="#07594F" stroke="#C5B344" stroke-width="2.5"
-                  filter="url(#nodeShadow)" />
-                <text x="48" y="38" text-anchor="middle" font-family="'M PLUS Rounded 1c', sans-serif" font-weight="900"
-                  font-size="15" fill="#FFFFFF">3</text>
-
-                <!-- Teks Pos 3: Wawancara Wali Murid -->
-                <text x="0" y="180" text-anchor="middle" font-family="'M PLUS Rounded 1c', sans-serif" font-weight="800"
-                  font-size="16.5" fill="#07594F">Wawancara Wali Murid</text>
-                <text x="0" y="200" text-anchor="middle" font-family="'Nunito Sans', sans-serif" font-weight="600"
-                  font-size="12.5" fill="#52746B">Penyelarasan visi pendidikan siswa</text>
-              </g>
-
-              <!-- ==========================================
-       POS 4: PENGUMUMAN & DAFTAR ULANG (NOMOR 4 - TENGAH BAWAH)
-       ========================================== -->
-              <g class="serpentine-node" transform="translate(480, 440)">
-                <!-- Ilustrasi Sertifikat & Smartcard -->
-                <g transform="translate(-45, 30)" filter="url(#nodeShadow)">
-                  <!-- Sertifikat Piagam di Belakang -->
-                  <rect x="0" y="4" width="76" height="54" rx="6" fill="#FFFDF5" stroke="#C5B344" stroke-width="2" />
-                  <rect x="4" y="8" width="68" height="46" rx="4" fill="none" stroke="#E6DC9A" stroke-width="1" />
-                  <rect x="14" y="16" width="34" height="4" rx="2" fill="#07594F" />
-                  <rect x="14" y="24" width="48" height="2.5" rx="1" fill="#7FA89E" />
-                  <rect x="14" y="30" width="38" height="2.5" rx="1" fill="#7FA89E" />
-
-                  <!-- Pita Emas & Bintang di Piagam -->
-                  <circle cx="60" cy="40" r="7" fill="#C5B344" />
-                  <path d="M 58,45 L 56,54 L 60,51 L 64,54 L 62,45 Z" fill="#C5B344" />
-                  <path d="M 60,37 L 61,39 L 63,39 L 61.5,40.5 L 62,43 L 60,41.5 L 58,43 L 58.5,40.5 L 57,39 L 59,39 Z"
-                    fill="#FFFFFF" />
-
-                  <!-- Smartcard Siswa / Bukti Daftar Ulang (Overlapping di Depan) -->
-                  <g transform="translate(18, 38)">
-                    <rect x="0" y="0" width="64" height="44" rx="6" fill="#FFFFFF" stroke="#07594F"
-                      stroke-width="1.5" />
-                    <!-- Header Card Emerald -->
-                    <path d="M 0,6 Q 0,0 6,0 L 58,0 Q 64,0 64,6 L 64,12 L 0,12 Z" fill="#07594F" />
-                    <!-- Chip Kartu Emas -->
-                    <rect x="8" y="18" width="10" height="8" rx="1.5" fill="#E2D479" stroke="#9A8C2D"
-                      stroke-width="0.8" />
-                    <!-- Garis Data Siswa -->
-                    <rect x="22" y="18" width="34" height="3" rx="1" fill="#263A35" />
-                    <rect x="22" y="24" width="24" height="2" rx="1" fill="#6B8881" />
-                    <rect x="8" y="32" width="30" height="2" rx="1" fill="#6B8881" />
-                    <!-- Stempel Lulus -->
-                    <circle cx="52" cy="30" r="6" fill="#10B981" />
-                    <path d="M 49,30 L 51,32 L 55,28" stroke="#FFFFFF" stroke-width="1.3" stroke-linecap="round"
-                      fill="none" />
                   </g>
                 </g>
 
@@ -375,15 +373,109 @@
 
                 <!-- Teks Pos 4 -->
                 <text x="0" y="180" text-anchor="middle" font-family="'M PLUS Rounded 1c', sans-serif" font-weight="800"
-                  font-size="16.5" fill="#07594F">Pengumuman &amp; Daftar Ulang</text>
+                  font-size="16.5" fill="#07594F">Mengisi Formulir</text>
                 <text x="0" y="200" text-anchor="middle" font-family="'Nunito Sans', sans-serif" font-weight="600"
-                  font-size="12.5" fill="#52746B">Pemberitahuan kelulusan &amp; penyelesaian registrasi</text>
+                  font-size="12.5" fill="#52746B">Isi data calon siswa secara daring</text>
+              </g>
+
+              <!-- ==========================================
+       POS 5: PENGUKURAN BAJU (NOMOR 5 - KIRI BAWAH)
+       ========================================== -->
+              <g class="serpentine-node" transform="translate(260, 440)">
+                <!-- Ilustrasi Seragam Sekolah & Pita Ukur Meteran -->
+                <g transform="translate(-40, 26)" filter="url(#nodeShadow)">
+                  <!-- Kartu Latar Lembut -->
+                  <rect x="0" y="6" width="78" height="88" rx="8" fill="#FFFDF8" stroke="#D3E5E0" stroke-width="1.5" />
+
+                  <!-- Gantungan Baju Hanger Emas -->
+                  <path d="M 39,12 Q 39,8 43,8 Q 47,8 47,11 Q 47,14 39,17 L 16,28 L 62,28 Z" fill="none"
+                    stroke="#C5B344" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+
+                  <!-- Kemeja / Seragam Sekolah -->
+                  <path d="M 22,28 L 12,38 L 20,44 L 26,36 L 26,72 L 52,72 L 52,36 L 58,44 L 66,38 L 56,28 Z"
+                    fill="#07594F" stroke="#146053" stroke-width="1.5" />
+                  <!-- Kerah Seragam Putih & Dasi Emas -->
+                  <path d="M 30,28 L 39,38 L 48,28" stroke="#FFFFFF" stroke-width="2.5" fill="none"
+                    stroke-linejoin="round" />
+                  <polygon points="37,35 41,35 42,48 39,52 36,48" fill="#C5B344" />
+                  <!-- Saku Seragam Kiri -->
+                  <rect x="44" y="44" width="6" height="7" rx="1" fill="#0E705F" stroke="#C5B344" stroke-width="0.8" />
+
+                  <!-- Pita Meteran Jahit Melingkar Kuning Emas -->
+                  <path d="M 8,56 Q 39,78 70,56" fill="none" stroke="#FFD700" stroke-width="4.5" stroke-linecap="round"
+                    filter="url(#nodeShadow)" />
+                  <!-- Garis Milimeter Meteran -->
+                  <path d="M 14,57 L 14,59 M 20,60 L 20,62 M 26,62 L 26,64 M 32,63 L 32,65 M 39,63.5 L 39,66 M 46,63 L 46,65 M 52,61.5 L 52,63.5 M 58,59 L 58,61 M 64,57 L 64,59"
+                    stroke="#8A7A1C" stroke-width="1" />
+                </g>
+
+                <!-- Badge Angka 5 -->
+                <circle cx="48" cy="32" r="17" fill="#07594F" stroke="#C5B344" stroke-width="2.5"
+                  filter="url(#nodeShadow)" />
+                <text x="48" y="38" text-anchor="middle" font-family="'M PLUS Rounded 1c', sans-serif" font-weight="900"
+                  font-size="15" fill="#FFFFFF">5</text>
+
+                <!-- Teks Pos 5 -->
+                <text x="0" y="180" text-anchor="middle" font-family="'M PLUS Rounded 1c', sans-serif" font-weight="800"
+                  font-size="16.5" fill="#07594F">Pengukuran Baju</text>
+                <text x="0" y="200" text-anchor="middle" font-family="'Nunito Sans', sans-serif" font-weight="600"
+                  font-size="12.5" fill="#52746B">Fitting seragam di sekolah</text>
+              </g>
+
+              <!-- ==========================================
+       POS 6: PERTEMUAN SELURUH WALI MURID DENGAN KEPALA SEKOLAH (NOMOR 6 - KANAN BAWAH)
+       ========================================== -->
+              <g class="serpentine-node" transform="translate(610, 440)">
+                <!-- Ilustrasi Forum Pertemuan / Auditorium & Silaturahmi Kepala Sekolah -->
+                <g transform="translate(-40, 26)" filter="url(#nodeShadow)">
+                  <!-- Papan Forum / Podium -->
+                  <rect x="0" y="6" width="78" height="88" rx="8" fill="#FFFFFF" stroke="#D3E5E0" stroke-width="1.5" />
+                  <!-- Header Emerald Podium -->
+                  <path d="M 0,14 Q 0,6 8,6 L 70,6 Q 78,6 78,14 L 78,24 L 0,24 Z" fill="#07594F" />
+                  <circle cx="39" cy="15" r="4.5" fill="#C5B344" />
+                  <!-- Bintang / Simbol Sekolah -->
+                  <path d="M 39,12 L 40,14 L 42,14 L 40.5,15.5 L 41,17.5 L 39,16 L 37,17.5 L 37.5,15.5 L 36,14 L 38,14 Z"
+                    fill="#FFFFFF" />
+
+                  <!-- Ilustrasi Sosok Kepala Sekolah & Perwakilan Wali Murid -->
+                  <!-- Kepala Sekolah (Tengah) -->
+                  <circle cx="39" cy="36" r="6" fill="#D3E5E0" stroke="#07594F" stroke-width="1.2" />
+                  <path d="M 29,52 Q 39,44 49,52 L 49,60 L 29,60 Z" fill="#07594F" />
+                  <rect x="36" y="47" width="6" height="5" fill="#C5B344" />
+
+                  <!-- Wali Murid 1 (Kiri) -->
+                  <circle cx="20" cy="40" r="5" fill="#E8F2EF" stroke="#4B776E" stroke-width="1" />
+                  <path d="M 12,54 Q 20,47 28,54 L 28,62 L 12,62 Z" fill="#6A9086" />
+
+                  <!-- Wali Murid 2 (Kanan) -->
+                  <circle cx="58" cy="40" r="5" fill="#FBF8EE" stroke="#A89732" stroke-width="1" />
+                  <path d="M 50,54 Q 58,47 66,54 L 66,62 L 50,62 Z" fill="#C5B344" />
+
+                  <!-- Banner Visi Bersama di Bawah -->
+                  <rect x="8" y="68" width="62" height="18" rx="4" fill="#F4F9F7" stroke="#07594F" stroke-width="1" />
+                  <text x="39" y="77" text-anchor="middle" font-family="'M PLUS Rounded 1c', sans-serif" font-weight="800"
+                    font-size="5" fill="#07594F">PENYELARASAN VISI</text>
+                  <text x="39" y="83" text-anchor="middle" font-family="'Nunito Sans', sans-serif" font-weight="700"
+                    font-size="4.5" fill="#8A7A1C">Wali Murid &amp; Kepala Sekolah</text>
+                </g>
+
+                <!-- Badge Angka 6 -->
+                <circle cx="48" cy="32" r="17" fill="#07594F" stroke="#C5B344" stroke-width="2.5"
+                  filter="url(#nodeShadow)" />
+                <text x="48" y="38" text-anchor="middle" font-family="'M PLUS Rounded 1c', sans-serif" font-weight="900"
+                  font-size="15" fill="#FFFFFF">6</text>
+
+                <!-- Teks Pos 6 -->
+                <text x="0" y="178" text-anchor="middle" font-family="'M PLUS Rounded 1c', sans-serif" font-weight="800"
+                  font-size="15.5" fill="#07594F">Pertemuan Wali Murid</text>
+                <text x="0" y="198" text-anchor="middle" font-family="'Nunito Sans', sans-serif" font-weight="600"
+                  font-size="12" fill="#52746B">dengan Kepala Sekolah</text>
               </g>
 
               <!-- ==========================================
        FINISH: BADGE SELESAI (RESMI DITERIMA)
        ========================================== -->
-              <g class="serpentine-node" transform="translate(860, 520)" filter="url(#nodeShadow)">
+              <g class="serpentine-node" transform="translate(865, 520)" filter="url(#nodeShadow)">
                 <!-- Kartu Kotak Hijau Emerald -->
                 <rect x="-65" y="0" width="130" height="110" rx="20" fill="#07594F" stroke="#C5B344"
                   stroke-width="2.5" />
@@ -420,8 +512,8 @@
               <div class="serpentine-mobile-card">
                 <div class="serpentine-mobile-badge">1</div>
                 <div class="serpentine-mobile-content">
-                  <h4 class="serpentine-mobile-title">Pengisian Formulir</h4>
-                  <p class="serpentine-mobile-desc">Isi data calon siswa secara daring</p>
+                  <h4 class="serpentine-mobile-title">Chat Admin</h4>
+                  <p class="serpentine-mobile-desc">Hubungi admin PPDB via WhatsApp resmi sekolah</p>
                 </div>
               </div>
 
@@ -429,8 +521,8 @@
               <div class="serpentine-mobile-card">
                 <div class="serpentine-mobile-badge">2</div>
                 <div class="serpentine-mobile-content">
-                  <h4 class="serpentine-mobile-title">Verifikasi Dokumen oleh Tim PPDB</h4>
-                  <p class="serpentine-mobile-desc">Pemeriksaan kelengkapan berkas</p>
+                  <h4 class="serpentine-mobile-title">Pembayaran</h4>
+                  <p class="serpentine-mobile-desc">Pembayaran &amp; konfirmasi biaya formulir pendaftaran</p>
                 </div>
               </div>
 
@@ -438,8 +530,8 @@
               <div class="serpentine-mobile-card">
                 <div class="serpentine-mobile-badge">3</div>
                 <div class="serpentine-mobile-content">
-                  <h4 class="serpentine-mobile-title">Wawancara Wali Murid</h4>
-                  <p class="serpentine-mobile-desc">Penyelarasan visi pendidikan siswa</p>
+                  <h4 class="serpentine-mobile-title">Admin Memberikan No. Registrasi</h4>
+                  <p class="serpentine-mobile-desc">Admin menerbitkan Nomor Registrasi resmi calon siswa</p>
                 </div>
               </div>
 
@@ -447,12 +539,30 @@
               <div class="serpentine-mobile-card">
                 <div class="serpentine-mobile-badge">4</div>
                 <div class="serpentine-mobile-content">
-                  <h4 class="serpentine-mobile-title">Pengumuman &amp; Daftar Ulang</h4>
-                  <p class="serpentine-mobile-desc">Pemberitahuan kelulusan &amp; penyelesaian registrasi</p>
+                  <h4 class="serpentine-mobile-title">Mengisi Formulir</h4>
+                  <p class="serpentine-mobile-desc">Pengisian formulir pendaftaran secara daring &amp; unggah berkas</p>
                 </div>
               </div>
 
-              <!-- Pos 5: Finish -->
+              <!-- Pos 5 -->
+              <div class="serpentine-mobile-card">
+                <div class="serpentine-mobile-badge">5</div>
+                <div class="serpentine-mobile-content">
+                  <h4 class="serpentine-mobile-title">Pengukuran Baju</h4>
+                  <p class="serpentine-mobile-desc">Fitting dan pengukuran seragam sekolah di kampus SDIT</p>
+                </div>
+              </div>
+
+              <!-- Pos 6 -->
+              <div class="serpentine-mobile-card">
+                <div class="serpentine-mobile-badge">6</div>
+                <div class="serpentine-mobile-content">
+                  <h4 class="serpentine-mobile-title">Pertemuan Seluruh Wali Murid dengan Kepala Sekolah</h4>
+                  <p class="serpentine-mobile-desc">Silaturahmi dan penyelarasan visi pendidikan bersama Kepala Sekolah</p>
+                </div>
+              </div>
+
+              <!-- Pos 7: Finish -->
               <div class="serpentine-mobile-card finish-card">
                 <div class="serpentine-mobile-badge finish-badge">
                   <i data-lucide="check" style="width:20px;height:20px;"></i>
