@@ -3327,7 +3327,66 @@ svg.lucide-loader {
 }
 
 /* --- RESPONSIVE MEDIA QUERIES --- */
+
+/* Small Desktop / Laptop / iPad Landscape refinement (1025px - 1200px) */
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .navbar-inner {
+    padding: 0.75rem 0;
+  }
+  .brand-logo {
+    height: 42px;
+  }
+  .brand-title {
+    font-size: 1.18rem;
+  }
+  .brand-subtitle {
+    font-size: 0.72rem;
+  }
+  .nav-menu {
+    gap: 1.15rem;
+  }
+  .nav-link {
+    font-size: 0.88rem;
+  }
+  .nav-cta .btn {
+    padding: 0.45rem 0.85rem;
+    font-size: 0.82rem;
+  }
+}
+
+/* Tablet / iPad Portrait & Landscape breakpoint (<= 1024px) */
 @media (max-width: 1024px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .nav-menu, .nav-cta {
+    display: none !important;
+  }
+  .nav-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+  .top-bar {
+    display: none;
+  }
+  .navbar-inner {
+    padding: 0.85rem 0;
+  }
+  .brand {
+    gap: 0.75rem;
+  }
+  .brand-logo {
+    height: 44px;
+    flex-shrink: 0;
+  }
+  .brand-title {
+    font-size: 1.25rem;
+  }
+  .brand-subtitle {
+    font-size: 0.75rem;
+  }
   .hero-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
@@ -3339,7 +3398,7 @@ svg.lucide-loader {
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .grid-3 {
+  .grid-3, .news-grid {
     grid-template-columns: repeat(2, 1fr);
   }
   .grid-4, .facility-grid, .teacher-grid {
@@ -3354,19 +3413,27 @@ svg.lucide-loader {
   }
 }
 
+/* Tablet-specific mobile drawer enhancement (641px - 1024px) */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .mobile-nav {
+    padding: 1.5rem 2rem 2rem;
+  }
+  .mobile-nav-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .mobile-nav-link {
+    font-size: 1rem;
+    padding: 0.55rem 0;
+  }
+}
+
 @media (max-width: 768px) {
   .container {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
-  }
-  .nav-menu, .nav-cta {
-    display: none;
-  }
-  .nav-toggle {
-    display: block;
-  }
-  .top-bar {
-    display: none;
   }
   .grid-2, .grid-3, .grid-4, .facility-grid, .news-grid {
     grid-template-columns: 1fr;
