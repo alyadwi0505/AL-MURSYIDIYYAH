@@ -253,6 +253,18 @@ p:last-child {
   box-shadow: var(--shadow-emerald);
 }
 
+.btn-emerald {
+  background-color: var(--color-emerald);
+  color: var(--color-white) !important;
+  box-shadow: var(--shadow-sm);
+}
+.btn-emerald:hover {
+  background-color: var(--color-emerald-dark);
+  color: var(--color-white) !important;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-emerald);
+}
+
 .btn-gold {
   background-color: var(--color-gold);
   color: var(--color-dark-forest);
@@ -4388,16 +4400,25 @@ svg.lucide-loader {
   align-items: center;
   justify-content: center;
   gap: 0.65rem;
-  padding: 1rem 1.5rem;
-  font-size: 0.98rem;
+  padding: 0.95rem 1.25rem;
+  font-size: 0.95rem;
   font-weight: 700;
-  border-radius: 10px;
+  border-radius: 12px;
+  background-color: var(--color-emerald);
+  color: #ffffff !important;
   box-shadow: 0 4px 16px rgba(7, 89, 79, 0.2);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   box-sizing: border-box;
   text-decoration: none;
+  white-space: normal !important;
+  text-align: center;
+  line-height: 1.4;
+  word-break: normal;
+  overflow-wrap: break-word;
 }
 .gate-wa-btn:hover {
+  background-color: var(--color-emerald-dark);
+  color: #ffffff !important;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(7, 89, 79, 0.25);
 }
@@ -4566,16 +4587,95 @@ svg.lucide-loader {
 }
 
 @media (max-width: 640px) {
+  .ppdb-gate-card {
+    padding: 1.35rem 1.15rem;
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(38, 58, 53, 0.05);
+  }
+  .ppdb-gate-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .ppdb-gate-title {
+    font-size: 1.25rem;
+    line-height: 1.35;
+  }
+  .ppdb-gate-desc {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    margin-bottom: 1.25rem;
+  }
   .ppdb-gate-steps {
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.85rem;
+    gap: 0.65rem;
+    padding: 0.75rem 0.65rem;
+  }
+  .gate-step-item {
+    font-size: 0.75rem;
+    gap: 0.3rem;
+  }
+  .gate-wa-btn {
+    padding: 0.85rem 1rem;
+    font-size: 0.9rem;
+    gap: 0.5rem;
+    line-height: 1.35;
+  }
+  .gate-unlock-box {
+    padding: 1.15rem 0.85rem;
   }
   .gate-input-group {
     flex-direction: column;
+    gap: 0.65rem;
+  }
+  .gate-input-wrap {
+    min-width: 100%;
+    width: 100%;
   }
   .gate-unlock-btn {
     width: 100%;
     justify-content: center;
+    padding: 0.85rem 1rem;
+  }
+  .ppdb-unlocked-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.65rem;
+  }
+  .unlocked-banner-content {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .ppdb-gate-card {
+    padding: 1.15rem 0.9rem;
+    border-radius: 14px;
+  }
+  .ppdb-gate-title {
+    font-size: 1.15rem;
+  }
+  .ppdb-gate-steps {
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+  }
+  .gate-step-item {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 0.65rem;
+    padding: 0.25rem 0;
+  }
+  .gate-step-num {
+    width: 22px;
+    height: 22px;
+    font-size: 0.72rem;
+    flex-shrink: 0;
+  }
+  .gate-wa-btn {
+    font-size: 0.86rem;
+    padding: 0.85rem 0.85rem;
   }
 }
 
