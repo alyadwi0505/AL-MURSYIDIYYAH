@@ -537,7 +537,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 3. Prominent Alert with Registration Number
     setTimeout(() => {
-      alert(`Alhamdulillah, pendaftaran ananda ${namaSiswa} BERHASIL!\n\nNomor Registrasi Anda: ${regNumber}\n\nSimpan nomor registrasi ini untuk mengecek status seleksi pendaftaran.`);
+      alert(`Alhamdulillah, pendaftaran ananda ${namaSiswa} BERHASIL!\n\nNomor Registrasi Anda: ${regNumber}\n\nSimpan nomor registrasi ini untuk mengecek status berkas dan jadwal pengukuran baju seragam.`);
     }, 150);
   }
 
@@ -559,34 +559,34 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   } // End of if (wizard)
 
-  // Helper: Mapping Konfigurasi Status Pendaftaran (Senior UI/UX Design System)
+  // Helper: Mapping Konfigurasi Status Pendaftaran (Senior UI/UX Design System - Jenjang SD Tanpa Seleksi)
   function getStatusConfig(rawStatus) {
     const s = (rawStatus || '').toLowerCase();
     
-    // 6. Tidak Diterima
-    if (s.includes('tidak') || s.includes('tolak') || s.includes('reject')) {
+    // 4. Tidak Diterima / Batal
+    if (s.includes('tidak') || s.includes('tolak') || s.includes('reject') || s.includes('batal')) {
       return {
         statusClass: 'status-banner-ditolak',
         icon: 'x-circle',
-        tag: 'STATUS PENDAFTARAN: BELUM MEMENUHI KUOTA',
-        title: 'Mohon Maaf, Kuota Belum Mencukupi',
-        timelineClasses: ['completed', 'completed', 'completed', 'warning'],
-        note: 'Terima kasih atas kepercayaan Ayah/Bunda mendaftarkan ananda. Mengingat keterbatasan kuota daya tampung kelas, saat ini calon siswa belum dapat kami terima di T.A. 2027/2028.'
+        tag: 'STATUS PENDAFTARAN: DIBATALKAN / KUOTA PENUH',
+        title: 'Pendaftaran Tidak Dapat Diproses',
+        timelineClasses: ['completed', 'completed', 'warning', ''],
+        note: 'Mohon maaf, pendaftaran ananda tidak dapat diproses karena kuota 30 siswa telah terpenuhi atau permohonan dibatalkan. Silakan hubungi panitia via WhatsApp jika memerlukan informasi lebih lanjut.'
       };
     }
-    // 5. Diterima
-    if (s.includes('terima') || s.includes('accept') || s.includes('lulus')) {
+    // 3. Diterima / Terverifikasi Resmi
+    if (s.includes('terima') || s.includes('accept') || s.includes('lulus') || s.includes('verifikasi') || s.includes('sah')) {
       return {
         statusClass: 'status-banner-diterima',
         icon: 'award',
-        tag: 'STATUS PENDAFTARAN: DINYATAKAN DITERIMA',
-        title: 'Selamat! Calon Siswa Diterima di SDIT Al-Mursyidiyyah',
-        timelineClasses: ['completed', 'completed', 'completed', 'completed'],
-        note: 'Alhamdulillah, ananda dinyatakan resmi diterima sebagai peserta didik baru SDIT Al-Mursyidiyyah. Mohon segera melakukan konfirmasi daftar ulang melalui Sekretariat PPDB.'
+        tag: 'STATUS PENDAFTARAN: RESMI DITERIMA',
+        title: 'Selamat! Calon Siswa Resmi Diterima di SDIT Al-Mursyidiyyah',
+        timelineClasses: ['completed', 'completed', 'completed', 'active'],
+        note: 'Alhamdulillah, pembayaran penuh telah terkonfirmasi dan berkas administrasi dinyatakan sah. Karena jenjang SD tidak ada tes seleksi, ananda resmi diterima sebagai peserta didik baru T.A. 2027/2028. Jadwal pengukuran baju seragam dan undangan pertemuan kepala sekolah akan segera dikirimkan panitia via WhatsApp.'
       };
     }
-    // 3. Perlu Perbaikan
-    if (s.includes('perlu') || s.includes('perbaikan') || s.includes('revisi')) {
+    // 2. Perlu Perbaikan Berkas
+    if (s.includes('perlu') || s.includes('perbaikan') || s.includes('revisi') || s.includes('kurang')) {
       return {
         statusClass: 'status-banner-perbaikan',
         icon: 'alert-triangle',
@@ -596,36 +596,14 @@ document.addEventListener('DOMContentLoaded', () => {
         note: 'Terdapat dokumen yang belum lengkap atau berkas kurang terbaca jelas. Mohon hubungi panitia via WhatsApp untuk panduan unggah ulang berkas.'
       };
     }
-    // 4. Terverifikasi
-    if (s.includes('terverifikasi') || s.includes('verified')) {
-      return {
-        statusClass: 'status-banner-terverifikasi',
-        icon: 'check-circle-2',
-        tag: 'STATUS PENDAFTARAN: BERKAS TERVERIFIKASI',
-        title: 'Seluruh Berkas Administrasi Dinyatakan Sah',
-        timelineClasses: ['completed', 'completed', 'active', ''],
-        note: 'Dokumen administrasi telah lengkap dan sah. Calon wali murid dijadwalkan mengikuti tahapan wawancara calon wali murid.'
-      };
-    }
-    // 2. Sedang Diverifikasi
-    if (s.includes('sedang') || s.includes('proses') || s.includes('in verif')) {
-      return {
-        statusClass: 'status-banner-proses',
-        icon: 'refresh-cw',
-        tag: 'STATUS PENDAFTARAN: SEDANG DIVERIFIKASI',
-        title: 'Pemeriksaan Berkas oleh Tim Administrasi',
-        timelineClasses: ['completed', 'active', '', ''],
-        note: 'Panitia PPDB sedang meninjau keabsahan dan kelengkapan dokumen persyaratan calon peserta didik. Proses ini membutuhkan waktu 1-2 hari kerja.'
-      };
-    }
-    // 1. Menunggu Verifikasi (Default)
+    // 1. Menunggu Verifikasi Berkas (Default)
     return {
       statusClass: 'status-banner-menunggu',
       icon: 'clock',
-      tag: 'STATUS PENDAFTARAN: MENUNGGU VERIFIKASI',
-      title: 'Berkas Telah Berhasil Diterima Sistem',
+      tag: 'STATUS PENDAFTARAN: BERKAS SEDANG DIPERIKSA',
+      title: 'Formulir & Dokumen Telah Berhasil Diterima Sistem',
       timelineClasses: ['completed', 'active', '', ''],
-      note: 'Pendaftaran calon siswa telah tersimpan di sistem. Berkas ananda saat ini sedang mengantre untuk diperiksa oleh panitia seleksi administrasi.'
+      note: 'Formulir data ananda telah tersimpan di sistem. Pembayaran penuh (full payment) Ayah/Bunda telah mengamankan 1 kuota siswa. Berkas ananda saat ini sedang diperiksa kelengkapannya oleh tim administrasi.'
     };
   }
 
@@ -732,25 +710,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
               </div>
 
-              <!-- 3. TIMELINE 4 TAHAPAN PENDAFTARAN -->
+              <!-- 3. TIMELINE 4 TAHAPAN PENDAFTARAN (JENJANG SD: TANPA SELEKSI) -->
               <div class="tracking-timeline">
-                <div class="timeline-header-title">Tahapan Pendaftaran</div>
+                <div class="timeline-header-title">Tahapan Pendaftaran Siswa Baru (Tanpa Tes Masuk)</div>
                 <div class="timeline-track-grid">
                   <div class="timeline-step-node ${cfg.timelineClasses[0]}">
                     <div class="timeline-step-circle">1</div>
-                    <div class="timeline-step-label">Pengisian Formulir</div>
+                    <div class="timeline-step-label">Pembayaran Full &amp; No. Regis</div>
                   </div>
                   <div class="timeline-step-node ${cfg.timelineClasses[1]}">
                     <div class="timeline-step-circle">2</div>
-                    <div class="timeline-step-label">Verifikasi Dokumen</div>
+                    <div class="timeline-step-label">Pengisian Formulir</div>
                   </div>
                   <div class="timeline-step-node ${cfg.timelineClasses[2]}">
                     <div class="timeline-step-circle">3</div>
-                    <div class="timeline-step-label">Wawancara Wali Murid</div>
+                    <div class="timeline-step-label">Pengukuran Baju Seragam</div>
                   </div>
                   <div class="timeline-step-node ${cfg.timelineClasses[3]}">
                     <div class="timeline-step-circle">4</div>
-                    <div class="timeline-step-label">Pengumuman & Daftar Ulang</div>
+                    <div class="timeline-step-label">Pertemuan Kepala Sekolah</div>
                   </div>
                 </div>
               </div>

@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const reply = `
           <strong>💵 Informasi Biaya Pendaftaran & Pendidikan:</strong><br><br>
           • Pendaftaran PPDB dapat dilakukan secara online melalui website ini.<br>
-          • Rincian lengkap biaya formulir, sarana/uang pangkal, SPP bulanan, dan seragam sekolah dapat dikirimkan langsung oleh admin panitia.
+          • Rincian lengkap biaya masuk penuh (uang pangkal, SPP bulanan, dan seragam sekolah) dapat dikirimkan langsung oleh admin panitia.
         `;
         const waLink = `https://wa.me/${ADMIN_WA_NUMBER}?text=${encodeURIComponent("Assalamu'alaikum Admin SDIT Al-Mursyidiyyah, mohon informasi rincian brosur biaya masuk dan SPP sekolah.")}`;
         const btnHtml = `

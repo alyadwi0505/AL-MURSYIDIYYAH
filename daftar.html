@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="SDIT Al-Mursyidiyyah">
-  <meta name="description" content="Formulir Pendaftaran Peserta Didik Baru (PPDB) Online SDIT Al-Mursyidiyyah Tahun Ajaran 2027/2028.">
+  <meta name="description"
+    content="Formulir Pendaftaran Peserta Didik Baru (PPDB) Online SDIT Al-Mursyidiyyah Tahun Ajaran 2027/2028.">
   <title>Formulir Pendaftaran PPDB Online — SDIT Al-Mursyidiyyah</title>
 
   <!-- Google Fonts: M PLUS Rounded 1c, Nunito Sans & Zain -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cookie&family=M+PLUS+Rounded+1c:wght@700;800;900&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Satisfy&family=Zain:wght@400;700;800;900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cookie&family=M+PLUS+Rounded+1c:wght@700;800;900&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Satisfy&family=Zain:wght@400;700;800;900&display=swap"
+    rel="stylesheet">
 
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -82,7 +86,8 @@
     <section class="page-header">
       <div class="container">
         <h1>Formulir Pendaftaran Online</h1>
-        <div class="breadcrumb" style="display: flex; gap: 0.75rem; align-items: center; justify-content: center; flex-wrap: wrap;">
+        <div class="breadcrumb"
+          style="display: flex; gap: 0.75rem; align-items: center; justify-content: center; flex-wrap: wrap;">
           <a href="index.html">Beranda</a>
           <span>/</span>
           <a href="ppdb.html">PPDB Online</a>
@@ -95,7 +100,7 @@
     <!-- FORMULIR ONLINE INTERAKTIF MULTI-STEP -->
     <section class="section section-ivory" style="min-height: 70vh;">
       <div class="container container-narrow">
-        
+
         <!-- REGISTRATION ACCESS GATE -->
         <div class="ppdb-gate-card" id="ppdbGate">
           <div class="ppdb-gate-header">
@@ -108,7 +113,7 @@
 
           <h2 class="ppdb-gate-title">Gerbang Pendaftaran Calon Siswa Baru</h2>
           <p class="ppdb-gate-desc">
-            Sesuai alur resmi SDIT Al-Mursyidiyyah, calon wali murid wajib melakukan <strong>konfirmasi pembayaran formulir</strong> terlebih dahulu kepada Admin PPDB via WhatsApp untuk mendapatkan <strong>Nomor Registrasi</strong> resmi.
+            Sesuai alur resmi SDIT Al-Mursyidiyyah, calon wali murid wajib melakukan <strong>pembayaran penuh (full payment)</strong> terlebih dahulu kepada Admin PPDB via WhatsApp untuk mengamankan kuota dan mendapatkan <strong>Nomor Registrasi</strong> resmi. Karena ini jenjang SD, <strong>tidak ada seleksi siswa</strong> — calon siswa yang telah menyelesaikan pembayaran full langsung dinyatakan diterima hingga kuota 30 siswa terpenuhi.
           </p>
 
           <!-- Alur Resmi 6 Tahapan PPDB SDIT Al-Mursyidiyyah -->
@@ -123,8 +128,8 @@
             <div class="gate-step-card done">
               <span class="gate-step-badge">2</span>
               <div class="gate-step-detail">
-                <span class="gate-step-name">Pembayaran</span>
-                <span class="gate-step-desc">Biaya Formulir</span>
+                <span class="gate-step-name">Pembayaran Full</span>
+                <span class="gate-step-desc">Biaya Masuk Penuh</span>
               </div>
             </div>
             <div class="gate-step-card done">
@@ -159,7 +164,7 @@
 
           <!-- Primary CTA: WhatsApp Admin -->
           <div class="gate-cta-box">
-            <a href="https://wa.me/6281380327256?text=Halo%20Admin%20SDIT%20Al-Mursyidiyyah,%20saya%20ingin%20mendaftarkan%20calon%20siswa%20baru%20T.A.%202027/2028%20dan%20konfirmasi%20pembayaran%20formulir."
+            <a href="https://wa.me/6281380327256?text=Halo%20Admin%20SDIT%20Al-Mursyidiyyah,%20saya%20ingin%20mendaftarkan%20calon%20siswa%20baru%20T.A.%202027/2028%20dan%20konfirmasi%20pembayaran%20full%20biaya%20masuk."
               target="_blank" class="btn btn-emerald btn-lg gate-wa-btn" id="btnGateWa">
               <i data-lucide="message-circle" style="width:20px;height:20px; flex-shrink:0;"></i>
               <span>Chat Admin via WhatsApp untuk Dapatkan No. Registrasi</span>
@@ -177,7 +182,8 @@
             <div class="gate-input-group">
               <div class="gate-input-wrap">
                 <i data-lucide="key" class="gate-input-icon"></i>
-                <input type="text" id="gateRegInput" class="gate-input" placeholder="Ketik nomor (misal: 1 atau REG-2027-001)" autocomplete="off" spellcheck="false">
+                <input type="text" id="gateRegInput" class="gate-input"
+                  placeholder="Ketik nomor (misal: 1 atau REG-2027-001)" autocomplete="off" spellcheck="false">
               </div>
               <button type="button" id="btnVerifyGate" class="btn btn-gold gate-unlock-btn">
                 <span>Buka Formulir</span>
@@ -185,7 +191,8 @@
               </button>
             </div>
             <div class="gate-demo-hint">
-              <span>Bisa ketik angka langsung: <code>1</code> s/d <code>30</code> atau format penuh <code>REG-2027-001</code></span>
+              <span>Bisa ketik angka langsung: <code>1</code> s/d <code>30</code> atau format penuh
+                <code>REG-2027-001</code></span>
               <button type="button" id="btnQuickDemoUnlock" class="btn-demo-link">
                 <i data-lucide="play" style="width:13px;height:13px;"></i> Coba Demo (REG-2027-001)
               </button>
@@ -201,11 +208,13 @@
             <div class="unlocked-banner-content">
               <i data-lucide="check-circle-2" style="width:20px;height:20px; color:#10B981; flex-shrink:0;"></i>
               <div>
-                <strong>Nomor Registrasi Terverifikasi:</strong> <span id="unlockedRegNumber" class="unlocked-code">-</span>
+                <strong>Nomor Registrasi Terverifikasi:</strong> <span id="unlockedRegNumber"
+                  class="unlocked-code">-</span>
                 <span class="unlocked-sub">(Kuota 30 Siswa T.A. 2027/2028 Terjamin)</span>
               </div>
             </div>
-            <button type="button" id="btnChangeReg" class="unlocked-change-btn" title="Kunci nomor lain">Ganti Nomor</button>
+            <button type="button" id="btnChangeReg" class="unlocked-change-btn" title="Kunci nomor lain">Ganti
+              Nomor</button>
           </div>
 
           <!-- Step Indicator -->
@@ -230,7 +239,8 @@
             <input type="hidden" id="verifiedRegNumber" name="regNumber">
             <!-- STEP 1: DATA SISWA -->
             <div class="form-step active" data-step="1">
-              <h3 style="font-size: 1.25rem; margin-bottom: 1.25rem; color: var(--color-emerald);">1. Identitas Calon Peserta Didik</h3>
+              <h3 style="font-size: 1.25rem; margin-bottom: 1.25rem; color: var(--color-emerald);">1. Identitas Calon
+                Peserta Didik</h3>
               <div class="form-grid">
                 <div class="form-group full-width">
                   <label for="namaSiswa" class="form-label">Nama Lengkap Siswa <span class="req">*</span></label>
@@ -243,8 +253,10 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="nikSiswa" class="form-label">Nomor Induk Kependudukan (NIK) <span class="req">*</span></label>
-                  <input type="text" id="nikSiswa" class="form-input" placeholder="16 Digit NIK di Kartu Keluarga" maxlength="16" required>
+                  <label for="nikSiswa" class="form-label">Nomor Induk Kependudukan (NIK) <span
+                      class="req">*</span></label>
+                  <input type="text" id="nikSiswa" class="form-input" placeholder="16 Digit NIK di Kartu Keluarga"
+                    maxlength="16" required>
                 </div>
 
                 <div class="form-group">
@@ -273,19 +285,22 @@
 
                 <div class="form-group full-width">
                   <label for="alamatSiswa" class="form-label">Alamat Lengkap Domisili <span class="req">*</span></label>
-                  <textarea id="alamatSiswa" class="form-textarea" placeholder="Jalan, No. Rumah, RT/RW, Kelurahan, Kecamatan, Kota" required></textarea>
+                  <textarea id="alamatSiswa" class="form-textarea"
+                    placeholder="Jalan, No. Rumah, RT/RW, Kelurahan, Kecamatan, Kota" required></textarea>
                 </div>
 
                 <div class="form-group full-width">
                   <label for="catatanKesehatan" class="form-label">Catatan Khusus / Riwayat Alergi (Opsional)</label>
-                  <textarea id="catatanKesehatan" class="form-textarea" placeholder="Tuliskan jika anak memiliki alergi makanan, pantangan, atau riwayat kesehatan tertentu..."></textarea>
+                  <textarea id="catatanKesehatan" class="form-textarea"
+                    placeholder="Tuliskan jika anak memiliki alergi makanan, pantangan, atau riwayat kesehatan tertentu..."></textarea>
                 </div>
               </div>
             </div>
 
             <!-- STEP 2: DATA ORANG TUA / WALI -->
             <div class="form-step" data-step="2">
-              <h3 style="font-size: 1.25rem; margin-bottom: 1.25rem; color: var(--color-emerald);">2. Identitas Orang Tua / Wali</h3>
+              <h3 style="font-size: 1.25rem; margin-bottom: 1.25rem; color: var(--color-emerald);">2. Identitas Orang
+                Tua / Wali</h3>
               <div class="form-grid">
                 <div class="form-group">
                   <label for="namaAyah" class="form-label">Nama Lengkap Ayah / Wali <span class="req">*</span></label>
@@ -294,7 +309,8 @@
 
                 <div class="form-group">
                   <label for="pekerjaanAyah" class="form-label">Pekerjaan Ayah / Wali</label>
-                  <input type="text" id="pekerjaanAyah" class="form-input" placeholder="PNS / Karyawan Swasta / Wiraswasta">
+                  <input type="text" id="pekerjaanAyah" class="form-input"
+                    placeholder="PNS / Karyawan Swasta / Wiraswasta">
                 </div>
 
                 <div class="form-group">
@@ -304,12 +320,15 @@
 
                 <div class="form-group">
                   <label for="pekerjaanIbu" class="form-label">Pekerjaan Ibu</label>
-                  <input type="text" id="pekerjaanIbu" class="form-input" placeholder="Ibu Rumah Tangga / Karyawati / Profesi">
+                  <input type="text" id="pekerjaanIbu" class="form-input"
+                    placeholder="Ibu Rumah Tangga / Karyawati / Profesi">
                 </div>
 
                 <div class="form-group full-width">
-                  <label for="noHpOrtu" class="form-label">Nomor WhatsApp Aktif Orang Tua <span class="req">*</span></label>
-                  <input type="tel" id="noHpOrtu" class="form-input" placeholder="08xxxxxxxxxx (untuk konfirmasi pendaftaran)" required>
+                  <label for="noHpOrtu" class="form-label">Nomor WhatsApp Aktif Orang Tua <span
+                      class="req">*</span></label>
+                  <input type="tel" id="noHpOrtu" class="form-input"
+                    placeholder="08xxxxxxxxxx (untuk konfirmasi pendaftaran)" required>
                 </div>
 
                 <div class="form-group full-width">
@@ -321,7 +340,8 @@
 
             <!-- STEP 3: UPLOAD DOKUMEN -->
             <div class="form-step" data-step="3">
-              <h3 style="font-size: 1.25rem; margin-bottom: 1.25rem; color: var(--color-emerald);">3. Unggah Dokumen Berkas (Dapat Menyusul)</h3>
+              <h3 style="font-size: 1.25rem; margin-bottom: 1.25rem; color: var(--color-emerald);">3. Unggah Dokumen
+                Berkas (Dapat Menyusul)</h3>
 
               <div class="form-grid">
                 <!-- Dropzone 1: Kartu Identitas Anak (KIA) -->
@@ -409,7 +429,8 @@
                 </div>
               </div>
 
-              <div style="margin-top: 1.25rem; padding: 0.75rem 1rem; background: var(--color-emerald-surface); border-radius: var(--radius-sm); font-size: 0.85rem; color: var(--color-emerald); display: flex; align-items: center; gap: 0.65rem;">
+              <div
+                style="margin-top: 1.25rem; padding: 0.75rem 1rem; background: var(--color-emerald-surface); border-radius: var(--radius-sm); font-size: 0.85rem; color: var(--color-emerald); display: flex; align-items: center; gap: 0.65rem;">
                 <i data-lucide="shield-check" style="width:18px;height:18px; min-width:18px;"></i>
                 <span>Data dan berkas Anda tersimpan aman dan terenkripsi untuk keperluan verifikasi PPDB.</span>
               </div>
@@ -439,15 +460,19 @@
             <div class="reg-header">
               <img src="assets/img/logo-transparent.png" alt="Logo SDIT Al-Mursyidiyyah" class="reg-logo">
               <div>
-                <h3 style="font-size: 1.25rem; color: var(--color-emerald); margin-bottom: 0.2rem;">BUKTI REGISTRASI PPDB ONLINE</h3>
-                <div class="font-school-title" style="font-size: 0.95rem; color: var(--color-gold); font-weight: 700;">SDIT AL-MURSYIDIYYAH T.A. 2027/2028</div>
-                <div style="font-size: 0.78rem; color: var(--color-dark-forest-muted);">Cendekia Beriman yang Berakhlak Mulia</div>
+                <h3 style="font-size: 1.25rem; color: var(--color-emerald); margin-bottom: 0.2rem;">BUKTI REGISTRASI
+                  PPDB ONLINE</h3>
+                <div class="font-school-title" style="font-size: 0.95rem; color: var(--color-gold); font-weight: 700;">
+                  SDIT AL-MURSYIDIYYAH T.A. 2027/2028</div>
+                <div style="font-size: 0.78rem; color: var(--color-dark-forest-muted);">Cendekia Beriman yang Berakhlak
+                  Mulia</div>
               </div>
             </div>
 
             <div style="text-align: center; margin-bottom: 1.75rem;">
               <span class="reg-num-badge" id="cardRegNumber">REG-2027-001</span>
-              <div style="font-size: 0.82rem; color: var(--color-dark-forest-muted); margin-top: 0.4rem;">Simpan nomor registrasi ini sebagai identitas saat verifikasi.</div>
+              <div style="font-size: 0.82rem; color: var(--color-dark-forest-muted); margin-top: 0.4rem;">Simpan nomor
+                registrasi ini sebagai identitas saat verifikasi.</div>
             </div>
 
             <table style="width: 100%; border-collapse: collapse; margin-bottom: 2rem; font-size: 0.95rem;">
@@ -482,27 +507,35 @@
             </table>
 
             <!-- Next Steps Information (Step 5 & 6) -->
-            <div class="reg-next-steps-banner" style="margin-bottom: 1.75rem; background: #FFFDF0; border: 1.5px solid #E6DC9A; border-radius: 12px; padding: 1.15rem 1.25rem; text-align: left;">
-              <div style="font-weight: 800; font-size: 0.95rem; color: #8A7A1C; display: flex; align-items: center; gap: 0.45rem; margin-bottom: 0.5rem;">
+            <div class="reg-next-steps-banner"
+              style="margin-bottom: 1.75rem; background: #FFFDF0; border: 1.5px solid #E6DC9A; border-radius: 12px; padding: 1.15rem 1.25rem; text-align: left;">
+              <div
+                style="font-weight: 800; font-size: 0.95rem; color: #8A7A1C; display: flex; align-items: center; gap: 0.45rem; margin-bottom: 0.5rem;">
                 <i data-lucide="info" style="width:18px;height:18px; flex-shrink:0;"></i>
                 <span>Tahapan Selanjutnya Setelah Pendaftaran:</span>
               </div>
-              <ul style="margin: 0; padding-left: 1.2rem; font-size: 0.86rem; color: var(--color-dark-forest); line-height: 1.6;">
-                <li><strong>Langkah 5 — Pengukuran Baju:</strong> Jadwal pengukuran seragam sekolah calon peserta didik akan diinformasikan panitia via WhatsApp.</li>
-                <li><strong>Langkah 6 — Pertemuan Kepala Sekolah:</strong> Pertemuan dan silaturahmi seluruh calon wali murid bersama Kepala Sekolah SDIT Al-Mursyidiyyah.</li>
+              <ul
+                style="margin: 0; padding-left: 1.2rem; font-size: 0.86rem; color: var(--color-dark-forest); line-height: 1.6;">
+                <li><strong>Langkah 5 — Pengukuran Baju:</strong> Jadwal pengukuran seragam sekolah calon peserta didik
+                  akan diinformasikan panitia via WhatsApp.</li>
+                <li><strong>Langkah 6 — Pertemuan Kepala Sekolah:</strong> Pertemuan dan silaturahmi seluruh calon wali
+                  murid bersama Kepala Sekolah SDIT Al-Mursyidiyyah.</li>
               </ul>
             </div>
 
             <div class="reg-actions-group" style="display: flex; flex-direction: column; gap: 0.85rem;">
-              <a href="https://wa.me/6281380327256" id="btnWhatsAppConfirm" target="_blank" class="btn btn-gold reg-action-btn" style="width: 100%;">
+              <a href="https://wa.me/6281380327256" id="btnWhatsAppConfirm" target="_blank"
+                class="btn btn-gold reg-action-btn" style="width: 100%;">
                 <i data-lucide="message-circle" style="width:18px;height:18px;flex-shrink:0;"></i>
                 <span>Konfirmasi Pendaftaran ke WhatsApp Panitia</span>
               </a>
-              <a href="cek-status.html" id="btnGoToTracking" class="btn btn-outline-emerald reg-action-btn" style="width: 100%;">
+              <a href="cek-status.html" id="btnGoToTracking" class="btn btn-outline-emerald reg-action-btn"
+                style="width: 100%;">
                 <i data-lucide="search" style="width:18px;height:18px;flex-shrink:0;"></i>
                 <span>Pantau Status di Halaman Cek Status</span>
               </a>
-              <button type="button" id="btnPrintCard" class="btn btn-white reg-action-btn" style="width: 100%; border: 1px solid var(--color-border);">
+              <button type="button" id="btnPrintCard" class="btn btn-white reg-action-btn"
+                style="width: 100%; border: 1px solid var(--color-border);">
                 <i data-lucide="printer" style="width:18px;height:18px;flex-shrink:0;"></i>
                 <span>Cetak / Simpan Kartu PDF</span>
               </button>
@@ -518,7 +551,8 @@
     <div class="container">
       <div class="footer-simple">
         <div class="footer-simple-contact">
-          <a href="https://www.google.com/maps/search/?api=1&query=SDIT+Al-Mursyidiyyah+Klender+Duren+Sawit+Jakarta+Timur" target="_blank" title="Buka di Google Maps">
+          <a href="https://www.google.com/maps/search/?api=1&query=SDIT+Al-Mursyidiyyah+Klender+Duren+Sawit+Jakarta+Timur"
+            target="_blank" title="Buka di Google Maps">
             <i data-lucide="map-pin" style="width:16px;height:16px;color:var(--color-gold);flex-shrink:0;"></i>
             <span>Jl. Kapitan, RT.8/RW.4, Klender, Kec. Duren Sawit, Kota Jakarta Timur 13470</span>
           </a>
@@ -532,7 +566,8 @@
   </footer>
 
   <!-- WhatsApp Floating Pill -->
-  <a href="https://wa.me/6281380327256?text=Halo%20SDIT%20Al-Mursyidiyyah,%20saya%20ingin%20bertanya%20informasi%20sekolah" target="_blank" class="whatsapp-float">
+  <a href="https://wa.me/6281380327256?text=Halo%20SDIT%20Al-Mursyidiyyah,%20saya%20ingin%20bertanya%20informasi%20sekolah"
+    target="_blank" class="whatsapp-float">
     <i data-lucide="message-circle" style="width:20px;height:20px;"></i>
     <span>Chat WhatsApp</span>
   </a>
@@ -545,5 +580,5 @@
     lucide.createIcons();
   </script>
 </body>
-</html>
 
+</html>
