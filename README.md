@@ -217,8 +217,5 @@ Berikut rangkuman pembaruan dan penyempurnaan yang telah disimpan pada tanggal *
 
 ---
 
-**SDIT AL-MURSYIDIYYAH**  
-📍 Jl. Kapitan, RT.8/RW.4, Klender, Kec. Duren Sawit, Kota Jakarta Timur 13470  
-💬 WhatsApp: [0813-8032-7256](https://wa.me/6281380327256)  
-© 2026 SDIT Al-Mursyidiyyah. Seluruh Hak Cipta Dilindungi.
+
 
